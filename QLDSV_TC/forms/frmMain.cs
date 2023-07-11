@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC.forms
 {
-    public partial class frmDangNhap : Form
+    public partial class frmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public frmDangNhap()
+        public frmMain()
         {
             InitializeComponent();
         }

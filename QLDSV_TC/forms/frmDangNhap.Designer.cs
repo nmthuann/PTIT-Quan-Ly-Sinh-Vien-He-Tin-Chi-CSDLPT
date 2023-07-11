@@ -1,5 +1,5 @@
 ﻿
-namespace QLDSV_TC
+namespace QLDSV_TC.forms
 {
     partial class frmDangNhap
     {
@@ -43,17 +43,16 @@ namespace QLDSV_TC
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(209, 131);
+            this.label1.Location = new System.Drawing.Point(229, 116);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Phòng ban";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbPhongBan
             // 
             this.cmbPhongBan.FormattingEnabled = true;
-            this.cmbPhongBan.Location = new System.Drawing.Point(388, 131);
+            this.cmbPhongBan.Location = new System.Drawing.Point(408, 116);
             this.cmbPhongBan.Name = "cmbPhongBan";
             this.cmbPhongBan.Size = new System.Drawing.Size(166, 24);
             this.cmbPhongBan.TabIndex = 1;
@@ -62,16 +61,15 @@ namespace QLDSV_TC
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(209, 198);
+            this.label2.Location = new System.Drawing.Point(229, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(118, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên đăng nhập";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(388, 193);
+            this.txtUsername.Location = new System.Drawing.Point(408, 178);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(166, 22);
             this.txtUsername.TabIndex = 3;
@@ -80,7 +78,7 @@ namespace QLDSV_TC
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(209, 240);
+            this.label3.Location = new System.Drawing.Point(229, 230);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 17);
             this.label3.TabIndex = 4;
@@ -88,26 +86,28 @@ namespace QLDSV_TC
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(388, 240);
+            this.txtPassword.Location = new System.Drawing.Point(408, 225);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(166, 22);
             this.txtPassword.TabIndex = 5;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLogin.Location = new System.Drawing.Point(237, 316);
+            this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLogin.Location = new System.Drawing.Point(330, 301);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(119, 48);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(435, 316);
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(455, 301);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(119, 48);
             this.btnExit.TabIndex = 7;
@@ -128,7 +128,7 @@ namespace QLDSV_TC
             this.Controls.Add(this.cmbPhongBan);
             this.Controls.Add(this.label1);
             this.Name = "frmDangNhap";
-            this.Text = "frmDangNhap";
+            this.Text = "Đăng nhập";
             this.ResumeLayout(false);
             this.PerformLayout();
 

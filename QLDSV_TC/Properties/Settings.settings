@@ -10,5 +10,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=MT-LAPTOP-ESHFI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456</Value>
     </Setting>
+    <Setting Name="statusStripThongTin" Type="System.String" Scope="User">
+      <Value Profile="(Default)">statusStripThongTin</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

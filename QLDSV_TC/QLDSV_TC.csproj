@@ -82,6 +82,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSV_TCDataSetTest.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -127,6 +132,17 @@
     </None>
     <None Include="QLDSV_TCDataSet.xss">
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSetTest.xsc">
+      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSetTest.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSV_TCDataSetTest.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSV_TCDataSetTest.xss">
+      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup />

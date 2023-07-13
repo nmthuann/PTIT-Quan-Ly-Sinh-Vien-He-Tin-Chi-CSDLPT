@@ -32,5 +32,17 @@ namespace QLDSV_TC.Properties {
                 return ((string)(this["QLDSV_TCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("statusStripThongTin")]
+        public string statusStripThongTin {
+            get {
+                return ((string)(this["statusStripThongTin"]));
+            }
+            set {
+                this["statusStripThongTin"] = value;
+            }
+        }
     }
 }

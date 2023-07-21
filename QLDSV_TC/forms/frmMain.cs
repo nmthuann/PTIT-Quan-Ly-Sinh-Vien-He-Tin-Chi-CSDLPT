@@ -57,7 +57,9 @@ namespace QLDSV_TC.forms
             barButtonDangXuat.Enabled = false;
             barButtonTaoTaiKhoan.Enabled = false;
             barButtonThongTinCaNhan.Enabled = false;
+            
         }
+
 
 
         public void enalbleButtonsAfterLogin()
@@ -65,40 +67,45 @@ namespace QLDSV_TC.forms
             barButtonDangXuat.Enabled = true;
             if (Program.mGroup.Equals("PGV"))
             {
-                //ribbonQuanLyKhoa_PGV.Visible = true;
-                //ribbonQuanLyKhoa_PGV.Enabled = true;
-                //reportPagePGV_Khoa.Visible = true;
-                //reportPagePGV_Khoa.Enabled = true;
-                //barBtnTaoLogin.Enabled = true;
+                barButtonTaoTaiKhoan.Enabled = true;
+                barButtonThongTinCaNhan.Enabled = true;
+                barButtonDangNhap.Enabled = false;
                 ribbonPageQuanLy.Visible = true;
-                //ribbonPageGroupQuanLy.Visible = true;
+                ribbonPageGroupQuanLy.Enabled = true;
+                ribbonPageBaoCao.Visible = true;
+                ribbonPageGroupBaoCao.Enabled = true;
+                barButtonLopTinChi.Enabled = true;
             }
             else if ((Program.mGroup.Equals("KHOA")))
             {
-                //ribbonQuanLyKhoa_PGV.Visible = true;
-                //ribbonQuanLyKhoa_PGV.Enabled = true;
-                //reportPagePGV_Khoa.Visible = true;
-                //reportPagePGV_Khoa.Enabled = true;
-                //barBtnTaoLogin.Enabled = true;
+                barButtonTaoTaiKhoan.Enabled = true;
+                barButtonThongTinCaNhan.Enabled = true;
+                barButtonDangNhap.Enabled = false;
                 ribbonPageQuanLy.Visible = true;
-                ribbonPageGroupQuanLy.Visible = true;
-                // ribbon.SelectedPage = ribbonPageQuanLy;
+                ribbonPageGroupQuanLy.Enabled = true;
+                barButtonLopTinChi.Enabled = true;
+
             }
-            else if (Program.mGroup.Equals("SINHVIEN"))
+            else if (Program.mGroup.Equals("SV"))
             {
-                //ribbonPageSinhVien.Visible = true;
-                //ribbonPageBaoCao.Visible = false;
-                //ribbonPageQuanLy.Visible = false;
-                //barBtnTaoLogin.Visibility = BarItemVisibility.Never;
-                ribbon.SelectedPage = ribbonPageSinhVien;
+                barButtonThongTinCaNhan.Enabled = true;
+                barButtonThongTinCaNhan.Enabled = true;
+                barButtonDangNhap.Enabled = false;
+                ribbonPageSinhVien.Visible = true;
+                ribbonPageGroupSinhVien.Enabled = true;
+                
             }
             else if (Program.mGroup.Equals("PKT"))
             {
-                //ribbonQuanLyPKT.Visible = true;
-                //ribbonQuanLyPKT.Enabled = true;
-                //reportPagePKT.Visible = true;
-                //reportPagePKT.Enabled = true;
-                //barBtnTaoLogin.Enabled = true;
+                
+                barButtonTaoTaiKhoan.Enabled = true;
+                barButtonThongTinCaNhan.Enabled = true;
+                barButtonDangNhap.Enabled = false;
+                ribbonPageQuanLy.Visible = true;
+                ribbonPageGroupQuanLy.Enabled = true;
+                barButtonLopTinChi.Enabled = false;
+                ribbonPageBaoCao.Visible = true;
+                ribbonPageGroupBaoCao.Enabled = true;
             }
         }
 
@@ -139,13 +146,31 @@ namespace QLDSV_TC.forms
             {
                 foreach (Form frm in this.MdiChildren)
                     frm.Close();
-                //Program.frmM.Dispose();
-                //Program.frmLogin.Visible = true;
                 Program.bindingSource.RemoveFilter();
-                // Program.frmMain.loadAgain();
-                barButtonDangXuat.Enabled = false;
+                //Program.frmMain.Dispose();
+                // Program.frmDangNhap.Visible = true;
+                //barButtonTaoTaiKhoan.Enabled = false;
+                //barButtonDangXuat.Enabled = false;
+                //ribbonPageQuanLy.Visible = false;
+                enalbleButtonsInit();
                 ribbonPageQuanLy.Visible = false;
+                barButtonDangNhap.Enabled = true;
+                Program.frmMain.toolStripStatusMa.Text = "Mã: ";
+                Program.frmMain.toolStripStatusHoVaTen.Text = "Họ và Tên: ";
+                Program.frmMain.toolStripStatusVaiTro.Text = "Vai trò: ";
 
+            }
+        }
+
+        private void barButtonLopTinChi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmLopTinChi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmLopTinChi = new frmLopTinChi();
+                Program.frmLopTinChi.MdiParent = this;
+                Program.frmLopTinChi.Show();
             }
         }
     }

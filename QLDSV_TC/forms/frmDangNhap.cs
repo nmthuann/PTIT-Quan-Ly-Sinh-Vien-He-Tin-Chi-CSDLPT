@@ -73,9 +73,6 @@ namespace QLDSV_TC.forms
         }
 
 
-
-
-
         private void checkBoxHienPassword_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBoxHienPassword.Checked)
@@ -89,8 +86,6 @@ namespace QLDSV_TC.forms
         }
 
 
-
-
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             if (KetNoiCoSoDuLieuGoc() == 0)
@@ -101,6 +96,7 @@ namespace QLDSV_TC.forms
             //cmbPhongBan.SelectedIndex = 2;
             Program.serverName = cmbPhongBan.SelectedValue.ToString();
         }
+
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
@@ -116,56 +112,61 @@ namespace QLDSV_TC.forms
                 return;
             }
 
+
+            /**
+             * get dữ liệu
+             */
             Program.mlogin = txtUsername.Text.Trim();
             Program.password = txtPassword.Text.Trim();
             Program.mPhongBan = cmbPhongBan.SelectedIndex;
             Program.serverName = cmbPhongBan.SelectedValue.ToString();
 
-            bool flag = false;
-            if (Program.KetNoi(flag) == 1) //  connect OK -> chạy sp
+            if (cbVaiTro.Checked)  // login - SV
             {
-                // PGV-KHOA-PKT
-                String statement = "EXEC SP_DANGNHAP'" + Program.mlogin + "'";
+               
+                Program.mlogin = Program.LoginSinhVien;
+                Program.password = Program.PasswordSinhVien;
+                
+                if(Program.KetNoi() == 1) // the connection is successfull!
+                {
+                    Program.mMaDangNhap = txtUsername.Text.Trim();
+                    Program.password = txtPassword.Text.Trim();
+
+                    // Program.conn.Open();
+                    string query =
+                        "SELECT * " +
+                        "FROM SINHVIEN WHERE " +
+                        "MaSV = '" + Program.mMaDangNhap + "' AND PASSWORD = '" + Program.password + "'";
+                    SqlDataReader check = Program.ExecSqlDataReader(query);
+                    if (check == null)
+                    {
+                        Program.conn.Close();
+                        MessageBox.Show(
+                            "Sinh Viên đăng nhập thất bại", "", MessageBoxButtons.OK);
+                        return;
+                    }
+                    Program.conn.Close();
+
+                    String statement =
+                    "EXEC SP_THONGTINDANGNHAP'" +
+                    Program.mMaDangNhap + "', 'SV'";
+                    Program.myReader = Program.ExecSqlDataReader(statement);
+                }
+            }
+            else // login - GV
+            {
+                Program.mlogin = txtUsername.Text.Trim();
+                Program.password = txtPassword.Text.Trim();
+                Program.mloginDN = Program.mlogin;
+                Program.passwordDN = Program.password;
+                if (Program.KetNoi() == 0) return;
+                String statement =
+                "EXEC SP_THONGTINDANGNHAP'" +
+                Program.mlogin + "', 'GV'";
                 Program.myReader = Program.ExecSqlDataReader(statement);
             }
-            else { 
 
-                //  thất bại do Tài khoản SV ?
-                if (!cmbPhongBan.Text.ToString().Equals("Tra cứu học phí"))
-                {
-                    
-                    Program.mloginDN = Program.mlogin;
-                    Program.passwordDN = txtPassword.Text.Trim();
-
-                    Program.serverName = cmbPhongBan.SelectedValue.ToString();
-                    Program.mlogin = Program.LoginSinhVien;
-                    Program.password = Program.PasswordSinhVien;
-
-                    // Program.username = Program.mloginDN;
-                    flag = true;
-                    if (Program.KetNoi(flag) == 0) return;
-                    //"EXEC SP_DANGNHAP_SV 'SV', 'N15DCCN001', '123456'"
-                    String strCmd = 
-                        "EXEC SP_DANGNHAP_SV'" +
-                        Program.LoginSinhVien + "', '" + 
-                        Program.mloginDN + "', '" + 
-                        Program.passwordDN + "'";
-
-                    Program.myReader = Program.ExecSqlDataReader(strCmd);
-                    //if(Program.myReader == null)
-                    //{
-                    //    MessageBox.Show(
-                    //        "Sinh Vien không có quyền truy cập dữ liệu", "", MessageBoxButtons.OK);
-                    //    return;
-                    //}
-                }
-                else
-                {
-                    MessageBox.Show("Sinh Vien không có quyền truy cập dữ liệu" +
-                        " \n Vui long kiem tra lại");
-                    return;
-                }
-            }
+            
 
             if (Program.myReader == null) return;
             Program.myReader.Read();
@@ -193,13 +194,27 @@ namespace QLDSV_TC.forms
                 MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ sos\n Vui long kiem tra lại \n" + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
-            
+
+
 
         }
+
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cbVaiTro_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVaiTro.Checked)
+            {
+                lbTaiKhoan.Text = "Mã Sinh Viên";
+            }
+            else
+            {
+                lbTaiKhoan.Text = "Tài khoản";
+            }
         }
     }
 }

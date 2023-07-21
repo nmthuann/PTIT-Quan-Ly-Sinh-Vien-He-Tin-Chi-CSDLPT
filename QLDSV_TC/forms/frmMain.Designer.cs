@@ -54,9 +54,9 @@ namespace QLDSV_TC.forms
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroupSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
@@ -100,7 +100,7 @@ namespace QLDSV_TC.forms
             this.barButtonThongTinCaNhan,
             this.barStaticMa});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(10, 10, 10, 10);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(10);
             this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -132,6 +132,7 @@ namespace QLDSV_TC.forms
             this.barButtonLopTinChi.Id = 3;
             this.barButtonLopTinChi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonLopTinChi.ImageOptions.SvgImage")));
             this.barButtonLopTinChi.Name = "barButtonLopTinChi";
+            this.barButtonLopTinChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLopTinChi_ItemClick);
             // 
             // barButtonNhapDiem
             // 
@@ -265,6 +266,7 @@ namespace QLDSV_TC.forms
             // 
             // ribbonPageGroupQuanLy
             // 
+            this.ribbonPageGroupQuanLy.Enabled = false;
             this.ribbonPageGroupQuanLy.ItemLinks.Add(this.barButtonLopHoc);
             this.ribbonPageGroupQuanLy.ItemLinks.Add(this.barButtonMonHoc);
             this.ribbonPageGroupQuanLy.ItemLinks.Add(this.barButtonLopTinChi);
@@ -274,37 +276,39 @@ namespace QLDSV_TC.forms
             // ribbonPageBaoCao
             // 
             this.ribbonPageBaoCao.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
+            this.ribbonPageGroupBaoCao});
             this.ribbonPageBaoCao.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageBaoCao.ImageOptions.Image")));
             this.ribbonPageBaoCao.Name = "ribbonPageBaoCao";
             this.ribbonPageBaoCao.Text = "Báo cáo";
             this.ribbonPageBaoCao.Visible = false;
             // 
-            // ribbonPageGroup2
+            // ribbonPageGroupBaoCao
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonDSLopTinChi);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonDSSVDangKyLTC);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonBangDiemMH);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonPhieuDiem);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonDSDongHocPhi);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonBangDiemTongKet);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            this.ribbonPageGroupBaoCao.Enabled = false;
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonDSLopTinChi);
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonDSSVDangKyLTC);
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonBangDiemMH);
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonPhieuDiem);
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonDSDongHocPhi);
+            this.ribbonPageGroupBaoCao.ItemLinks.Add(this.barButtonBangDiemTongKet);
+            this.ribbonPageGroupBaoCao.Name = "ribbonPageGroupBaoCao";
             // 
             // ribbonPageSinhVien
             // 
             this.ribbonPageSinhVien.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
+            this.ribbonPageGroupSinhVien});
             this.ribbonPageSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageSinhVien.ImageOptions.Image")));
             this.ribbonPageSinhVien.Name = "ribbonPageSinhVien";
             this.ribbonPageSinhVien.Text = "Sinh Viên";
             this.ribbonPageSinhVien.Visible = false;
             // 
-            // ribbonPageGroup3
+            // ribbonPageGroupSinhVien
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonDangKyLTC);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonXemDiem);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonXemHocPhi);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroupSinhVien.Enabled = false;
+            this.ribbonPageGroupSinhVien.ItemLinks.Add(this.barButtonDangKyLTC);
+            this.ribbonPageGroupSinhVien.ItemLinks.Add(this.barButtonXemDiem);
+            this.ribbonPageGroupSinhVien.ItemLinks.Add(this.barButtonXemHocPhi);
+            this.ribbonPageGroupSinhVien.Name = "ribbonPageGroupSinhVien";
             // 
             // ribbonPageHeThong
             // 
@@ -421,9 +425,9 @@ namespace QLDSV_TC.forms
         private DevExpress.XtraBars.BarButtonItem barButtonLopTinChi;
         private DevExpress.XtraBars.BarButtonItem barButtonNhapDiem;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageBaoCao;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupBaoCao;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageSinhVien;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupSinhVien;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageHeThong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.BarButtonItem barButtonDangKyLTC;

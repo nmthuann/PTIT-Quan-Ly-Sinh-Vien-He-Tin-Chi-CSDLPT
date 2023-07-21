@@ -63,7 +63,7 @@ namespace QLDSV_TC
         //  public static cho Winform
         public static forms.frmMain frmMain;
         public static forms.frmDangNhap frmDangNhap;
-
+        public static forms.frmLopTinChi frmLopTinChi;
 
 
         //  public static Function 
@@ -80,7 +80,8 @@ namespace QLDSV_TC
          * @return trả về 1 nếu thành công
          *         trả về 0 nếu thất bại
          */
-        public static int KetNoi(bool flag=true) { 
+        public static int KetNoi()
+        { // bool flag=true
 
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
                 Program.conn.Close();
@@ -99,13 +100,13 @@ namespace QLDSV_TC
 
             catch (Exception e)
             {
-                if (flag == true)
-                {
+                //if (flag == true)
+                //{
                     MessageBox.Show(
                     "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
                     e.Message, "", MessageBoxButtons.OK);
                    
-                }
+                //}
                 return 0;
                 //MessageBox.Show(
                 //    "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
@@ -190,6 +191,11 @@ namespace QLDSV_TC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            //// Program.frmMain = new forms.frmMain();
+            //Program.frmDangNhap = new forms.frmDangNhap();
+            //// frmMain.enalbleButtonsInit();
+            //Application.Run(frmDangNhap);
+
             Program.frmMain = new forms.frmMain();
             // frmMain.enalbleButtonsInit();
             Application.Run(frmMain);

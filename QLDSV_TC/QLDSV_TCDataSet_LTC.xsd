@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QLDSV_TCDataSet_LTC" targetNamespace="http://tempuri.org/QLDSV_TCDataSet_LTC.xsd" xmlns:mstns="http://tempuri.org/QLDSV_TCDataSet_LTC.xsd" xmlns="http://tempuri.org/QLDSV_TCDataSet_LTC.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLDSV_TCConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLDSV_TCConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QLDSV_TC.Properties.Settings.GlobalReference.Default.QLDSV_TCConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DS_GIANGVIENTableAdapter" GeneratorDataComponentClassName="V_DS_GIANGVIENTableAdapter" Name="V_DS_GIANGVIEN" UserDataComponentName="V_DS_GIANGVIENTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLDSV_TCConnectionString (Settings)" DbObjectName="QLDSV_TC.dbo.V_DS_GIANGVIEN" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MAGV, HOTEN FROM dbo.V_DS_GIANGVIEN</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MAGV" DataSetColumn="MAGV" />
+              <Mapping SourceColumn="HOTEN" DataSetColumn="HOTEN" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="V_DS_MONHOCTableAdapter" GeneratorDataComponentClassName="V_DS_MONHOCTableAdapter" Name="V_DS_MONHOC" UserDataComponentName="V_DS_MONHOCTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QLDSV_TCConnectionString (Settings)" DbObjectName="QLDSV_TC.dbo.V_DS_MONHOC" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT MAMH, TENMH FROM dbo.V_DS_MONHOC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MAMH" DataSetColumn="MAMH" />
+              <Mapping SourceColumn="TENMH" DataSetColumn="TENMH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QLDSV_TCDataSet_LTC" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QLDSV_TCDataSet_LTC" msprop:Generator_UserDSName="QLDSV_TCDataSet_LTC">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="V_DS_GIANGVIEN" msprop:Generator_TableClassName="V_DS_GIANGVIENDataTable" msprop:Generator_TableVarName="tableV_DS_GIANGVIEN" msprop:Generator_TablePropName="V_DS_GIANGVIEN" msprop:Generator_RowDeletingName="V_DS_GIANGVIENRowDeleting" msprop:Generator_RowChangingName="V_DS_GIANGVIENRowChanging" msprop:Generator_RowEvHandlerName="V_DS_GIANGVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DS_GIANGVIENRowDeleted" msprop:Generator_UserTableName="V_DS_GIANGVIEN" msprop:Generator_RowChangedName="V_DS_GIANGVIENRowChanged" msprop:Generator_RowEvArgName="V_DS_GIANGVIENRowChangeEvent" msprop:Generator_RowClassName="V_DS_GIANGVIENRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAGV" msprop:Generator_ColumnVarNameInTable="columnMAGV" msprop:Generator_ColumnPropNameInRow="MAGV" msprop:Generator_ColumnPropNameInTable="MAGVColumn" msprop:Generator_UserColumnName="MAGV">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HOTEN" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHOTEN" msprop:Generator_ColumnPropNameInRow="HOTEN" msprop:Generator_ColumnPropNameInTable="HOTENColumn" msprop:Generator_UserColumnName="HOTEN" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="V_DS_MONHOC" msprop:Generator_TableClassName="V_DS_MONHOCDataTable" msprop:Generator_TableVarName="tableV_DS_MONHOC" msprop:Generator_TablePropName="V_DS_MONHOC" msprop:Generator_RowDeletingName="V_DS_MONHOCRowDeleting" msprop:Generator_RowChangingName="V_DS_MONHOCRowChanging" msprop:Generator_RowEvHandlerName="V_DS_MONHOCRowChangeEventHandler" msprop:Generator_RowDeletedName="V_DS_MONHOCRowDeleted" msprop:Generator_UserTableName="V_DS_MONHOC" msprop:Generator_RowChangedName="V_DS_MONHOCRowChanged" msprop:Generator_RowEvArgName="V_DS_MONHOCRowChangeEvent" msprop:Generator_RowClassName="V_DS_MONHOCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MAMH" msprop:Generator_ColumnVarNameInTable="columnMAMH" msprop:Generator_ColumnPropNameInRow="MAMH" msprop:Generator_ColumnPropNameInTable="MAMHColumn" msprop:Generator_UserColumnName="MAMH">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TENMH" msprop:Generator_ColumnVarNameInTable="columnTENMH" msprop:Generator_ColumnPropNameInRow="TENMH" msprop:Generator_ColumnPropNameInTable="TENMHColumn" msprop:Generator_UserColumnName="TENMH">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DS_GIANGVIEN" />
+      <xs:field xpath="mstns:MAGV" />
+    </xs:unique>
+    <xs:unique name="V_DS_MONHOC_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:V_DS_MONHOC" />
+      <xs:field xpath="mstns:MAMH" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

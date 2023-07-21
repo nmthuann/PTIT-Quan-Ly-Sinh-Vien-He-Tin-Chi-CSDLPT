@@ -48,6 +48,8 @@
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
     <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -69,6 +71,12 @@
     <Compile Include="forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmLopTinChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLopTinChi.Designer.cs">
+      <DependentUpon>frmLopTinChi.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,15 +85,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLDSV_TCDataSet.cs">
+      <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLDSV_TCDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLDSV_TCDataSetTest.Designer.cs">
+    <Compile Include="QLDSV_TCDataSet_LTC.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
+      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraReport1.cs">
       <SubType>Component</SubType>
@@ -95,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLopTinChi.resx">
+      <DependentUpon>frmLopTinChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -133,16 +147,16 @@
     <None Include="QLDSV_TCDataSet.xss">
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
     </None>
-    <None Include="QLDSV_TCDataSetTest.xsc">
-      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
+    <None Include="QLDSV_TCDataSet_LTC.xsc">
+      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
     </None>
-    <None Include="QLDSV_TCDataSetTest.xsd">
+    <None Include="QLDSV_TCDataSet_LTC.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSV_TCDataSetTest.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLDSV_TCDataSet_LTC.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLDSV_TCDataSetTest.xss">
-      <DependentUpon>QLDSV_TCDataSetTest.xsd</DependentUpon>
+    <None Include="QLDSV_TCDataSet_LTC.xss">
+      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup />

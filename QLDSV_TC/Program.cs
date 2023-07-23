@@ -22,8 +22,8 @@ namespace QLDSV_TC
         public static String connstr;
         public static SqlCommand sqlcmd = new SqlCommand();
         public static SqlDataReader myReader;
-        public static String constrPublisher = 
-            "Data Source=MT-LAPTOP-ESHFI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
+        public static String constrPublisher =
+            "Data Source=DESKTOP-KQSALCV;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
         
         public static BindingSource bindingSource = new BindingSource();//dùng để giữ ds phân mảnh khi login
         public static String database = "QLDSV_TC";
@@ -64,6 +64,7 @@ namespace QLDSV_TC
         public static forms.frmMain frmMain;
         public static forms.frmDangNhap frmDangNhap;
         public static forms.frmLopTinChi frmLopTinChi;
+        public static forms.frmMonHoc frmMonHoc;
 
 
         //  public static Function 

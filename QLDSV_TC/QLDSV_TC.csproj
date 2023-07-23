@@ -43,6 +43,7 @@
     <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -83,6 +84,12 @@
     <Compile Include="forms\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmMonHoc.Designer.cs">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLDSV_TCDataSet.cs">
@@ -98,6 +105,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSV_TCDataSet_MonHoc.cs">
+      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLDSV_TCDataSet_MonHoc.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reports\XtraReport1.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -112,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmMonHoc.resx">
+      <DependentUpon>frmMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -157,6 +175,17 @@
     </None>
     <None Include="QLDSV_TCDataSet_LTC.xss">
       <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet_MonHoc.xsc">
+      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    </None>
+    <None Include="QLDSV_TCDataSet_MonHoc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLDSV_TCDataSet_MonHoc.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLDSV_TCDataSet_MonHoc.xss">
+      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup />

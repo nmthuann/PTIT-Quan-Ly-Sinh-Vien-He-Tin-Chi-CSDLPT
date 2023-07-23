@@ -378,7 +378,19 @@ namespace QLDSV_TC.forms
             panelControlThongTinLTC.Enabled = false;
         }
 
+        private void panelControl1_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void lOPTINCHIGridControl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControlThongTinLTC_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

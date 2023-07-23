@@ -100,7 +100,7 @@ namespace QLDSV_TC.forms
             this.barButtonThongTinCaNhan,
             this.barStaticMa});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(10);
+            this.ribbon.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
             this.ribbon.MaxItemId = 27;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -108,7 +108,7 @@ namespace QLDSV_TC.forms
             this.ribbonPageBaoCao,
             this.ribbonPageSinhVien,
             this.ribbonPageHeThong});
-            this.ribbon.Size = new System.Drawing.Size(1138, 193);
+            this.ribbon.Size = new System.Drawing.Size(975, 181);
             // 
             // barButtonLopHoc
             // 
@@ -125,6 +125,7 @@ namespace QLDSV_TC.forms
             this.barButtonMonHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonMonHoc.ImageOptions.Image")));
             this.barButtonMonHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonMonHoc.ImageOptions.LargeImage")));
             this.barButtonMonHoc.Name = "barButtonMonHoc";
+            this.barButtonMonHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonMonHoc_ItemClick);
             // 
             // barButtonLopTinChi
             // 
@@ -347,9 +348,10 @@ namespace QLDSV_TC.forms
             this.toolStripStatusMa,
             this.toolStripStatusHoVaTen,
             this.toolStripStatusVaiTro});
-            this.statusStripThongTin.Location = new System.Drawing.Point(0, 693);
+            this.statusStripThongTin.Location = new System.Drawing.Point(0, 559);
             this.statusStripThongTin.Name = global::QLDSV_TC.Properties.Settings.Default.statusStripThongTin;
-            this.statusStripThongTin.Size = new System.Drawing.Size(1138, 26);
+            this.statusStripThongTin.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
+            this.statusStripThongTin.Size = new System.Drawing.Size(975, 25);
             this.statusStripThongTin.TabIndex = 2;
             this.statusStripThongTin.Text = "statusStrip1";
             // 
@@ -392,13 +394,14 @@ namespace QLDSV_TC.forms
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1138, 719);
+            this.ClientSize = new System.Drawing.Size(975, 584);
             this.Controls.Add(this.statusStripThongTin);
             this.Controls.Add(this.ribbon);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPDANGNHAPBindingSource, "USERNAME", true));
             this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
             this.Ribbon = this.ribbon;
             this.Text = "QUẢN LÝ ĐIỂM SINH VIÊN TÍN CHỈ";

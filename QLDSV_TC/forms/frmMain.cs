@@ -173,6 +173,18 @@ namespace QLDSV_TC.forms
                 Program.frmLopTinChi.Show();
             }
         }
+
+        private void barButtonMonHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmMonHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmMonHoc = new frmMonHoc();
+                Program.frmMonHoc.MdiParent = this;
+                Program.frmMonHoc.Show();
+            }
+        }
     }
 
 

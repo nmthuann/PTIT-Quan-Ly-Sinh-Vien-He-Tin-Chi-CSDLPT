@@ -34,7 +34,9 @@
   <ItemGroup>
     <Reference Include="DevExpress.BonusSkins.v19.2" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -66,11 +68,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="forms\frmDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDangKyLTC.Designer.cs">
+      <DependentUpon>frmDangKyLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\frmDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="forms\frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmBangDiemHetMonLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmBangDiemHetMonLTC.Designer.cs">
+      <DependentUpon>frmBangDiemHetMonLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDanhSachSVDaDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDanhSachSVDaDangKyLTC.Designer.cs">
+      <DependentUpon>frmDanhSachSVDaDangKyLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDanhSachLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDanhSachLTC.Designer.cs">
+      <DependentUpon>frmDanhSachLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmDongHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmDongHocPhi.Designer.cs">
+      <DependentUpon>frmDongHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmLopHoc.designer.cs">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\frmLopTinChi.cs">
       <SubType>Form</SubType>
@@ -90,28 +128,71 @@
     <Compile Include="forms\frmMonHoc.Designer.cs">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\frmNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmNhapDiem.designer.cs">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\frmXemDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\frmXemDiem.designer.cs">
+      <DependentUpon>frmXemDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Xfrm_BangDiem_TongKetLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Xfrm_BangDiem_TongKetLop.designer.cs">
+      <DependentUpon>Xfrm_BangDiem_TongKetLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Xfrm_ReportHocPhiTheoLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Xfrm_ReportHocPhiTheoLop.designer.cs">
+      <DependentUpon>Xfrm_ReportHocPhiTheoLop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLDSV_TCDataSet.cs">
-      <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLDSV_TCDataSet.Designer.cs">
+    <Compile Include="QLDSV_TCDataSet_HocPhi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+      <DependentUpon>QLDSV_TCDataSet_HocPhi.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLDSV_TCDataSet_LTC.Designer.cs">
+    <Compile Include="QLDSV_TC_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
+      <DependentUpon>QLDSV_TC_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLDSV_TCDataSet_MonHoc.cs">
-      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    <Compile Include="Reports\Report_BangDiemMonHocLTC.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="QLDSV_TCDataSet_MonHoc.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    <Compile Include="Reports\Report_BangDiemMonHocLTC.Designer.cs">
+      <DependentUpon>Report_BangDiemMonHocLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_BangDiem_TongKet_Lop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_BangDiem_TongKet_Lop.designer.cs">
+      <DependentUpon>Report_BangDiem_TongKet_Lop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_DanhSachLopTinChi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_DanhSachLopTinChi.Designer.cs">
+      <DependentUpon>Report_DanhSachLopTinChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_DS_SINHVIEN_DANGKY_LTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_DS_SINHVIEN_DANGKY_LTC.Designer.cs">
+      <DependentUpon>Report_DS_SINHVIEN_DANGKY_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_HocPhiTheoLop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_HocPhiTheoLop.designer.cs">
+      <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraReport1.cs">
       <SubType>Component</SubType>
@@ -119,8 +200,26 @@
     <Compile Include="Reports\XtraReport1.Designer.cs">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\frmDangKyLTC.resx">
+      <DependentUpon>frmDangKyLTC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmBangDiemHetMonLTC.resx">
+      <DependentUpon>frmBangDiemHetMonLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDanhSachSVDaDangKyLTC.resx">
+      <DependentUpon>frmDanhSachSVDaDangKyLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDanhSachLTC.resx">
+      <DependentUpon>frmDanhSachLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmDongHocPhi.resx">
+      <DependentUpon>frmDongHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmLopHoc.resx">
+      <DependentUpon>frmLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmLopTinChi.resx">
       <DependentUpon>frmLopTinChi.cs</DependentUpon>
@@ -130,6 +229,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\frmMonHoc.resx">
       <DependentUpon>frmMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmNhapDiem.resx">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\frmXemDiem.resx">
+      <DependentUpon>frmXemDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Xfrm_BangDiem_TongKetLop.resx">
+      <DependentUpon>Xfrm_BangDiem_TongKetLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Xfrm_ReportHocPhiTheoLop.resx">
+      <DependentUpon>Xfrm_ReportHocPhiTheoLop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -141,6 +252,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reports\Report_BangDiemMonHocLTC.resx">
+      <DependentUpon>Report_BangDiemMonHocLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_BangDiem_TongKet_Lop.resx">
+      <DependentUpon>Report_BangDiem_TongKet_Lop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_DanhSachLopTinChi.resx">
+      <DependentUpon>Report_DanhSachLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_DS_SINHVIEN_DANGKY_LTC.resx">
+      <DependentUpon>Report_DS_SINHVIEN_DANGKY_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_HocPhiTheoLop.resx">
+      <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
     </EmbeddedResource>
@@ -154,38 +280,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QLDSV_TCDataSet.xsc">
-      <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+    <None Include="QLDSV_TCDataSet_HocPhi.xsc">
+      <DependentUpon>QLDSV_TCDataSet_HocPhi.xsd</DependentUpon>
     </None>
-    <None Include="QLDSV_TCDataSet.xsd">
+    <None Include="QLDSV_TCDataSet_HocPhi.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSV_TCDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLDSV_TCDataSet_HocPhi.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLDSV_TCDataSet.xss">
-      <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
+    <None Include="QLDSV_TCDataSet_HocPhi.xss">
+      <DependentUpon>QLDSV_TCDataSet_HocPhi.xsd</DependentUpon>
     </None>
-    <None Include="QLDSV_TCDataSet_LTC.xsc">
-      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
+    <None Include="QLDSV_TC_DataSet.xsc">
+      <DependentUpon>QLDSV_TC_DataSet.xsd</DependentUpon>
     </None>
-    <None Include="QLDSV_TCDataSet_LTC.xsd">
+    <None Include="QLDSV_TC_DataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSV_TCDataSet_LTC.Designer.cs</LastGenOutput>
+      <LastGenOutput>QLDSV_TC_DataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="QLDSV_TCDataSet_LTC.xss">
-      <DependentUpon>QLDSV_TCDataSet_LTC.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSV_TCDataSet_MonHoc.xsc">
-      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
-    </None>
-    <None Include="QLDSV_TCDataSet_MonHoc.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLDSV_TCDataSet_MonHoc.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLDSV_TCDataSet_MonHoc.xss">
-      <DependentUpon>QLDSV_TCDataSet_MonHoc.xsd</DependentUpon>
+    <None Include="QLDSV_TC_DataSet.xss">
+      <DependentUpon>QLDSV_TC_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup />

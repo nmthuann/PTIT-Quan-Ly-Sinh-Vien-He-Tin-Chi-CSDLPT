@@ -50,7 +50,7 @@ namespace QLDSV_TC.forms
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.mONHOCGridControl = new DevExpress.XtraGrid.GridControl();
             this.bdsMH = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TCDataSet();
+            this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TC_DataSet();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,8 +58,8 @@ namespace QLDSV_TC.forms
             this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControlMonHoc = new DevExpress.XtraEditors.PanelControl();
             this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
-            this.mONHOCTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter();
-            this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
+            this.mONHOCTableAdapter = new QLDSV_TC.QLDSV_TC_DataSetTableAdapters.MONHOCTableAdapter();
+            this.tableAdapterManager = new QLDSV_TC.QLDSV_TC_DataSetTableAdapters.TableAdapterManager();
             this.txtTenMH = new DevExpress.XtraEditors.TextEdit();
             this.spnSTLT = new DevExpress.XtraEditors.SpinEdit();
             this.spnSTTH = new DevExpress.XtraEditors.SpinEdit();
@@ -335,16 +335,14 @@ namespace QLDSV_TC.forms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CT_DONGHOCPHITableAdapter = null;
             this.tableAdapterManager.DANGKYTableAdapter = null;
             this.tableAdapterManager.GIANGVIENTableAdapter = null;
-            this.tableAdapterManager.HOCPHITableAdapter = null;
             this.tableAdapterManager.KHOATableAdapter = null;
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.LOPTINCHITableAdapter = null;
             this.tableAdapterManager.MONHOCTableAdapter = this.mONHOCTableAdapter;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TC_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // tENMHLabel
             // 
@@ -467,11 +465,11 @@ namespace QLDSV_TC.forms
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
         private DevExpress.XtraEditors.PanelControl panelControlMonHoc;
-        private QLDSV_TCDataSet qLDSV_TCDataSet;
+        private QLDSV_TC_DataSet qLDSV_TCDataSet;
         private System.Windows.Forms.BindingSource bdsMH;
-        private QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
+        private QLDSV_TC_DataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private DevExpress.XtraEditors.TextEdit txtMaMH;
-        private QLDSV_TCDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private QLDSV_TC_DataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.SpinEdit spnSTTH;
         private DevExpress.XtraEditors.SpinEdit spnSTLT;
         private DevExpress.XtraEditors.TextEdit txtTenMH;

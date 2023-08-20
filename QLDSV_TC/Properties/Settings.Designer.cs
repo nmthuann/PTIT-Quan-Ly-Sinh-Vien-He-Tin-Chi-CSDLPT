@@ -23,16 +23,6 @@ namespace QLDSV_TC.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MT-LAPTOP-ESHFI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456")]
-        public string QLDSV_TCConnectionString {
-            get {
-                return ((string)(this["QLDSV_TCConnectionString"]));
-            }
-        }
-        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("statusStripThongTin")]
@@ -53,6 +43,48 @@ namespace QLDSV_TC.Properties {
         public string QLDSV_TCConnectionString1 {
             get {
                 return ((string)(this["QLDSV_TCConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MT-LAPTOP-ESHFI\\MSSQLSERVER1;Initial Catalog=QLDSV_TC;User ID=sa;Pass" +
+            "word=123")]
+        public string QLDSV_TCConnectionString {
+            get {
+                return ((string)(this["QLDSV_TCConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MT-LAPTOP-ESHFI\\MSSQLSERVER01;Initial Catalog=QLDSV_TC;User ID=sa")]
+        public string QLDSV_TCS {
+            get {
+                return ((string)(this["QLDSV_TCS"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MT-LAPTOP-ESHFI;Initial Catalog=QLDSV_TC;User ID=sa")]
+        public string SP_DSLOPTINCHI {
+            get {
+                return ((string)(this["SP_DSLOPTINCHI"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MT-LAPTOP-ESHFI\\MSSQLSERVER03;Initial Catalog=QLDSV_TC;Persist Securi" +
+            "ty Info=True;User ID=sa")]
+        public string QLDSV_TCConnectionString3 {
+            get {
+                return ((string)(this["QLDSV_TCConnectionString3"]));
             }
         }
     }

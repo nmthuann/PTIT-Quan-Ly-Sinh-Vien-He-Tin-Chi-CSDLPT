@@ -23,7 +23,7 @@ namespace QLDSV_TC
         public static SqlCommand sqlcmd = new SqlCommand();
         public static SqlDataReader myReader;
         public static String constrPublisher =
-            "Data Source=DESKTOP-KQSALCV;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
+            "Data Source=MT-LAPTOP-ESHFI;Initial Catalog=QLDSV_TC;User ID=sa;Password=123456";
         
         public static BindingSource bindingSource = new BindingSource();//dùng để giữ ds phân mảnh khi login
         public static String database = "QLDSV_TC";
@@ -65,7 +65,17 @@ namespace QLDSV_TC
         public static forms.frmDangNhap frmDangNhap;
         public static forms.frmLopTinChi frmLopTinChi;
         public static forms.frmMonHoc frmMonHoc;
+        public static forms.frmDangKyLTC frmDangKyLTC;
+        public static forms.frmDanhSachLTC frmDanhSachLTC;
+        public static forms.frmDanhSachSVDaDangKyLTC frmDanhSachSVDaDangKyLTC;
+        public static forms.frmBangDiemHetMonLTC frmBangDiemHetMonLTC;
+        public static forms.frmDongHocPhi frmDongHocPhi;
+        public static forms.frmNhapDiem frmNhapDiem;
+        public static forms.frmXemDiem frmXemDiem;
+        public static forms.frmLopHoc frmLopHoc;
 
+        public static forms.Xfrm_BangDiem_TongKetLop Xfrm_BangDiem_TongKetLop;
+        public static forms.Xfrm_ReportHocPhiTheoLop Xfrm_ReportHocPhiTheoLop;
 
         //  public static Function 
         /**
@@ -197,9 +207,13 @@ namespace QLDSV_TC
             //// frmMain.enalbleButtonsInit();
             //Application.Run(frmDangNhap);
 
-            Program.frmMain = new forms.frmMain();
+            frmMain = new forms.frmMain();
             // frmMain.enalbleButtonsInit();
+            //frmDangNhap = new forms.frmDangNhap();
+            //Application.Run(frmDangNhap);
+
             Application.Run(frmMain);
+
         }
 
 

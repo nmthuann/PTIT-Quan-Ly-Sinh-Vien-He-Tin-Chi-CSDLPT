@@ -29,7 +29,6 @@ namespace QLDSV_TC.forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonLopHoc = new DevExpress.XtraBars.BarButtonItem();
@@ -51,8 +50,11 @@ namespace QLDSV_TC.forms
             this.barButtonBangDiemTongKet = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonThongTinCaNhan = new DevExpress.XtraBars.BarButtonItem();
             this.barStaticMa = new DevExpress.XtraBars.BarStaticItem();
+            this.barButtonHocPhi = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageKeToan = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroupKeToan = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -61,17 +63,13 @@ namespace QLDSV_TC.forms
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.statusStripThongTin = new System.Windows.Forms.StatusStrip();
-            this.sPDANGNHAPBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TCDataSet();
             this.toolStripStatusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusHoVaTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusVaiTro = new System.Windows.Forms.ToolStripStatusLabel();
-            this.sP_DANGNHAPTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.SP_DANGNHAPTableAdapter();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.toolStripContainer1.SuspendLayout();
             this.statusStripThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDANGNHAPBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -98,17 +96,19 @@ namespace QLDSV_TC.forms
             this.barButtonDSDongHocPhi,
             this.barButtonBangDiemTongKet,
             this.barButtonThongTinCaNhan,
-            this.barStaticMa});
+            this.barStaticMa,
+            this.barButtonHocPhi});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.Margin = new System.Windows.Forms.Padding(9, 8, 9, 8);
-            this.ribbon.MaxItemId = 27;
+            this.ribbon.Margin = new System.Windows.Forms.Padding(10);
+            this.ribbon.MaxItemId = 29;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageQuanLy,
+            this.ribbonPageKeToan,
             this.ribbonPageBaoCao,
             this.ribbonPageSinhVien,
             this.ribbonPageHeThong});
-            this.ribbon.Size = new System.Drawing.Size(975, 181);
+            this.ribbon.Size = new System.Drawing.Size(1137, 193);
             // 
             // barButtonLopHoc
             // 
@@ -117,6 +117,7 @@ namespace QLDSV_TC.forms
             this.barButtonLopHoc.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonLopHoc.ImageOptions.Image")));
             this.barButtonLopHoc.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonLopHoc.ImageOptions.LargeImage")));
             this.barButtonLopHoc.Name = "barButtonLopHoc";
+            this.barButtonLopHoc.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLopHoc_ItemClick);
             // 
             // barButtonMonHoc
             // 
@@ -141,6 +142,7 @@ namespace QLDSV_TC.forms
             this.barButtonNhapDiem.Id = 4;
             this.barButtonNhapDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonNhapDiem.ImageOptions.SvgImage")));
             this.barButtonNhapDiem.Name = "barButtonNhapDiem";
+            this.barButtonNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonNhapDiem_ItemClick);
             // 
             // barButtonDangKyLTC
             // 
@@ -149,6 +151,7 @@ namespace QLDSV_TC.forms
             this.barButtonDangKyLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonDangKyLTC.ImageOptions.Image")));
             this.barButtonDangKyLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonDangKyLTC.ImageOptions.LargeImage")));
             this.barButtonDangKyLTC.Name = "barButtonDangKyLTC";
+            this.barButtonDangKyLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDangKyLTC_ItemClick);
             // 
             // barButtonXemDiem
             // 
@@ -157,6 +160,7 @@ namespace QLDSV_TC.forms
             this.barButtonXemDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonXemDiem.ImageOptions.Image")));
             this.barButtonXemDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonXemDiem.ImageOptions.LargeImage")));
             this.barButtonXemDiem.Name = "barButtonXemDiem";
+            this.barButtonXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonXemDiem_ItemClick);
             // 
             // barButtonXemHocPhi
             // 
@@ -203,6 +207,7 @@ namespace QLDSV_TC.forms
             this.barButtonDSLopTinChi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonDSLopTinChi.ImageOptions.Image")));
             this.barButtonDSLopTinChi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonDSLopTinChi.ImageOptions.LargeImage")));
             this.barButtonDSLopTinChi.Name = "barButtonDSLopTinChi";
+            this.barButtonDSLopTinChi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDSLopTinChi_ItemClick);
             // 
             // barButtonDSSVDangKyLTC
             // 
@@ -211,6 +216,7 @@ namespace QLDSV_TC.forms
             this.barButtonDSSVDangKyLTC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonDSSVDangKyLTC.ImageOptions.Image")));
             this.barButtonDSSVDangKyLTC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonDSSVDangKyLTC.ImageOptions.LargeImage")));
             this.barButtonDSSVDangKyLTC.Name = "barButtonDSSVDangKyLTC";
+            this.barButtonDSSVDangKyLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDSSVDangKyLTC_ItemClick);
             // 
             // barButtonBangDiemMH
             // 
@@ -219,6 +225,7 @@ namespace QLDSV_TC.forms
             this.barButtonBangDiemMH.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonBangDiemMH.ImageOptions.Image")));
             this.barButtonBangDiemMH.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonBangDiemMH.ImageOptions.LargeImage")));
             this.barButtonBangDiemMH.Name = "barButtonBangDiemMH";
+            this.barButtonBangDiemMH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonBangDiemMH_ItemClick);
             // 
             // barButtonPhieuDiem
             // 
@@ -235,6 +242,7 @@ namespace QLDSV_TC.forms
             this.barButtonDSDongHocPhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonDSDongHocPhi.ImageOptions.Image")));
             this.barButtonDSDongHocPhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonDSDongHocPhi.ImageOptions.LargeImage")));
             this.barButtonDSDongHocPhi.Name = "barButtonDSDongHocPhi";
+            this.barButtonDSDongHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonDSDongHocPhi_ItemClick);
             // 
             // barButtonBangDiemTongKet
             // 
@@ -243,6 +251,7 @@ namespace QLDSV_TC.forms
             this.barButtonBangDiemTongKet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonBangDiemTongKet.ImageOptions.Image")));
             this.barButtonBangDiemTongKet.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonBangDiemTongKet.ImageOptions.LargeImage")));
             this.barButtonBangDiemTongKet.Name = "barButtonBangDiemTongKet";
+            this.barButtonBangDiemTongKet.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonBangDiemTongKet_ItemClick);
             // 
             // barButtonThongTinCaNhan
             // 
@@ -255,6 +264,14 @@ namespace QLDSV_TC.forms
             // 
             this.barStaticMa.Id = 26;
             this.barStaticMa.Name = "barStaticMa";
+            // 
+            // barButtonHocPhi
+            // 
+            this.barButtonHocPhi.Caption = "Học Phí";
+            this.barButtonHocPhi.Id = 27;
+            this.barButtonHocPhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonHocPhi.ImageOptions.SvgImage")));
+            this.barButtonHocPhi.Name = "barButtonHocPhi";
+            this.barButtonHocPhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonHocPhi_ItemClick);
             // 
             // ribbonPageQuanLy
             // 
@@ -273,6 +290,21 @@ namespace QLDSV_TC.forms
             this.ribbonPageGroupQuanLy.ItemLinks.Add(this.barButtonLopTinChi);
             this.ribbonPageGroupQuanLy.ItemLinks.Add(this.barButtonNhapDiem);
             this.ribbonPageGroupQuanLy.Name = "ribbonPageGroupQuanLy";
+            // 
+            // ribbonPageKeToan
+            // 
+            this.ribbonPageKeToan.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroupKeToan});
+            this.ribbonPageKeToan.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPageKeToan.ImageOptions.Image")));
+            this.ribbonPageKeToan.Name = "ribbonPageKeToan";
+            this.ribbonPageKeToan.Text = "Kế Toán";
+            this.ribbonPageKeToan.Visible = false;
+            // 
+            // ribbonPageGroupKeToan
+            // 
+            this.ribbonPageGroupKeToan.ItemLinks.Add(this.barButtonHocPhi);
+            this.ribbonPageGroupKeToan.Name = "ribbonPageGroupKeToan";
+            this.ribbonPageGroupKeToan.Text = "Phòng Kế Toán";
             // 
             // ribbonPageBaoCao
             // 
@@ -341,29 +373,17 @@ namespace QLDSV_TC.forms
             // 
             // statusStripThongTin
             // 
-            this.statusStripThongTin.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPDANGNHAPBindingSource, "USERNAME", true));
             this.statusStripThongTin.DataBindings.Add(new System.Windows.Forms.Binding("Name", global::QLDSV_TC.Properties.Settings.Default, "statusStripThongTin", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.statusStripThongTin.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStripThongTin.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusMa,
             this.toolStripStatusHoVaTen,
             this.toolStripStatusVaiTro});
-            this.statusStripThongTin.Location = new System.Drawing.Point(0, 559);
+            this.statusStripThongTin.Location = new System.Drawing.Point(0, 693);
             this.statusStripThongTin.Name = global::QLDSV_TC.Properties.Settings.Default.statusStripThongTin;
-            this.statusStripThongTin.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.statusStripThongTin.Size = new System.Drawing.Size(975, 25);
+            this.statusStripThongTin.Size = new System.Drawing.Size(1137, 26);
             this.statusStripThongTin.TabIndex = 2;
             this.statusStripThongTin.Text = "statusStrip1";
-            // 
-            // sPDANGNHAPBindingSource
-            // 
-            this.sPDANGNHAPBindingSource.DataMember = "SP_DANGNHAP";
-            this.sPDANGNHAPBindingSource.DataSource = this.qLDSV_TCDataSet;
-            // 
-            // qLDSV_TCDataSet
-            // 
-            this.qLDSV_TCDataSet.DataSetName = "QLDSV_TCDataSet";
-            this.qLDSV_TCDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // toolStripStatusMa
             // 
@@ -388,18 +408,20 @@ namespace QLDSV_TC.forms
             this.toolStripStatusVaiTro.Text = "Vai trò:";
             this.toolStripStatusVaiTro.Click += new System.EventHandler(this.toolStripStatusVaiTro_Click);
             // 
-            // sP_DANGNHAPTableAdapter
+            // barButtonItem2
             // 
-            this.sP_DANGNHAPTableAdapter.ClearBeforeFill = true;
+            this.barButtonItem2.Caption = "Học Phí";
+            this.barButtonItem2.Id = 27;
+            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(975, 584);
+            this.ClientSize = new System.Drawing.Size(1137, 719);
             this.Controls.Add(this.statusStripThongTin);
             this.Controls.Add(this.ribbon);
-            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sPDANGNHAPBindingSource, "USERNAME", true));
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
@@ -411,8 +433,6 @@ namespace QLDSV_TC.forms
             this.toolStripContainer1.PerformLayout();
             this.statusStripThongTin.ResumeLayout(false);
             this.statusStripThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sPDANGNHAPBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -453,11 +473,12 @@ namespace QLDSV_TC.forms
         private DevExpress.XtraBars.BarStaticItem barStaticMa;
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.StatusStrip statusStripThongTin;
-        private System.Windows.Forms.BindingSource sPDANGNHAPBindingSource;
-        private QLDSV_TCDataSet qLDSV_TCDataSet;
-        public QLDSV_TCDataSetTableAdapters.SP_DANGNHAPTableAdapter sP_DANGNHAPTableAdapter;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusMa;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusHoVaTen;
         public System.Windows.Forms.ToolStripStatusLabel toolStripStatusVaiTro;
+        private DevExpress.XtraBars.BarButtonItem barButtonHocPhi;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroupKeToan;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        public DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageKeToan;
     }
 }

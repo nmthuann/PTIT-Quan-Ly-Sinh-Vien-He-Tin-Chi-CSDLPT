@@ -12,10 +12,9 @@ namespace QLDSV_TC.forms
 {
     public partial class frmLopTinChi : Form
     {
-
-
         private int viTri = 0;
         private string maKhoa = "";
+        bool DangThem = false;
 
         public frmLopTinChi()
         {
@@ -24,35 +23,31 @@ namespace QLDSV_TC.forms
 
         private void frmLopTinChi_Load(object sender, EventArgs e)
         {
-            
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.DANGKY' table. You can move, or remove it, as needed.
-            
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet2.V_DS_GIANGVIEN' table. You can move, or remove it, as needed.
 
             qLDSV_TCDataSet.EnforceConstraints = false;
-            qLDSV_TCDataSet_LTC.EnforceConstraints = false;
+
+
+            //this.dS_GIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.dS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.DS_GIANGVIEN);
+            //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
 
             this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
 
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.MONHOC' table. You can move, or remove it, as needed.
-            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
-
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.GIANGVIEN' table. You can move, or remove it, as needed.
-            this.gIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.GIANGVIEN);
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.LOPTINCHI' table. You can move, or remove it, as needed.
-
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
 
+           
 
-            // this.v_DS_MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.v_DS_MONHOCTableAdapter.Fill(this.qLDSV_TCDataSet_LTC.V_DS_MONHOC);
-            //// TODO: This line of code loads data into the 'qLDSV_TCDataSet_LTC.V_DS_GIANGVIEN' table. You can move, or remove it, as needed.
-            // this.v_DS_GIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.v_DS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet_LTC.V_DS_GIANGVIEN);
+            cmbTenMonHoc.DataSource = Program.ExecSqlDataTable("SELECT * FROM MONHOC");
+            cmbTenMonHoc.DisplayMember = "TENMH";
+            cmbTenMonHoc.ValueMember = "MAMH";
+
+            cmbTenGV.DataSource = Program.ExecSqlDataTable("SELECT MAGV, TENGV = HO + ' ' + TEN FROM GIANGVIEN");
+            cmbTenGV.DisplayMember = "TENGV";
+            cmbTenGV.ValueMember = "MAGV";
+
 
 
             Program.bindingSource.Filter = "TENCN not LIKE 'Tra cứu học phí%'  ";
@@ -63,7 +58,6 @@ namespace QLDSV_TC.forms
             cmbKhoa.SelectedValue = Program.serverName;
            
 
-            cmbTenMonHoc.SelectedValue = ((DataRowView)bdsMonHoc[0])["MAMH"].ToString();
 
             if (Program.mGroup == "PGV")
             {
@@ -83,13 +77,8 @@ namespace QLDSV_TC.forms
             }
             if (Program.mGroup == "PKT")// PKT
             {
-                
-                //cmbKhoa.Enabled = true;
-                //btnReload.Enabled = true;
                 panelControlThongTinLTC.Enabled = false;
-                
             }
-
         }
 
     
@@ -110,11 +99,22 @@ namespace QLDSV_TC.forms
              */
             viTri = bdsLTC.Position;
             panelControlThongTinLTC.Enabled = true;
+            DangThem = true;
+
             bdsLTC.AddNew();
             txtMaKhoa.Text = maKhoa;
             cbHuyLop.Checked = false;
-            cmbTenGV.SelectedIndex = 0;
-            cmbTenMonHoc.SelectedIndex = 0;
+            // cmbTenMonHoc.SelectedIndex = -1;
+            // cmbTenGV.SelectedIndex = 0;
+            // cmbTenMonHoc.SelectedIndex = 0;
+            // this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+
+
+            // Liên kết dữ liệu vào ComboBox
+            //cmbTenMonHoc.DataSource = mONHOCBindingSource;
+            //cmbTenMonHoc.DisplayMember = "TENMH";
+            //cmbTenMonHoc.ValueMember = "MAMH";
+
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
         }
@@ -150,18 +150,10 @@ namespace QLDSV_TC.forms
                 }
                 maKhoa = "CNTT";
                 // maKhoa = ((DataRowView)bdsLTC[0])["MAKHOA"].ToString(); // chắc phải viết SP ở lỗi này
+                //this.dS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.DS_GIANGVIEN);
                 this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
 
-                //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                //this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
-
-                //this.gIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-                //this.gIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.GIANGVIEN);
-
-                //this.v_DS_MONHOCTableAdapter.Fill(this.qLDSV_TCDataSet_LTC.V_DS_MONHOC);
-                //this.v_DS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet_LTC.V_DS_GIANGVIEN);
-               
             }
 
             if (bdsLTC.Count == 0)
@@ -170,34 +162,6 @@ namespace QLDSV_TC.forms
                 btnXoa.Enabled = btnSua.Enabled = true;
         }
 
-
-        private void cmbTenGV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbTenGV.SelectedValue != null)
-                txtMaGiangVien.Text = cmbTenGV.SelectedValue.ToString();
-        }
-
-
-        private void txtMaGiangVien_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void cmbTenMonHoc_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbTenMonHoc.SelectedValue != null)
-                txtMaMonHoc.Text = cmbTenMonHoc.SelectedValue.ToString();
-        }
-
-
-        private void txtMaMonHoc_EditValueChanged(object sender, EventArgs e)
-        {
-            if (txtMaMonHoc.Text != null)
-            {
-                cmbTenMonHoc.SelectedValue = txtMaMonHoc.Text;
-            }
-        }
 
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -213,7 +177,7 @@ namespace QLDSV_TC.forms
 
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("Chức năng chưa hoàn thành?");
+            //MessageBox.Show("Chức năng chưa hoàn thành?");
             if (bdsDangKy.Count > 0)
             {
                 MessageBox.Show(
@@ -239,7 +203,7 @@ namespace QLDSV_TC.forms
                      *  ** Find chỉ tìm dc ở khóa chính
                      */
                     this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    // this.LTCTableAdapter.Update(this.qLDSV_TCDataSet.LOPTINCHI); // mở ở đây ra mới xóa dc trong csdl
+                    this.LTCTableAdapter.Update(this.qLDSV_TCDataSet.LOPTINCHI); // mở ở đây ra mới xóa dc trong csdl
                     if (bdsLTC.Count == 0) // xóa đến nào k còn thì thôi!
                         btnXoa.Enabled = btnSua.Enabled = false;
                 }
@@ -257,13 +221,14 @@ namespace QLDSV_TC.forms
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("Chức năng chưa hoàn thành?");
+            //MessageBox.Show("Chức năng chưa hoàn thành?");
             viTri = bdsLTC.Position;
             panelControlThongTinLTC.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
             cmbKhoa.Enabled = false;
             cbHuyLop.Enabled = true;
+            DangThem = true;
         }
 
 
@@ -271,7 +236,7 @@ namespace QLDSV_TC.forms
         // chưa có thêm stack
         private void btnUndo_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("Chức năng chưa hoàn thành?");
+            //MessageBox.Show("Chức năng chưa hoàn thành?");
             bdsLTC.CancelEdit();
             this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
@@ -292,7 +257,7 @@ namespace QLDSV_TC.forms
 
         private void btnReload_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            MessageBox.Show("Chức năng chưa hoàn thành?");
+            //MessageBox.Show("Chức năng chưa hoàn thành?");
             try
             {
                 this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
@@ -347,12 +312,24 @@ namespace QLDSV_TC.forms
                 speSoSVToiThieu.Focus();
                 return false;
             }
+            //if (cbHuyLop.Checked)
+            //{
+            //    if (bdsDangKy.Count > 0)
+            //    {
+            //        MessageBox.Show(
+            //            "Không thể xóa hủy lớp tín chỉ vì đã có sinh viên đăng kí ",
+            //            "", MessageBoxButtons.OK);
+            //        return false;
+            //    }    
+            //}
+
             return true;
         }
 
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DangThem = false;
             MessageBox.Show("Chức năng chưa hoàn thành?");
             bool check = CheckInput();
             if (check == false)
@@ -362,7 +339,7 @@ namespace QLDSV_TC.forms
             {
                 bdsLTC.EndEdit();
                 bdsLTC.ResetCurrentItem();
-                this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
+                // this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LTCTableAdapter.Update(this.qLDSV_TCDataSet.LOPTINCHI);
                 lOPTINCHIGridControl.Enabled = true;
 
@@ -376,6 +353,7 @@ namespace QLDSV_TC.forms
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = btnReload.Enabled = true;
             btnGhi.Enabled = btnUndo.Enabled = false;
             panelControlThongTinLTC.Enabled = false;
+           
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)
@@ -392,5 +370,25 @@ namespace QLDSV_TC.forms
         {
 
         }
+
+        private void cmbTenGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTenGV.SelectedValue != null)
+                mAGVTextEdit.Text = cmbTenGV.SelectedValue.ToString();
+        }
+
+        private void cmbTenMonHoc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTenMonHoc.SelectedValue != null)
+                mAMHTextEdit.Text = cmbTenMonHoc.SelectedValue.ToString();
+        }
+
+        //private void mAGVTextEdit_EditValueChanged(object sender, EventArgs e)
+        //{
+        //    if ( mAGVTextEdit.Text != null)
+        //    {
+        //        cmbTenGV.SelectedValue = cmbTenGV.Text;
+        //    }
+        //}
     }
 }

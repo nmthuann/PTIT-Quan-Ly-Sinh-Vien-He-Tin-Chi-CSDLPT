@@ -75,6 +75,9 @@ namespace QLDSV_TC.forms
                 ribbonPageBaoCao.Visible = true;
                 ribbonPageGroupBaoCao.Enabled = true;
                 barButtonLopTinChi.Enabled = true;
+                barButtonDSLopTinChi.Enabled = true;
+                barButtonDSSVDangKyLTC.Enabled = true;
+                barButtonBangDiemMH.Enabled = true;
             }
             else if ((Program.mGroup.Equals("KHOA")))
             {
@@ -84,6 +87,8 @@ namespace QLDSV_TC.forms
                 ribbonPageQuanLy.Visible = true;
                 ribbonPageGroupQuanLy.Enabled = true;
                 barButtonLopTinChi.Enabled = true;
+                barButtonDSSVDangKyLTC.Enabled = true;
+                barButtonBangDiemMH.Enabled = true;
 
             }
             else if (Program.mGroup.Equals("SV"))
@@ -93,6 +98,7 @@ namespace QLDSV_TC.forms
                 barButtonDangNhap.Enabled = false;
                 ribbonPageSinhVien.Visible = true;
                 ribbonPageGroupSinhVien.Enabled = true;
+                barButtonDangKyLTC.Enabled = true;
                 
             }
             else if (Program.mGroup.Equals("PKT"))
@@ -106,6 +112,10 @@ namespace QLDSV_TC.forms
                 barButtonLopTinChi.Enabled = false;
                 ribbonPageBaoCao.Visible = true;
                 ribbonPageGroupBaoCao.Enabled = true;
+                
+                ribbonPageKeToan.Visible = true;
+                ribbonPageGroupKeToan.Visible = true;
+                barButtonHocPhi.Enabled = true;
             }
         }
 
@@ -147,11 +157,6 @@ namespace QLDSV_TC.forms
                 foreach (Form frm in this.MdiChildren)
                     frm.Close();
                 Program.bindingSource.RemoveFilter();
-                //Program.frmMain.Dispose();
-                // Program.frmDangNhap.Visible = true;
-                //barButtonTaoTaiKhoan.Enabled = false;
-                //barButtonDangXuat.Enabled = false;
-                //ribbonPageQuanLy.Visible = false;
                 enalbleButtonsInit();
                 ribbonPageQuanLy.Visible = false;
                 barButtonDangNhap.Enabled = true;
@@ -160,6 +165,18 @@ namespace QLDSV_TC.forms
                 Program.frmMain.toolStripStatusVaiTro.Text = "Vai trò: ";
 
             }
+
+            //DialogResult dialog = XtraMessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo);
+            //if (dialog == DialogResult.Yes)
+            //{
+            //    foreach (Form frm in this.MdiChildren)
+            //        frm.Close();
+            //    Program.frmMain.Dispose();
+            //    Program.frmDangNhap.Visible = true;
+            //    Program.bindingSource.RemoveFilter();
+            //    Program.frmDangNhap.loadAgain();
+
+            //}
         }
 
         private void barButtonLopTinChi_ItemClick(object sender, ItemClickEventArgs e)
@@ -183,6 +200,126 @@ namespace QLDSV_TC.forms
                 Program.frmMonHoc = new frmMonHoc();
                 Program.frmMonHoc.MdiParent = this;
                 Program.frmMonHoc.Show();
+            }
+        }
+
+        private void barButtonDangKyLTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmDangKyLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmDangKyLTC = new frmDangKyLTC();
+                Program.frmDangKyLTC.MdiParent = this;
+                Program.frmDangKyLTC.Show();
+            }
+        }
+
+        private void barButtonDSLopTinChi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmDanhSachLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmDanhSachLTC = new frmDanhSachLTC();
+                Program.frmDanhSachLTC.MdiParent = this;
+                Program.frmDanhSachLTC.Show();
+            }
+        }
+
+        private void barButtonDSSVDangKyLTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmDanhSachSVDaDangKyLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmDanhSachSVDaDangKyLTC = new frmDanhSachSVDaDangKyLTC();
+                Program.frmDanhSachSVDaDangKyLTC.MdiParent = this;
+                Program.frmDanhSachSVDaDangKyLTC.Show();
+            }
+        }
+
+        private void barButtonBangDiemMH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmBangDiemHetMonLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmBangDiemHetMonLTC = new frmBangDiemHetMonLTC();
+                Program.frmBangDiemHetMonLTC.MdiParent = this;
+                Program.frmBangDiemHetMonLTC.Show();
+            }
+        }
+
+        private void barButtonHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmDongHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmDongHocPhi = new frmDongHocPhi();
+                Program.frmDongHocPhi.MdiParent = this;
+                Program.frmDongHocPhi.Show();
+            }
+        }
+
+        private void barButtonBangDiemTongKet_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.Xfrm_BangDiem_TongKetLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.Xfrm_BangDiem_TongKetLop = new Xfrm_BangDiem_TongKetLop();
+                Program.Xfrm_BangDiem_TongKetLop.MdiParent = this;
+                Program.Xfrm_BangDiem_TongKetLop.Show();
+            }
+        }
+
+        private void barButtonNhapDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmNhapDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmNhapDiem = new frmNhapDiem();
+                Program.frmNhapDiem.MdiParent = this;
+                Program.frmNhapDiem.Show();
+            }
+        }
+
+        private void barButtonDSDongHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.Xfrm_ReportHocPhiTheoLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.Xfrm_ReportHocPhiTheoLop = new Xfrm_ReportHocPhiTheoLop();
+                Program.Xfrm_ReportHocPhiTheoLop.MdiParent = this;
+                Program.Xfrm_ReportHocPhiTheoLop.Show();
+            }
+        }
+
+        private void barButtonXemDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmXemDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmXemDiem = new frmXemDiem();
+                Program.frmXemDiem.MdiParent = this;
+                Program.frmXemDiem.Show();
+            }
+        }
+
+        private void barButtonLopHoc_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.frmLopHoc));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmLopHoc = new frmLopHoc();
+                Program.frmLopHoc.MdiParent = this;
+                Program.frmLopHoc.Show();
             }
         }
     }

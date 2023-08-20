@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -41,13 +42,13 @@ namespace QLDSV_TC.forms
         }
 
 
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
-        }
+        //private Form CheckExists(Type ftype)
+        //{
+        //    foreach (Form f in this.MdiChildren)
+        //        if (f.GetType() == ftype)
+        //            return f;
+        //    return null;
+        //}
 
         private void cmbPhongBan_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -184,10 +185,14 @@ namespace QLDSV_TC.forms
                 Program.myReader.Close();
 
                 this.Visible = false;
+                // Program.frmMain = new frmMain();
+               
                 Program.frmMain.toolStripStatusMa.Text = "Mã: " + Program.username;
                 Program.frmMain.toolStripStatusHoVaTen.Text = "Họ và tên: " + Program.mHoten;
                 Program.frmMain.toolStripStatusVaiTro.Text = "Vai trò: " + Program.mGroup;
                 Program.frmMain.enalbleButtonsAfterLogin();
+                // Thread.Sleep(500);
+                // Program.frmMain.Show();
             }
             catch (Exception ex)
             {
@@ -216,5 +221,15 @@ namespace QLDSV_TC.forms
                 lbTaiKhoan.Text = "Tài khoản";
             }
         }
+
+
+        //public void loadAgain()
+        //{
+        //    cmbPhongBan.SelectedItem = Program.mGroup;
+        //    Program.serverName = cmbPhongBan.SelectedValue.ToString();
+        //    txtUsername.Text = null;
+        //    txtPassword.Text = null;
+        //    txtUsername.Focus();
+        //}
     }
 }

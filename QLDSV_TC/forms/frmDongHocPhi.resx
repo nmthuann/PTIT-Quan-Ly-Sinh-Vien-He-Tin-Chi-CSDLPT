@@ -129,6 +129,9 @@
   <metadata name="hOCPHILabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
+  <metadata name="sOTIENCANDONGLabel.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -285,13 +288,27 @@
   <metadata name="bdsThongTinDongHocPhi.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>399, 17</value>
   </metadata>
-  <metadata name="sP_THONGTINDONGHOCPHITableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>753, 17</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnTraCuu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAZtJREFUSEutlTtSAkEURccEA3EDwB7YDaCZBmoBGpFg5rZAA0VTXYCJBvgpN+Cn
+        yvZc+nUg1U63MKfq1pR37nuvunsai2Wcc9voBF2gJ/RpT/19jOoW/T8U99ArKuMFdawkH4pO0bc6wBXq
+        ogaqoSbS8BkSyo2tNA1hFavoCx2ZHYX3fcspn14JIe152JbS5gFyGiKeUfmZENCBikuzsiB/7cvc0Kw4
+        BPR1iK5ZWZDf8WVualYcAvoERcOsLMjr4MXcrDgEPnzO1czKgvymL3PvZsUhsOoKWr4svYJzn3M9s7Ig
+        v+vL3MSsOAR0/cXMrCRkN9DNosq5gdlxCNSRrr/om10KuaGPZ9wDQaiDwk0uHcJ7NVdOjMxOQ3iMwm+R
+        LpG+cx2kfov01J6HbQm8oba1SENYK9Gyy9D7EVJzoec+OkPpL5GQzmSApmiOdE/0nCD5W5ZrozAkcI9a
+        i0ZVQLO9RdvfVDeERtqWGNUMoYn+IalZDPlNi66OmlizGLcWWw8a/TXk0SLrQ7PYkAN7XQ001JA79IAO
+        i6IofgDpafKgjE+3awAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="tableAdapterManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 60</value>
   </metadata>
   <metadata name="sP_CT_DONGHOCPHI_MASVTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>572, 60</value>
+  </metadata>
+  <metadata name="sP_THONGTINDONGHOCPHITableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>753, 17</value>
   </metadata>
 </root>

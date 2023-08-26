@@ -14,7 +14,7 @@ namespace QLDSV_TC.forms
     {
         private int viTri = 0;
         private string maKhoa = "";
-        bool DangThem = false;
+        //  bool DangThem = false;
 
         public frmLopTinChi()
         {
@@ -38,7 +38,7 @@ namespace QLDSV_TC.forms
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
 
-           
+
 
             cmbTenMonHoc.DataSource = Program.ExecSqlDataTable("SELECT * FROM MONHOC");
             cmbTenMonHoc.DisplayMember = "TENMH";
@@ -56,7 +56,7 @@ namespace QLDSV_TC.forms
             cmbKhoa.DisplayMember = "TENCN";
             cmbKhoa.ValueMember = "TENSERVER";
             cmbKhoa.SelectedValue = Program.serverName;
-           
+
 
 
             if (Program.mGroup == "PGV")
@@ -77,11 +77,14 @@ namespace QLDSV_TC.forms
             }
             if (Program.mGroup == "PKT")// PKT
             {
-                panelControlThongTinLTC.Enabled = false;
+                btnReload.Enabled = true;
+                btnThoat.Enabled = true;
+                // panelControlThongTinLTC.Enabled = false;
+                btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = false;
             }
         }
 
-    
+
 
         private void lOPTINCHIBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -91,7 +94,7 @@ namespace QLDSV_TC.forms
 
         }
 
-        
+
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             /**
@@ -99,10 +102,12 @@ namespace QLDSV_TC.forms
              */
             viTri = bdsLTC.Position;
             panelControlThongTinLTC.Enabled = true;
-            DangThem = true;
+            cmbKhoa.Enabled = false;
+            // DangThem = true;
 
             bdsLTC.AddNew();
-            txtMaKhoa.Text = maKhoa;
+            maKhoa = ((DataRowView)bdsLTC[0])["MAKHOA"].ToString(); // có thể lỗi???
+            txtMaKhoa.Text = maKhoa.Trim();
             cbHuyLop.Checked = false;
             // cmbTenMonHoc.SelectedIndex = -1;
             // cmbTenGV.SelectedIndex = 0;
@@ -144,12 +149,16 @@ namespace QLDSV_TC.forms
             {
                 // qLDSV_TCDataSet.EnforceConstraints = false;
                 // qLDSV_TCDataSet_LTC.EnforceConstraints = false;
-                if (cmbKhoa.DisplayMember.ToString() == "Viễn Thông")
-                {
-                    maKhoa = "VT";
-                }
-                maKhoa = "CNTT";
-                // maKhoa = ((DataRowView)bdsLTC[0])["MAKHOA"].ToString(); // chắc phải viết SP ở lỗi này
+                //if (cmbKhoa.DisplayMember.ToString() == "Viễn thông")
+                //{
+                //    maKhoa = "VT";
+                //}
+                //if (cmbKhoa.DisplayMember.ToString() == "Công nghệ thông tin")
+                //{
+                //    maKhoa = "CNTT";
+                //}
+
+                maKhoa = ((DataRowView)bdsLTC[0])["MAKHOA"].ToString(); // chắc phải viết SP ở lỗi này
                 //this.dS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.DS_GIANGVIEN);
                 this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
@@ -169,9 +178,13 @@ namespace QLDSV_TC.forms
             if (MessageBox.Show(
                 "Bạn chắc chắn muốn thoát", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
+                if (btnGhi.Enabled == true) //  có thể đang thêm - sửa nhưng thoát vội?
+                {
+                    bdsLTC.CancelEdit();
+                }
                 this.Close();
             }
-            
+
         }
 
 
@@ -186,7 +199,7 @@ namespace QLDSV_TC.forms
                 return;
             }
             if (MessageBox.Show(
-                "Bạn chắc chắn muốn xóa lớp tín chỉ?", 
+                "Bạn chắc chắn muốn xóa lớp tín chỉ?",
                 "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -223,12 +236,21 @@ namespace QLDSV_TC.forms
         {
             //MessageBox.Show("Chức năng chưa hoàn thành?");
             viTri = bdsLTC.Position;
+            if (bdsDangKy.Count > 0)
+            {
+                //MessageBox.Show(
+                //    "Không thể sửa lớp tín chỉ vì đã có sinh viên đăng kí ",
+                //    "", MessageBoxButtons.OK);
+                //return;
+                cmbeNienKhoa.Enabled = speHocKy.Enabled = speNhom.Enabled = cmbTenMonHoc.Enabled = false;
+            }
+
             panelControlThongTinLTC.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
             cmbKhoa.Enabled = false;
             cbHuyLop.Enabled = true;
-            DangThem = true;
+            // DangThem = true;
         }
 
 
@@ -329,8 +351,8 @@ namespace QLDSV_TC.forms
 
         private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            DangThem = false;
-            MessageBox.Show("Chức năng chưa hoàn thành?");
+            // DangThem = false;
+            // MessageBox.Show("Chức năng chưa hoàn thành?");
             bool check = CheckInput();
             if (check == false)
                 return;
@@ -353,7 +375,11 @@ namespace QLDSV_TC.forms
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = btnReload.Enabled = true;
             btnGhi.Enabled = btnUndo.Enabled = false;
             panelControlThongTinLTC.Enabled = false;
-           
+            if (Program.mGroup == "PGV")
+            {
+                cmbKhoa.Enabled = true;
+            }
+
         }
 
         private void panelControl1_Paint(object sender, PaintEventArgs e)

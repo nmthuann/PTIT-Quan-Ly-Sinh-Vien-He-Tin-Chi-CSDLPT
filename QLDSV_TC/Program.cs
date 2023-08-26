@@ -76,7 +76,9 @@ namespace QLDSV_TC
 
         public static forms.Xfrm_BangDiem_TongKetLop Xfrm_BangDiem_TongKetLop;
         public static forms.Xfrm_ReportHocPhiTheoLop Xfrm_ReportHocPhiTheoLop;
+        public static forms.Xfrm_Report_BangDiemSV Xfrm_Report_BangDiemSV;
 
+        
         //  public static Function 
         /**
          *  1. KetNoi(): int

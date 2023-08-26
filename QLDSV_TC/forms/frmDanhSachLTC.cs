@@ -59,7 +59,7 @@ namespace QLDSV_TC.forms
             rpt.xrlbKhoaValue.Text = cmbKhoa.Text.Trim();
             rpt.xrlbNienKhoaValue.Text = cmbNienKhoa.Text;
             rpt.xrlbHocKyValue.Text = speHocKy.Text;
-
+            rpt.xrlbTenGVLap.Text = Program.mHoten;
 
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();

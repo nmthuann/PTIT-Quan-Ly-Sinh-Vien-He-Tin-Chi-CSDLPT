@@ -22,12 +22,9 @@ namespace QLDSV_TC.forms
     {
         private string maKhoa = "";
         private string maSV = Program.username.ToUpper();
-        private int viTri = 0;
-        private bool flagLoadData = true;
+        // private int viTri = 0;
+        // private bool flagLoadData = true;
 
-        /// <summary>
-        /// hai bds temp
-        /// </summary>
         private BindingSource bdsDSLopTinchi_temp = new BindingSource();
         private BindingSource bdsDSLTC_SVDADANGKY_temp = new BindingSource();
         List<int> maLTCList = new List<int>();
@@ -41,14 +38,9 @@ namespace QLDSV_TC.forms
 
         private void frmDangKyLTC_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.DS_GIANGVIEN' table. You can move, or remove it, as needed.
-            
             qLDSV_TCDataSet.EnforceConstraints = false;
             this.dS_GIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.DS_GIANGVIEN);
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.DS_GIANGVIEN' table. You can move, or remove it, as needed.
-   
-
         }
 
         // Lấy thông tin sinh viên
@@ -75,8 +67,9 @@ namespace QLDSV_TC.forms
         }
 
         /**
-         * mô tả: sẽ có 2 Table,  1 là DS_LTC & 2 là DSLTC_SVDADANGKY
-         * 
+         * mô tả: sẽ có 2 Table,
+         *   1 là DS_LTC 
+         * & 2 là DSLTC_SVDADANGKY
          */
         private void LoadDuLieuVaoDataGridView()
         {
@@ -127,7 +120,7 @@ namespace QLDSV_TC.forms
              * **/
 
 
-            // lưu các mã LTC
+            // lưu các mã LTC -> 
             foreach (DataRow row in tableDSLTC_SV_DADANGKY.Rows)
             {
                 // Đảm bảo cột MaLTC tồn tại trong DataTable
@@ -135,60 +128,99 @@ namespace QLDSV_TC.forms
                 if (row["MALTC"] != DBNull.Value)
                 {
                     string maLTC = row["MALTC"].ToString();
-                    maLTCList.Add(int.Parse(maLTC)); 
+                    maLTCList.Add(int.Parse(maLTC));
                 }
             }
 
 
+            //  gán giá trị cho col DangKy
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 // Kiểm tra nếu dòng được gắn dữ liệu
-                if (row.DataBoundItem is DataRowView dataRowView) 
+                if (row.DataBoundItem is DataRowView dataRowView)
                 {
                     DataRow dataRow = dataRowView.Row;
 
                     // Kiểm tra xem giá trị cột MALTC có trong danh sách maLTCList hay không
                     int maLTC = Convert.ToInt32(dataRow["MALTC"]);
-                    bool isMaLTCPresent= maLTCList.Contains(maLTC); 
+                    bool isMaLTCPresent = maLTCList.Contains(maLTC);
 
                     // Gán giá trị true/false cho cột đăng ký
                     DataGridViewCheckBoxCell checkBoxCell = (DataGridViewCheckBoxCell)row.Cells["colDangKy"];
                     checkBoxCell.Value = isMaLTCPresent; // true hoặc false
                 }
             }
+
+
+            // txtMaLTC.Text = row.Cells[0].Value.ToString();
+            //txtMaMH.Text = row.Cells[1].Value.ToString();
+            //txtTenMH.Text = row.Cells[2].Value.ToString();
+            //txtHoTenGV.Text = row.Cells[4].Value.ToString();
+
+
         }
 
+
+        //    Hạn chế Cell Dirty Click
         void dataGridView1_CurrentCellDirtyStateChanged(object sender, EventArgs e)
         {
-                if (dataGridView1.IsCurrentCellDirty)
-                {
-                    dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
-                }
+            if (dataGridView1.IsCurrentCellDirty)
+            {
+                dataGridView1.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
         }
+
+
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
+            /**
+             * chưa fix được Click vào Filter nhiều lần
+             */
+            
+
+
             if (cmbNienKhoa.Text == "")
             {
-                MessageBox.Show("Chọn Nien Khóa!");
+                MessageBox.Show("Vui lòng Chọn Niên Khóa!");
                 return;
             }
 
-            // Xóa tất cả các cột trong DataGridView
-            if (dataGridView1.Columns.Contains("colDangKy"))
-            {
-                dataGridView1.Columns.Remove("colDangKy");
-            }
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
+            dataGridView1.Columns.Clear();
+
+            /**
+             * Xóa Cột DK trong DataGridView
+             * -> mỗi lần load sẽ add colDK
+             * -> load lại phải xóa vì bị ghi đè
+             */
+            //if (dataGridView1.Columns.Contains("colDangKy"))
+            //{
+            //    dataGridView1.Columns.Remove("colDangKy");
+            //}
 
             //  System.ArgumentException: 'Cannot clear this list.'
-            //  Không được Click vào Filter nhiều lần
 
-            LoadDuLieuVaoDataGridView();
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+
+
+            try
+            {
+                LoadDuLieuVaoDataGridView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Load thông tin thất bại" +
+                    ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            // dataGridView1.CellValueChanged += new DataGridViewCellEventHandler(dataGridView1_CellValueChanged);
             // flagLoadData = true;
             btnXacNhan.Enabled = true;
             btnFilter.Enabled = false;
-            MessageBox.Show("Nhấn Xác Nhận để Filter!");
+            MessageBox.Show("Nhấn Xác Nhận để hoàn tất!");
         }
 
         private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -206,15 +238,17 @@ namespace QLDSV_TC.forms
 
                 if (newCheckBoxValue)
                 {
-                    // Logic khi ô checkbox bắt đầu được chọn (checked)
+                    // xử lý khi ô checkbox được chọn (checked)
                     HandleCheckboxChecked(e, maLTCCurrent);
                     txtMaLTC.Text = maLTCCurrent.ToString();
+                    dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
                 }
                 else
                 {
-                    // Logic khi ô checkbox bị bỏ chọn (unchecked)
+                    // xử lý khi ô checkbox bị bỏ chọn (unchecked)
                     HandleCheckboxUnchecked(e, maLTCCurrent);
                     txtMaLTC.Text = maLTCCurrent.ToString();
+                    dataGridView1.CellValueChanged -= dataGridView1_CellValueChanged;
                 }
             }
         }
@@ -222,22 +256,35 @@ namespace QLDSV_TC.forms
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             // Xác định xem người dùng đã nhấp chuột vào ô checkbox hay không
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0 &&
+            if (
+                e.RowIndex >= 0 &&
+                e.ColumnIndex >= 0 &&
                 dataGridView1.Columns[e.ColumnIndex] is DataGridViewCheckBoxColumn)
             {
                 // Xử lý khi người dùng nhấp chuột vào ô checkbox
-                ToggleCheckbox(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+                ChuyenDoiTrangThaiCheckbox(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex]);
+                
+            }
+            else if (e.RowIndex < 0 && e.ColumnIndex >= 0)
+            {
+                if (dataGridView1.Columns[e.ColumnIndex].HeaderText != "Đăng Ký")
+                {
+                    return;
+                }
             }
         }
 
-        private void ToggleCheckbox(DataGridViewCell cell)
+        private void ChuyenDoiTrangThaiCheckbox(DataGridViewCell cell)
         {
             // Thay đổi giá trị của ô checkbox (checked/unchecked)
             if (cell.Value == null) return; // dirty click
-            // else
-                cell.Value = !(bool)cell.Value;
+            cell.Value = !(bool)cell.Value;
+            
         }
 
+
+        //  false -> True
         private void HandleCheckboxChecked(DataGridViewCellEventArgs e, int maLTCCurrent)
         {
 
@@ -274,9 +321,11 @@ namespace QLDSV_TC.forms
                 newRow["NHOM"] = nhom;
                 newRow.EndEdit();
             }
-            
+
         }
 
+
+        //  true -> false
         private void HandleCheckboxUnchecked(DataGridViewCellEventArgs e, int maLTCCurrent)
         {
             // MessageBox.Show("Đã HỦY đăng ký");
@@ -311,10 +360,11 @@ namespace QLDSV_TC.forms
 
         private void dataGridView_SelectionChanged(object sender, EventArgs e)
         {
+            //  if (!dataGridView1.Focused) return;  //  click ra ngoài return
             foreach (DataGridViewRow row in dataGridView1.SelectedRows)
             {
-                txtMaLTC.Text =  row.Cells[0].Value.ToString();
-                txtMaMH.Text =  row.Cells[1].Value.ToString();
+                txtMaLTC.Text = row.Cells[0].Value.ToString();
+                txtMaMH.Text = row.Cells[1].Value.ToString();
                 txtTenMH.Text = row.Cells[2].Value.ToString();
                 txtHoTenGV.Text = row.Cells[4].Value.ToString();
             }
@@ -324,6 +374,8 @@ namespace QLDSV_TC.forms
         {
 
         }
+
+
 
         private void cmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -373,9 +425,49 @@ namespace QLDSV_TC.forms
                 MessageBox.Show("Ghi thất bại: " + ex.Message);
             }
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            List<int> maLTCCurentList = new List<int>();
+            DataRowView tmp;
+            for (int i = 0; i < bdsDSLTC_SVDADANGKY_temp.Count; i++)
+            {
+                tmp = ((DataRowView)bdsDSLTC_SVDADANGKY_temp[i]);
+                maLTCCurentList.Add(int.Parse(tmp["MALTC"].ToString()));
+            }
+
+            HashSet<int> setCurrent = new HashSet<int>(maLTCCurentList);
+            HashSet<int> setInit = new HashSet<int>(maLTCList);
+            bool check = setCurrent.SetEquals(setInit);
+
+            if (MessageBox.Show(
+               "Bạn chắc chắn muốn thoát", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (!check)
+                {
+                    MessageBox.Show("Môn Học Đăng Ký của bạn có sự thay đổi, Vui Lòng ấn Xác nhận!");
+                    return;
+                }
+                this.Close();
+            }
+        }
+
+        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            {
+                base.OnClick(e);
+                e.Column.SortMode = DataGridViewColumnSortMode.NotSortable;
+            }
+        }
     }
-    
+
 }
+
+
+
+
+
+
 
 
 

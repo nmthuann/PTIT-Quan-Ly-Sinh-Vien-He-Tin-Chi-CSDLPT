@@ -152,6 +152,12 @@
     <Compile Include="forms\Xfrm_ReportHocPhiTheoLop.designer.cs">
       <DependentUpon>Xfrm_ReportHocPhiTheoLop.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Xfrm_Report_BangDiemSV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Xfrm_Report_BangDiemSV.designer.cs">
+      <DependentUpon>Xfrm_Report_BangDiemSV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QLDSV_TCDataSet_HocPhi.Designer.cs">
@@ -193,6 +199,12 @@
     </Compile>
     <Compile Include="Reports\Report_HocPhiTheoLop.designer.cs">
       <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report_PhieuDiemTheoSinhVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Report_PhieuDiemTheoSinhVien.designer.cs">
+      <DependentUpon>Report_PhieuDiemTheoSinhVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Reports\XtraReport1.cs">
       <SubType>Component</SubType>
@@ -242,6 +254,9 @@
     <EmbeddedResource Include="forms\Xfrm_ReportHocPhiTheoLop.resx">
       <DependentUpon>Xfrm_ReportHocPhiTheoLop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="forms\Xfrm_Report_BangDiemSV.resx">
+      <DependentUpon>Xfrm_Report_BangDiemSV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -251,6 +266,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\Report_BangDiemMonHocLTC.resx">
       <DependentUpon>Report_BangDiemMonHocLTC.cs</DependentUpon>
@@ -266,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Report_HocPhiTheoLop.resx">
       <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Report_PhieuDiemTheoSinhVien.resx">
+      <DependentUpon>Report_PhieuDiemTheoSinhVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\XtraReport1.resx">
       <DependentUpon>XtraReport1.cs</DependentUpon>
@@ -303,7 +322,30 @@
       <DependentUpon>QLDSV_TC_DataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-check-mark-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-exit-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-48 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-filter-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-print-50.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

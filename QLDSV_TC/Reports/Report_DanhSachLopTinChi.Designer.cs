@@ -186,6 +186,8 @@ namespace QLDSV_TC.Reports
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrlbSoLuong = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
+            this.xrPageInfo1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.xrlbTenGVLap = new DevExpress.XtraReports.UI.XRPageInfo();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -486,24 +488,28 @@ namespace QLDSV_TC.Reports
             // 
             // TopMargin
             // 
+            this.TopMargin.HeightF = 67.5F;
             this.TopMargin.Name = "TopMargin";
             // 
             // BottomMargin
             // 
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.pageInfo1,
+            this.xrlbTenGVLap,
+            this.xrPageInfo1,
             this.pageInfo2});
             this.BottomMargin.Name = "BottomMargin";
             // 
             // pageInfo1
             // 
             this.pageInfo1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
+            this.pageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(325.0001F, 10F);
             this.pageInfo1.Name = "pageInfo1";
             this.pageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
             this.pageInfo1.SizeF = new System.Drawing.SizeF(315F, 23F);
             this.pageInfo1.StyleName = "PageInfo";
             this.pageInfo1.StylePriority.UseBorders = false;
+            this.pageInfo1.StylePriority.UseTextAlignment = false;
+            this.pageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // pageInfo2
             // 
@@ -519,6 +525,7 @@ namespace QLDSV_TC.Reports
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.pageInfo1,
             this.xrlbHocKyValue,
             this.xrlbNienKhoaValue,
             this.xrlbHocKy,
@@ -526,13 +533,13 @@ namespace QLDSV_TC.Reports
             this.xrlbKhoaValue,
             this.xrlbKhoa,
             this.label1});
-            this.ReportHeader.HeightF = 128.3333F;
+            this.ReportHeader.HeightF = 165.8333F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrlbHocKyValue
             // 
             this.xrlbHocKyValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbHocKyValue.LocationFloat = new DevExpress.Utils.PointFloat(502.785F, 79.19434F);
+            this.xrlbHocKyValue.LocationFloat = new DevExpress.Utils.PointFloat(497.785F, 126.6943F);
             this.xrlbHocKyValue.Name = "xrlbHocKyValue";
             this.xrlbHocKyValue.SizeF = new System.Drawing.SizeF(30.58594F, 20.80566F);
             this.xrlbHocKyValue.StyleName = "Title";
@@ -544,7 +551,7 @@ namespace QLDSV_TC.Reports
             // xrlbNienKhoaValue
             // 
             this.xrlbNienKhoaValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbNienKhoaValue.LocationFloat = new DevExpress.Utils.PointFloat(243.8497F, 79.19434F);
+            this.xrlbNienKhoaValue.LocationFloat = new DevExpress.Utils.PointFloat(238.8497F, 126.6943F);
             this.xrlbNienKhoaValue.Name = "xrlbNienKhoaValue";
             this.xrlbNienKhoaValue.SizeF = new System.Drawing.SizeF(100.8333F, 20.80566F);
             this.xrlbNienKhoaValue.StyleName = "Title";
@@ -556,7 +563,7 @@ namespace QLDSV_TC.Reports
             // xrlbHocKy
             // 
             this.xrlbHocKy.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbHocKy.LocationFloat = new DevExpress.Utils.PointFloat(385.8014F, 79.19434F);
+            this.xrlbHocKy.LocationFloat = new DevExpress.Utils.PointFloat(380.8014F, 126.6943F);
             this.xrlbHocKy.Name = "xrlbHocKy";
             this.xrlbHocKy.SizeF = new System.Drawing.SizeF(100.8333F, 20.80566F);
             this.xrlbHocKy.StyleName = "Title";
@@ -568,7 +575,7 @@ namespace QLDSV_TC.Reports
             // xrlbNienKhoa
             // 
             this.xrlbNienKhoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbNienKhoa.LocationFloat = new DevExpress.Utils.PointFloat(125.871F, 79.19434F);
+            this.xrlbNienKhoa.LocationFloat = new DevExpress.Utils.PointFloat(120.871F, 126.6943F);
             this.xrlbNienKhoa.Name = "xrlbNienKhoa";
             this.xrlbNienKhoa.SizeF = new System.Drawing.SizeF(100.8333F, 20.80566F);
             this.xrlbNienKhoa.StyleName = "Title";
@@ -580,7 +587,7 @@ namespace QLDSV_TC.Reports
             // xrlbKhoaValue
             // 
             this.xrlbKhoaValue.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbKhoaValue.LocationFloat = new DevExpress.Utils.PointFloat(276.6348F, 41.69434F);
+            this.xrlbKhoaValue.LocationFloat = new DevExpress.Utils.PointFloat(271.6348F, 89.19434F);
             this.xrlbKhoaValue.Name = "xrlbKhoaValue";
             this.xrlbKhoaValue.SizeF = new System.Drawing.SizeF(209.9999F, 20.80566F);
             this.xrlbKhoaValue.StyleName = "Title";
@@ -592,7 +599,7 @@ namespace QLDSV_TC.Reports
             // xrlbKhoa
             // 
             this.xrlbKhoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xrlbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(175.8015F, 41.69434F);
+            this.xrlbKhoa.LocationFloat = new DevExpress.Utils.PointFloat(170.8015F, 89.19434F);
             this.xrlbKhoa.Name = "xrlbKhoa";
             this.xrlbKhoa.SizeF = new System.Drawing.SizeF(100.8333F, 20.80566F);
             this.xrlbKhoa.StyleName = "Title";
@@ -604,7 +611,7 @@ namespace QLDSV_TC.Reports
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(5F, 5F);
+            this.label1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 52.5F);
             this.label1.Name = "label1";
             this.label1.SizeF = new System.Drawing.SizeF(640F, 24.19433F);
             this.label1.StyleName = "Title";
@@ -968,6 +975,32 @@ namespace QLDSV_TC.Reports
             this.ReportFooter.HeightF = 42F;
             this.ReportFooter.Name = "ReportFooter";
             // 
+            // xrPageInfo1
+            // 
+            this.xrPageInfo1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrPageInfo1.LocationFloat = new DevExpress.Utils.PointFloat(10F, 5F);
+            this.xrPageInfo1.Name = "xrPageInfo1";
+            this.xrPageInfo1.PageInfo = DevExpress.XtraPrinting.PageInfo.None;
+            this.xrPageInfo1.SizeF = new System.Drawing.SizeF(91.66666F, 23F);
+            this.xrPageInfo1.StyleName = "PageInfo";
+            this.xrPageInfo1.StylePriority.UseBorders = false;
+            this.xrPageInfo1.StylePriority.UseTextAlignment = false;
+            this.xrPageInfo1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrPageInfo1.TextFormatString = "Giảng Viên lập: ";
+            // 
+            // xrlbTenGVLap
+            // 
+            this.xrlbTenGVLap.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrlbTenGVLap.LocationFloat = new DevExpress.Utils.PointFloat(101.6667F, 5F);
+            this.xrlbTenGVLap.Name = "xrlbTenGVLap";
+            this.xrlbTenGVLap.PageInfo = DevExpress.XtraPrinting.PageInfo.None;
+            this.xrlbTenGVLap.SizeF = new System.Drawing.SizeF(228.3333F, 23F);
+            this.xrlbTenGVLap.StyleName = "PageInfo";
+            this.xrlbTenGVLap.StylePriority.UseBorders = false;
+            this.xrlbTenGVLap.StylePriority.UseTextAlignment = false;
+            this.xrlbTenGVLap.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.xrlbTenGVLap.TextFormatString = "Huỳnh Trung Trụ ";
+            // 
             // Report_DanhSachLopTinChi
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -985,6 +1018,7 @@ namespace QLDSV_TC.Reports
             this.DataMember = "SP_DSLOPTINCHI";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 68, 100);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.DetailCaption1,
@@ -1039,5 +1073,7 @@ namespace QLDSV_TC.Reports
         public DevExpress.XtraReports.UI.XRLabel xrlbHocKyValue;
         public DevExpress.XtraReports.UI.XRLabel xrlbNienKhoaValue;
         public DevExpress.XtraReports.UI.XRLabel xrlbKhoaValue;
+        private DevExpress.XtraReports.UI.XRPageInfo xrPageInfo1;
+        public DevExpress.XtraReports.UI.XRPageInfo xrlbTenGVLap;
     }
 }

@@ -47,7 +47,9 @@ namespace QLDSV_TC.forms
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
 
-            this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            //this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
+
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
 
             Program.bindingSource.Filter = "TENCN not LIKE 'Tra cứu học phí%'  ";
@@ -424,6 +426,20 @@ namespace QLDSV_TC.forms
                 btnDeleteSV.Enabled = btnEditSV.Enabled = true;
             else
                 btnDeleteSV.Enabled = btnEditSV.Enabled = false;
+        }
+
+        private void btnUndoSV_Click(object sender, EventArgs e)
+        {
+            if (btnADDSV.Enabled == false && btnEditSV.Enabled == false)
+            {
+                bdsSV.CancelEdit();
+                //bdsSV.RemoveCurrent();
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
+
+                btnADDSV.Enabled = btnEditSV.Enabled = btnDeleteSV.Enabled = true;
+                btnUndoSV.Enabled = btnSaveSV.Enabled = false;
+            }
         }
     }
 }

@@ -234,6 +234,7 @@ namespace QLDSV_TC.forms
             this.barButtonPhieuDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonPhieuDiem.ImageOptions.Image")));
             this.barButtonPhieuDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonPhieuDiem.ImageOptions.LargeImage")));
             this.barButtonPhieuDiem.Name = "barButtonPhieuDiem";
+            this.barButtonPhieuDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonPhieuDiem_ItemClick);
             // 
             // barButtonDSDongHocPhi
             // 
@@ -304,7 +305,6 @@ namespace QLDSV_TC.forms
             // 
             this.ribbonPageGroupKeToan.ItemLinks.Add(this.barButtonHocPhi);
             this.ribbonPageGroupKeToan.Name = "ribbonPageGroupKeToan";
-            this.ribbonPageGroupKeToan.Text = "Phòng Kế Toán";
             // 
             // ribbonPageBaoCao
             // 

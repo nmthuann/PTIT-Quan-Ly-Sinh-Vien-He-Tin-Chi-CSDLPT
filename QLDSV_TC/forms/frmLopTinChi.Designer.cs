@@ -120,7 +120,7 @@ namespace QLDSV_TC.forms
             // mAKHOALabel
             // 
             mAKHOALabel.AutoSize = true;
-            mAKHOALabel.Location = new System.Drawing.Point(265, 84);
+            mAKHOALabel.Location = new System.Drawing.Point(309, 86);
             mAKHOALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAKHOALabel.Name = "mAKHOALabel";
             mAKHOALabel.Size = new System.Drawing.Size(39, 17);
@@ -130,7 +130,7 @@ namespace QLDSV_TC.forms
             // nIENKHOALabel
             // 
             nIENKHOALabel.AutoSize = true;
-            nIENKHOALabel.Location = new System.Drawing.Point(816, 82);
+            nIENKHOALabel.Location = new System.Drawing.Point(838, 84);
             nIENKHOALabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nIENKHOALabel.Name = "nIENKHOALabel";
             nIENKHOALabel.Size = new System.Drawing.Size(69, 17);
@@ -140,7 +140,7 @@ namespace QLDSV_TC.forms
             // lbHocKy
             // 
             lbHocKy.AutoSize = true;
-            lbHocKy.Location = new System.Drawing.Point(265, 159);
+            lbHocKy.Location = new System.Drawing.Point(309, 143);
             lbHocKy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lbHocKy.Name = "lbHocKy";
             lbHocKy.Size = new System.Drawing.Size(52, 17);
@@ -150,7 +150,7 @@ namespace QLDSV_TC.forms
             // mAGVLabel
             // 
             mAGVLabel.AutoSize = true;
-            mAGVLabel.Location = new System.Drawing.Point(816, 228);
+            mAGVLabel.Location = new System.Drawing.Point(838, 201);
             mAGVLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAGVLabel.Name = "mAGVLabel";
             mAGVLabel.Size = new System.Drawing.Size(71, 17);
@@ -160,7 +160,7 @@ namespace QLDSV_TC.forms
             // mAMHLabel
             // 
             mAMHLabel.AutoSize = true;
-            mAMHLabel.Location = new System.Drawing.Point(816, 290);
+            mAMHLabel.Location = new System.Drawing.Point(838, 261);
             mAMHLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             mAMHLabel.Name = "mAMHLabel";
             mAMHLabel.Size = new System.Drawing.Size(62, 17);
@@ -170,7 +170,7 @@ namespace QLDSV_TC.forms
             // sOSVTOITHIEULabel
             // 
             sOSVTOITHIEULabel.AutoSize = true;
-            sOSVTOITHIEULabel.Location = new System.Drawing.Point(265, 344);
+            sOSVTOITHIEULabel.Location = new System.Drawing.Point(309, 323);
             sOSVTOITHIEULabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             sOSVTOITHIEULabel.Name = "sOSVTOITHIEULabel";
             sOSVTOITHIEULabel.Size = new System.Drawing.Size(103, 17);
@@ -180,7 +180,7 @@ namespace QLDSV_TC.forms
             // nHOMLabel
             // 
             nHOMLabel.AutoSize = true;
-            nHOMLabel.Location = new System.Drawing.Point(818, 161);
+            nHOMLabel.Location = new System.Drawing.Point(838, 143);
             nHOMLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             nHOMLabel.Name = "nHOMLabel";
             nHOMLabel.Size = new System.Drawing.Size(45, 17);
@@ -190,7 +190,7 @@ namespace QLDSV_TC.forms
             // hUYLOPLabel
             // 
             hUYLOPLabel.AutoSize = true;
-            hUYLOPLabel.Location = new System.Drawing.Point(816, 348);
+            hUYLOPLabel.Location = new System.Drawing.Point(838, 323);
             hUYLOPLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             hUYLOPLabel.Name = "hUYLOPLabel";
             hUYLOPLabel.Size = new System.Drawing.Size(60, 17);
@@ -200,7 +200,7 @@ namespace QLDSV_TC.forms
             // mAGVLabel1
             // 
             mAGVLabel1.AutoSize = true;
-            mAGVLabel1.Location = new System.Drawing.Point(265, 228);
+            mAGVLabel1.Location = new System.Drawing.Point(309, 201);
             mAGVLabel1.Name = "mAGVLabel1";
             mAGVLabel1.Size = new System.Drawing.Size(97, 17);
             mAGVLabel1.TabIndex = 27;
@@ -209,7 +209,7 @@ namespace QLDSV_TC.forms
             // mAMHLabel1
             // 
             mAMHLabel1.AutoSize = true;
-            mAMHLabel1.Location = new System.Drawing.Point(265, 285);
+            mAMHLabel1.Location = new System.Drawing.Point(309, 261);
             mAMHLabel1.Name = "mAMHLabel1";
             mAMHLabel1.Size = new System.Drawing.Size(88, 17);
             mAMHLabel1.TabIndex = 28;
@@ -389,7 +389,7 @@ namespace QLDSV_TC.forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(100, 49);
+            this.label1.Location = new System.Drawing.Point(181, 52);
             this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 21);
@@ -422,17 +422,17 @@ namespace QLDSV_TC.forms
             this.panelControlThongTinLTC.Controls.Add(this.cmbeNienKhoa);
             this.panelControlThongTinLTC.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControlThongTinLTC.Enabled = false;
-            this.panelControlThongTinLTC.Location = new System.Drawing.Point(0, 652);
+            this.panelControlThongTinLTC.Location = new System.Drawing.Point(0, 651);
             this.panelControlThongTinLTC.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.panelControlThongTinLTC.Name = "panelControlThongTinLTC";
-            this.panelControlThongTinLTC.Size = new System.Drawing.Size(1628, 403);
+            this.panelControlThongTinLTC.Size = new System.Drawing.Size(1628, 404);
             this.panelControlThongTinLTC.TabIndex = 8;
             this.panelControlThongTinLTC.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControlThongTinLTC_Paint);
             // 
             // mAMHTextEdit
             // 
             this.mAMHTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLTC, "MAMH", true));
-            this.mAMHTextEdit.Location = new System.Drawing.Point(449, 282);
+            this.mAMHTextEdit.Location = new System.Drawing.Point(493, 258);
             this.mAMHTextEdit.MenuManager = this.barManager1;
             this.mAMHTextEdit.Name = "mAMHTextEdit";
             this.mAMHTextEdit.Properties.ReadOnly = true;
@@ -452,7 +452,7 @@ namespace QLDSV_TC.forms
             // mAGVTextEdit
             // 
             this.mAGVTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLTC, "MAGV", true));
-            this.mAGVTextEdit.Location = new System.Drawing.Point(449, 220);
+            this.mAGVTextEdit.Location = new System.Drawing.Point(493, 198);
             this.mAGVTextEdit.MenuManager = this.barManager1;
             this.mAGVTextEdit.Name = "mAGVTextEdit";
             this.mAGVTextEdit.Properties.ReadOnly = true;
@@ -462,7 +462,7 @@ namespace QLDSV_TC.forms
             // cbHuyLop
             // 
             this.cbHuyLop.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.bdsLTC, "HUYLOP", true));
-            this.cbHuyLop.Location = new System.Drawing.Point(994, 338);
+            this.cbHuyLop.Location = new System.Drawing.Point(1005, 323);
             this.cbHuyLop.Margin = new System.Windows.Forms.Padding(4);
             this.cbHuyLop.Name = "cbHuyLop";
             this.cbHuyLop.Size = new System.Drawing.Size(160, 34);
@@ -477,7 +477,7 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speNhom.Location = new System.Drawing.Point(994, 151);
+            this.speNhom.Location = new System.Drawing.Point(1005, 139);
             this.speNhom.Margin = new System.Windows.Forms.Padding(4);
             this.speNhom.MenuManager = this.barManager1;
             this.speNhom.Name = "speNhom";
@@ -505,7 +505,7 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speSoSVToiThieu.Location = new System.Drawing.Point(449, 340);
+            this.speSoSVToiThieu.Location = new System.Drawing.Point(493, 319);
             this.speSoSVToiThieu.Margin = new System.Windows.Forms.Padding(4);
             this.speSoSVToiThieu.MenuManager = this.barManager1;
             this.speSoSVToiThieu.Name = "speSoSVToiThieu";
@@ -522,7 +522,7 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speSoSVToiThieu.Size = new System.Drawing.Size(193, 24);
+            this.speSoSVToiThieu.Size = new System.Drawing.Size(61, 24);
             this.speSoSVToiThieu.TabIndex = 23;
             // 
             // cmbTenMonHoc
@@ -530,7 +530,7 @@ namespace QLDSV_TC.forms
             this.cmbTenMonHoc.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsLTC, "MAMH", true));
             this.cmbTenMonHoc.ForeColor = System.Drawing.SystemColors.WindowText;
             this.cmbTenMonHoc.FormattingEnabled = true;
-            this.cmbTenMonHoc.Location = new System.Drawing.Point(994, 285);
+            this.cmbTenMonHoc.Location = new System.Drawing.Point(1005, 258);
             this.cmbTenMonHoc.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTenMonHoc.Name = "cmbTenMonHoc";
             this.cmbTenMonHoc.Size = new System.Drawing.Size(367, 24);
@@ -542,7 +542,7 @@ namespace QLDSV_TC.forms
             this.cmbTenGV.Cursor = System.Windows.Forms.Cursors.Default;
             this.cmbTenGV.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bdsLTC, "MAGV", true));
             this.cmbTenGV.FormattingEnabled = true;
-            this.cmbTenGV.Location = new System.Drawing.Point(994, 218);
+            this.cmbTenGV.Location = new System.Drawing.Point(1005, 196);
             this.cmbTenGV.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTenGV.Name = "cmbTenGV";
             this.cmbTenGV.Size = new System.Drawing.Size(367, 24);
@@ -557,7 +557,7 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speHocKy.Location = new System.Drawing.Point(449, 151);
+            this.speHocKy.Location = new System.Drawing.Point(493, 139);
             this.speHocKy.Margin = new System.Windows.Forms.Padding(4);
             this.speHocKy.MenuManager = this.barManager1;
             this.speHocKy.Name = "speHocKy";
@@ -574,14 +574,14 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speHocKy.Size = new System.Drawing.Size(193, 24);
+            this.speHocKy.Size = new System.Drawing.Size(61, 24);
             this.speHocKy.TabIndex = 19;
             // 
             // txtMaKhoa
             // 
             this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLTC, "MAKHOA", true));
             this.txtMaKhoa.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsLTC, "MAKHOA", true));
-            this.txtMaKhoa.Location = new System.Drawing.Point(449, 79);
+            this.txtMaKhoa.Location = new System.Drawing.Point(493, 81);
             this.txtMaKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKhoa.MenuManager = this.barManager1;
             this.txtMaKhoa.Name = "txtMaKhoa";
@@ -593,7 +593,7 @@ namespace QLDSV_TC.forms
             // 
             this.labelThongTinLTC.AutoSize = true;
             this.labelThongTinLTC.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelThongTinLTC.Location = new System.Drawing.Point(713, 26);
+            this.labelThongTinLTC.Location = new System.Drawing.Point(655, 19);
             this.labelThongTinLTC.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.labelThongTinLTC.Name = "labelThongTinLTC";
             this.labelThongTinLTC.Size = new System.Drawing.Size(226, 23);
@@ -604,7 +604,7 @@ namespace QLDSV_TC.forms
             // cmbeNienKhoa
             // 
             this.cmbeNienKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLTC, "NIENKHOA", true));
-            this.cmbeNienKhoa.Location = new System.Drawing.Point(994, 79);
+            this.cmbeNienKhoa.Location = new System.Drawing.Point(1005, 83);
             this.cmbeNienKhoa.Margin = new System.Windows.Forms.Padding(4);
             this.cmbeNienKhoa.MenuManager = this.barManager1;
             this.cmbeNienKhoa.Name = "cmbeNienKhoa";
@@ -645,7 +645,7 @@ namespace QLDSV_TC.forms
             this.lOPTINCHIGridControl.Margin = new System.Windows.Forms.Padding(4);
             this.lOPTINCHIGridControl.MenuManager = this.barManager1;
             this.lOPTINCHIGridControl.Name = "lOPTINCHIGridControl";
-            this.lOPTINCHIGridControl.Size = new System.Drawing.Size(1628, 486);
+            this.lOPTINCHIGridControl.Size = new System.Drawing.Size(1628, 485);
             this.lOPTINCHIGridControl.TabIndex = 13;
             this.lOPTINCHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewLTC});
@@ -670,6 +670,25 @@ namespace QLDSV_TC.forms
             // 
             // colMALTC
             // 
+            this.colMALTC.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colMALTC.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colMALTC.AppearanceCell.Options.UseBackColor = true;
+            this.colMALTC.AppearanceCell.Options.UseForeColor = true;
+            this.colMALTC.AppearanceCell.Options.UseTextOptions = true;
+            this.colMALTC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMALTC.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMALTC.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colMALTC.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colMALTC.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colMALTC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colMALTC.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colMALTC.AppearanceHeader.Options.UseBackColor = true;
+            this.colMALTC.AppearanceHeader.Options.UseBorderColor = true;
+            this.colMALTC.AppearanceHeader.Options.UseFont = true;
+            this.colMALTC.AppearanceHeader.Options.UseForeColor = true;
+            this.colMALTC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMALTC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMALTC.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colMALTC.Caption = "MÃ LỚP TÍN CHỈ";
             this.colMALTC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMALTC.FieldName = "MALTC";
@@ -683,6 +702,25 @@ namespace QLDSV_TC.forms
             // 
             // colNIENKHOA
             // 
+            this.colNIENKHOA.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colNIENKHOA.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colNIENKHOA.AppearanceCell.Options.UseBackColor = true;
+            this.colNIENKHOA.AppearanceCell.Options.UseForeColor = true;
+            this.colNIENKHOA.AppearanceCell.Options.UseTextOptions = true;
+            this.colNIENKHOA.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNIENKHOA.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colNIENKHOA.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colNIENKHOA.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colNIENKHOA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colNIENKHOA.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colNIENKHOA.AppearanceHeader.Options.UseBackColor = true;
+            this.colNIENKHOA.AppearanceHeader.Options.UseBorderColor = true;
+            this.colNIENKHOA.AppearanceHeader.Options.UseFont = true;
+            this.colNIENKHOA.AppearanceHeader.Options.UseForeColor = true;
+            this.colNIENKHOA.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNIENKHOA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNIENKHOA.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colNIENKHOA.Caption = "NIÊN KHÓA";
             this.colNIENKHOA.FieldName = "NIENKHOA";
             this.colNIENKHOA.MinWidth = 39;
@@ -693,6 +731,25 @@ namespace QLDSV_TC.forms
             // 
             // colHOCKY
             // 
+            this.colHOCKY.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colHOCKY.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colHOCKY.AppearanceCell.Options.UseBackColor = true;
+            this.colHOCKY.AppearanceCell.Options.UseForeColor = true;
+            this.colHOCKY.AppearanceCell.Options.UseTextOptions = true;
+            this.colHOCKY.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHOCKY.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colHOCKY.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colHOCKY.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colHOCKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colHOCKY.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colHOCKY.AppearanceHeader.Options.UseBackColor = true;
+            this.colHOCKY.AppearanceHeader.Options.UseBorderColor = true;
+            this.colHOCKY.AppearanceHeader.Options.UseFont = true;
+            this.colHOCKY.AppearanceHeader.Options.UseForeColor = true;
+            this.colHOCKY.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHOCKY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHOCKY.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colHOCKY.Caption = "HỌC KỲ";
             this.colHOCKY.FieldName = "HOCKY";
             this.colHOCKY.MinWidth = 39;
@@ -703,6 +760,25 @@ namespace QLDSV_TC.forms
             // 
             // colMAMH
             // 
+            this.colMAMH.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colMAMH.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colMAMH.AppearanceCell.Options.UseBackColor = true;
+            this.colMAMH.AppearanceCell.Options.UseForeColor = true;
+            this.colMAMH.AppearanceCell.Options.UseTextOptions = true;
+            this.colMAMH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMAMH.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colMAMH.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colMAMH.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colMAMH.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colMAMH.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colMAMH.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAMH.AppearanceHeader.Options.UseBorderColor = true;
+            this.colMAMH.AppearanceHeader.Options.UseFont = true;
+            this.colMAMH.AppearanceHeader.Options.UseForeColor = true;
+            this.colMAMH.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMAMH.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMAMH.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colMAMH.Caption = "MÃ MÔN HỌC";
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.MinWidth = 39;
@@ -713,6 +789,25 @@ namespace QLDSV_TC.forms
             // 
             // colNHOM
             // 
+            this.colNHOM.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colNHOM.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colNHOM.AppearanceCell.Options.UseBackColor = true;
+            this.colNHOM.AppearanceCell.Options.UseForeColor = true;
+            this.colNHOM.AppearanceCell.Options.UseTextOptions = true;
+            this.colNHOM.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNHOM.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colNHOM.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colNHOM.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colNHOM.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colNHOM.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colNHOM.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colNHOM.AppearanceHeader.Options.UseBackColor = true;
+            this.colNHOM.AppearanceHeader.Options.UseBorderColor = true;
+            this.colNHOM.AppearanceHeader.Options.UseFont = true;
+            this.colNHOM.AppearanceHeader.Options.UseForeColor = true;
+            this.colNHOM.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNHOM.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNHOM.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colNHOM.Caption = "NHÓM";
             this.colNHOM.FieldName = "NHOM";
             this.colNHOM.MinWidth = 39;
@@ -723,6 +818,25 @@ namespace QLDSV_TC.forms
             // 
             // colMAGV
             // 
+            this.colMAGV.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colMAGV.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colMAGV.AppearanceCell.Options.UseBackColor = true;
+            this.colMAGV.AppearanceCell.Options.UseForeColor = true;
+            this.colMAGV.AppearanceCell.Options.UseTextOptions = true;
+            this.colMAGV.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMAGV.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMAGV.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colMAGV.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colMAGV.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colMAGV.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colMAGV.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colMAGV.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAGV.AppearanceHeader.Options.UseBorderColor = true;
+            this.colMAGV.AppearanceHeader.Options.UseFont = true;
+            this.colMAGV.AppearanceHeader.Options.UseForeColor = true;
+            this.colMAGV.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMAGV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMAGV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colMAGV.Caption = "MÃ GIẢNG VIÊN";
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.MinWidth = 39;
@@ -733,6 +847,24 @@ namespace QLDSV_TC.forms
             // 
             // colMAKHOA
             // 
+            this.colMAKHOA.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colMAKHOA.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colMAKHOA.AppearanceCell.Options.UseBackColor = true;
+            this.colMAKHOA.AppearanceCell.Options.UseForeColor = true;
+            this.colMAKHOA.AppearanceCell.Options.UseTextOptions = true;
+            this.colMAKHOA.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMAKHOA.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colMAKHOA.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colMAKHOA.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colMAKHOA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colMAKHOA.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colMAKHOA.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAKHOA.AppearanceHeader.Options.UseBorderColor = true;
+            this.colMAKHOA.AppearanceHeader.Options.UseFont = true;
+            this.colMAKHOA.AppearanceHeader.Options.UseForeColor = true;
+            this.colMAKHOA.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMAKHOA.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMAKHOA.Caption = "MÃ KHOA";
             this.colMAKHOA.FieldName = "MAKHOA";
             this.colMAKHOA.MinWidth = 39;
@@ -743,6 +875,23 @@ namespace QLDSV_TC.forms
             // 
             // colSOSVTOITHIEU
             // 
+            this.colSOSVTOITHIEU.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.colSOSVTOITHIEU.AppearanceCell.ForeColor = System.Drawing.Color.Black;
+            this.colSOSVTOITHIEU.AppearanceCell.Options.UseBackColor = true;
+            this.colSOSVTOITHIEU.AppearanceCell.Options.UseForeColor = true;
+            this.colSOSVTOITHIEU.AppearanceCell.Options.UseTextOptions = true;
+            this.colSOSVTOITHIEU.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSOSVTOITHIEU.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colSOSVTOITHIEU.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colSOSVTOITHIEU.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colSOSVTOITHIEU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colSOSVTOITHIEU.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colSOSVTOITHIEU.AppearanceHeader.Options.UseBackColor = true;
+            this.colSOSVTOITHIEU.AppearanceHeader.Options.UseBorderColor = true;
+            this.colSOSVTOITHIEU.AppearanceHeader.Options.UseFont = true;
+            this.colSOSVTOITHIEU.AppearanceHeader.Options.UseForeColor = true;
+            this.colSOSVTOITHIEU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSOSVTOITHIEU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSOSVTOITHIEU.Caption = "SỐ SV TỐI THIỂU";
             this.colSOSVTOITHIEU.FieldName = "SOSVTOITHIEU";
             this.colSOSVTOITHIEU.MinWidth = 39;
@@ -753,6 +902,22 @@ namespace QLDSV_TC.forms
             // 
             // colHUYLOP
             // 
+            this.colHUYLOP.AppearanceCell.ForeColor = System.Drawing.Color.White;
+            this.colHUYLOP.AppearanceCell.Options.UseForeColor = true;
+            this.colHUYLOP.AppearanceCell.Options.UseTextOptions = true;
+            this.colHUYLOP.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colHUYLOP.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colHUYLOP.AppearanceHeader.BackColor = System.Drawing.Color.DodgerBlue;
+            this.colHUYLOP.AppearanceHeader.BackColor2 = System.Drawing.Color.Black;
+            this.colHUYLOP.AppearanceHeader.BorderColor = System.Drawing.Color.Black;
+            this.colHUYLOP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.colHUYLOP.AppearanceHeader.ForeColor = System.Drawing.Color.White;
+            this.colHUYLOP.AppearanceHeader.Options.UseBackColor = true;
+            this.colHUYLOP.AppearanceHeader.Options.UseBorderColor = true;
+            this.colHUYLOP.AppearanceHeader.Options.UseFont = true;
+            this.colHUYLOP.AppearanceHeader.Options.UseForeColor = true;
+            this.colHUYLOP.AppearanceHeader.Options.UseTextOptions = true;
+            this.colHUYLOP.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colHUYLOP.Caption = "HỦY LỚP";
             this.colHUYLOP.FieldName = "HUYLOP";
             this.colHUYLOP.MinWidth = 39;

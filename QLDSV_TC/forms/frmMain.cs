@@ -107,12 +107,12 @@ namespace QLDSV_TC.forms
                 barButtonTaoTaiKhoan.Enabled = true;
                 barButtonThongTinCaNhan.Enabled = true;
                 barButtonDangNhap.Enabled = false;
-                ribbonPageQuanLy.Visible = true;
-                ribbonPageGroupQuanLy.Enabled = true;
-                barButtonLopTinChi.Enabled = false;
+                //ribbonPageQuanLy.Visible = true;
+                //ribbonPageGroupQuanLy.Enabled = true;
+                //barButtonLopTinChi.Enabled = false;
                 ribbonPageBaoCao.Visible = true;
                 ribbonPageGroupBaoCao.Enabled = true;
-                
+                barButtonDSDongHocPhi.Enabled = true;
                 ribbonPageKeToan.Visible = true;
                 ribbonPageGroupKeToan.Visible = true;
                 barButtonHocPhi.Enabled = true;
@@ -159,6 +159,10 @@ namespace QLDSV_TC.forms
                 Program.bindingSource.RemoveFilter();
                 enalbleButtonsInit();
                 ribbonPageQuanLy.Visible = false;
+                ribbonPageSinhVien.Visible = false;
+                ribbonPageKeToan.Visible = false;
+                ribbonPageBaoCao.Visible = false;
+                ribbonPageHeThong.Visible = true;
                 barButtonDangNhap.Enabled = true;
                 Program.frmMain.toolStripStatusMa.Text = "Mã: ";
                 Program.frmMain.toolStripStatusHoVaTen.Text = "Họ và Tên: ";
@@ -320,6 +324,18 @@ namespace QLDSV_TC.forms
                 Program.frmLopHoc = new frmLopHoc();
                 Program.frmLopHoc.MdiParent = this;
                 Program.frmLopHoc.Show();
+            }
+        }
+
+        private void barButtonPhieuDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(forms.Xfrm_Report_BangDiemSV));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.Xfrm_Report_BangDiemSV = new Xfrm_Report_BangDiemSV();
+                Program.Xfrm_Report_BangDiemSV.MdiParent = this;
+                Program.Xfrm_Report_BangDiemSV.Show();
             }
         }
     }

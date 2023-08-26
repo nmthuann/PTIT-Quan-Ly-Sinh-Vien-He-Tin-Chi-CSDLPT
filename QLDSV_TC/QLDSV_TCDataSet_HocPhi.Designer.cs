@@ -320,7 +320,7 @@ namespace QLDSV_TC {
             
             private global::System.Data.DataColumn columnHOCPHI;
             
-            private global::System.Data.DataColumn columnSOTIENDONG;
+            private global::System.Data.DataColumn columnSOTIENDADONG;
             
             private global::System.Data.DataColumn columnSOTIENCANDONG;
             
@@ -383,9 +383,9 @@ namespace QLDSV_TC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn SOTIENDONGColumn {
+            public global::System.Data.DataColumn SOTIENDADONGColumn {
                 get {
-                    return this.columnSOTIENDONG;
+                    return this.columnSOTIENDADONG;
                 }
             }
             
@@ -434,13 +434,13 @@ namespace QLDSV_TC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_THONGTINDONGHOCPHIRow AddSP_THONGTINDONGHOCPHIRow(string NIENKHOA, int HOCKY, int HOCPHI, int SOTIENDONG, int SOTIENCANDONG) {
+            public SP_THONGTINDONGHOCPHIRow AddSP_THONGTINDONGHOCPHIRow(string NIENKHOA, int HOCKY, int HOCPHI, int SOTIENDADONG, int SOTIENCANDONG) {
                 SP_THONGTINDONGHOCPHIRow rowSP_THONGTINDONGHOCPHIRow = ((SP_THONGTINDONGHOCPHIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NIENKHOA,
                         HOCKY,
                         HOCPHI,
-                        SOTIENDONG,
+                        SOTIENDADONG,
                         SOTIENCANDONG};
                 rowSP_THONGTINDONGHOCPHIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_THONGTINDONGHOCPHIRow);
@@ -467,7 +467,7 @@ namespace QLDSV_TC {
                 this.columnNIENKHOA = base.Columns["NIENKHOA"];
                 this.columnHOCKY = base.Columns["HOCKY"];
                 this.columnHOCPHI = base.Columns["HOCPHI"];
-                this.columnSOTIENDONG = base.Columns["SOTIENDONG"];
+                this.columnSOTIENDADONG = base.Columns["SOTIENDADONG"];
                 this.columnSOTIENCANDONG = base.Columns["SOTIENCANDONG"];
             }
             
@@ -480,15 +480,15 @@ namespace QLDSV_TC {
                 base.Columns.Add(this.columnHOCKY);
                 this.columnHOCPHI = new global::System.Data.DataColumn("HOCPHI", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHOCPHI);
-                this.columnSOTIENDONG = new global::System.Data.DataColumn("SOTIENDONG", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSOTIENDONG);
+                this.columnSOTIENDADONG = new global::System.Data.DataColumn("SOTIENDADONG", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSOTIENDADONG);
                 this.columnSOTIENCANDONG = new global::System.Data.DataColumn("SOTIENCANDONG", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSOTIENCANDONG);
                 this.columnNIENKHOA.AllowDBNull = false;
                 this.columnNIENKHOA.MaxLength = 9;
                 this.columnHOCKY.AllowDBNull = false;
                 this.columnHOCPHI.AllowDBNull = false;
-                this.columnSOTIENDONG.AllowDBNull = false;
+                this.columnSOTIENDADONG.AllowDBNull = false;
                 this.columnSOTIENCANDONG.ReadOnly = true;
             }
             
@@ -928,12 +928,12 @@ namespace QLDSV_TC {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int SOTIENDONG {
+            public int SOTIENDADONG {
                 get {
-                    return ((int)(this[this.tableSP_THONGTINDONGHOCPHI.SOTIENDONGColumn]));
+                    return ((int)(this[this.tableSP_THONGTINDONGHOCPHI.SOTIENDADONGColumn]));
                 }
                 set {
-                    this[this.tableSP_THONGTINDONGHOCPHI.SOTIENDONGColumn] = value;
+                    this[this.tableSP_THONGTINDONGHOCPHI.SOTIENDADONGColumn] = value;
                 }
             }
             
@@ -1199,7 +1199,7 @@ namespace QLDSV_TC.QLDSV_TCDataSet_HocPhiTableAdapters {
             tableMapping.ColumnMappings.Add("NIENKHOA", "NIENKHOA");
             tableMapping.ColumnMappings.Add("HOCKY", "HOCKY");
             tableMapping.ColumnMappings.Add("HOCPHI", "HOCPHI");
-            tableMapping.ColumnMappings.Add("SOTIENDONG", "SOTIENDONG");
+            tableMapping.ColumnMappings.Add("SOTIENDONG", "SOTIENDADONG");
             tableMapping.ColumnMappings.Add("SOTIENCANDONG", "SOTIENCANDONG");
             this._adapter.TableMappings.Add(tableMapping);
         }

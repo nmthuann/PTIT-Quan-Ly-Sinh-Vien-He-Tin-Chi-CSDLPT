@@ -1,2 +1,2 @@
-# Quan Ly Diem Sinh Vien Lop Tin Chi - Luu Nguyen Ky Thu
+# Quản lý điểm sinh viên hệ tín chỉ  - Thầy Lưu Nguyễn Kỳ Thư
 Quan Ly Diem Sinh Vien Tin Chi

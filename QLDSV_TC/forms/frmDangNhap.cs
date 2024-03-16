@@ -125,7 +125,7 @@ namespace QLDSV_TC.forms
             if (cbVaiTro.Checked)  // login - SV
             {
                
-                Program.mlogin = Program.LoginSinhVien;
+                Program.mlogin = Program.LoginSinhVien; // LoginSinhVIen = SV
                 Program.password = Program.PasswordSinhVien;
                 
                 if(Program.KetNoi() == 1) // the connection is successfull!
@@ -139,19 +139,23 @@ namespace QLDSV_TC.forms
                         "FROM SINHVIEN WHERE " +
                         "MaSV = '" + Program.mMaDangNhap + "' AND PASSWORD = '" + Program.password + "'";
                     SqlDataReader check = Program.ExecSqlDataReader(query);
-                    if (check == null)
+                    if (!check.HasRows)
                     {
                         Program.conn.Close();
                         MessageBox.Show(
                             "Sinh Viên đăng nhập thất bại", "", MessageBoxButtons.OK);
                         return;
                     }
-                    Program.conn.Close();
+                    else
+                    {
+                        Program.conn.Close();
 
-                    String statement =
-                    "EXEC SP_THONGTINDANGNHAP'" +
-                    Program.mMaDangNhap + "', 'SV'";
-                    Program.myReader = Program.ExecSqlDataReader(statement);
+                        String statement =
+                        "EXEC SP_THONGTINDANGNHAP'" +
+                        Program.mMaDangNhap + "', 'SV'";
+                        Program.myReader = Program.ExecSqlDataReader(statement);
+                    }
+                   
                 }
             }
             else // login - GV

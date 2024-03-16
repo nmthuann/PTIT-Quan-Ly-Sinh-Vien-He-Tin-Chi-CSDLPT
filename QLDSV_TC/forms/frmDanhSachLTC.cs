@@ -41,7 +41,7 @@ namespace QLDSV_TC.forms
             }
             catch (Exception)
             {
-
+                // lỗi bắt null
             }
            
         }

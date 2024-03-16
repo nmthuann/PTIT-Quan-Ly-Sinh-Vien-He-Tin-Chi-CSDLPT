@@ -95,6 +95,7 @@ namespace QLDSV_TC.forms
             this.bdsDSLopTinchi_temp.DataSource = tableDSLopTinChi;
 
             this.dataGridView1.DataSource = tableDSLopTinChi;
+            // this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewCheckBoxColumn dangKyColumn = new DataGridViewCheckBoxColumn();
             dangKyColumn.HeaderText = "Đăng Ký";
             dangKyColumn.Name = "colDangKy";

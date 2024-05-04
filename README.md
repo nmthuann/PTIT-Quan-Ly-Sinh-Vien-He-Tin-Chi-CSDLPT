@@ -8,25 +8,25 @@
 
 ## Mục Lục
 
-- [Mô tả](#mo-ta)
-- [Thành viên tham gia dự án](#thanh-vien-tham-gia)
-  - [Phân công công việc](#phan-cong-cong-viec)
-- [Bắt đầu](#bat-dau)
-  - [Yêu cầu](#yeu-cau)
-  - [Cài đặt và Chạy Dự Án](#cai-dat-va-chay-du-an)
-- [Nội dung cần tìm hiểu](#noi-dung-can-tim-hieu)
-  - [Publication and Subcription](#publication-and-subcription)
-  - [Link Server](#link-server)
-  - [Stored Procedure](#stored-procedure)
-  - [Data Set](#data-set)
-- [Tính năng](#tinh-nang)
-  - [Nhập Liệu](#nhap-lieu)
-  - [Phân Quyền](#phan-quyen)
-  - [In Ấn](#in-an)
-- [Cấu trúc Thư mục](#cau-truc-thu-muc)
-- [Đóng góp](#đong-gop)
-- [Liên hệ](#lien-he)
-- [Tham chiếu](#tham-chieu)
+- [**Mô tả**](#mo-ta)
+- [**Thành viên tham gia dự án**]\*\*(#thanh-vien-tham-gia)
+  - [**Phân công công việc**](#phan-cong-cong-viec)
+- [**Bắt đầu**](#bat-dau)
+  - [**Yêu cầu**](#yeu-cau)
+  - [**Cài đặt và Chạy Dự Án**](#cai-dat-va-chay-du-an)
+- [**Nội dung cần tìm hiểu**](#noi-dung-can-tim-hieu)
+  - [**Publication and Subcription**](#publication-and-subcription)
+  - [**Link Server**](#link-server)
+  - [**Stored Procedure**](#stored-procedure)
+  - [**Data Set**](#data-set)
+- [**Tính năng**](#tính-năng)
+  - [**Nhập Liệu**](#nhập-liệu)
+  - [**Phân Quyền**](#phân-quyền)
+  - [**In Ấn**](#in-ấn)
+- [**Cấu trúc Thư mục**](#cấu-trúc-thư-mục)
+- [**Đóng góp**](#đóng-góp)
+- [**Liên hệ**](#liên-hệ)
+- [**Tham chiếu**](#tham-chiếu)
 
 ## [**Mô tả**](#mo-ta)
 
@@ -219,7 +219,7 @@ Data Set này tham gia vào mọi form chính của chương trình gồm:
 - `QLDSV_TC/Reports/`: Chứa các tính năng giao diện và mã code cho việc tạo report.
 - `README.md`: File này.
 
-## Đóng góp
+## [**Đóng góp**](#dong-gop)
 
 Chúng tôi hoan nghênh mọi đóng góp cho dự án. Để đóng góp:
 

@@ -1,61 +1,158 @@
-# Quản lý điểm sinh viên hệ tín chỉ  - Thầy Lưu Nguyễn Kỳ Thư
+<h1 align="center"> Cơ Sở Dữ Liệu Phân Tán <br/>
+ Đề tài:  Quản lý điểm sinh viên hệ tín chỉ  - Thầy Lưu Nguyễn Kỳ Thư
+<h1>
 
-## Mô tả
+   <p align="center"> 
+      <img src="./docs/images/formLopHoc.png">
+   </p>
+
+## Mục Lục
+
+- [Mô tả](#mô-tả)
+- [Thành viên tham gia dự án](#thành-viên-tham-gia-dự-án)
+- [Bắt đầu](#bắt-đầu)
+  - [Yêu cầu](#yêu-cầu)
+  - [Cài đặt và Chạy Dự Án](#cài-đặt-và-chạy-dự-án)
+- [Nội dung cần tìm hiểu](#noi-dung-can-tim-hieu)
+  - [Publication and Subcription](#publication-and-subcription)
+  - [Link Server](#link-server)
+  - [Stored Procedure](#stored-procedure)
+  - [Data Set](#data-set)
+- [Tính năng](#tính-năng)
+  - [Nhập Liệu](#nhập-liệu)
+  - [Phân Quyền](#phân-quyền)
+  - [In Ấn](#in-ấn)
+- [Cấu trúc Thư mục](#cấu-trúc-thư-mục)
+- [Đóng góp](#đóng-góp)
+- [Giấy phép](#giấy-phép)
+- [Liên hệ](#liên-hệ)
+
+## [**Mô tả**](#mô-tả)
 
 Dự án quản lý điểm sinh viên hệ tín chỉ được phát triển bằng C# và DevExpress là một đồ án nhóm môn học của thầy Lưu Nguyễn Kỳ Thư trong môn học Cơ Sở Dữ Liệu Phân Tán. Ứng dụng giúp quản lý thông tin sinh viên và điểm số của họ trong các môn học, tạo điều kiện thuận lợi cho việc theo dõi và báo cáo kết quả học tập.
 
-## Thành viên tham gia dự án
+## [**Thành viên tham gia dự án**] (#thành-viên-tham-gia-dự-án)
 
 - **Nguyễn Lưu Kỳ Thư** - Giảng viên
-    - Vai trò: Hướng dẫn dự án, giảng dạy môn Cơ Sở Dữ Liệu Phân Tán
-    - Thông tin liên hệ: [email@example.com](mailto:email@example.com)
+
+  - Vai trò: Hướng dẫn dự án, giảng dạy môn Cơ Sở Dữ Liệu Phân Tán
+  - Thông tin liên hệ: [email@example.com](mailto:email@example.com)
 
 - **Nguyễn Minh Thuận** - Thành viên nhóm
-    - Vai trò: Phát triển chức năng
-    - Thông tin liên hệ: [thuanminh.2001286@gmail.com](mailto:thuanminh.2001286@gmail.com)
+
+  - Vai trò: Phát triển chức năng
+  - Thông tin liên hệ: [thuanminh.2001286@gmail.com](mailto:thuanminh.2001286@gmail.com)
 
 - **Nguyễn Thành Trung** - Thành viên nhóm
-    - Vai trò: Phát triển chức năng
-    - Thông tin liên hệ: [email2@example.com](mailto:email2@example.com)
+  - Vai trò: Phát triển chức năng
+  - Thông tin liên hệ: [email2@example.com](mailto:email2@example.com)
 
 ### Phân công công việc
 
 Dưới đây là bảng phân công công việc cho các thành viên trong dự án:
-| STT | Tên Báo Cáo                               | Loại         | Input                                   | Output                                                        | Ghi chú |
+| STT | Tên Báo Cáo | Loại | Input | Output | Ghi chú |
 |-----|-------------------------------------------|--------------|-----------------------------------------|---------------------------------------------------------------|---------|
-| 1   | Danh sách lớp tín chỉ (Thuận)             | Loại thường  | Niên khóa, học kỳ                       | Chương trình in ra các lớp tín chỉ đã mở (chưa hủy)            | OK      |
-| 2   | Danh sách sinh viên đăng ký lớp tín chỉ (Thuận) | Loại thường  | Niên khóa, học kỳ, môn học, nhóm        | Chương trình in ra danh sách theo thứ tự tăng dần tên và họ   | OK      |
-| 3   | Bảng điểm môn học của một lớp tín chỉ (Thuận)| Loại thường  | Khoa, Niên khóa, Học kỳ, Môn học, Nhóm  | Chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ  | OK      |
-| 4   | Phiếu Điểm (Trung)                        | Loại thường  | Mã Sinh Viên                            |                                                               | OK      |
-| 5   | In danh sách đóng học phí của lớp (Trung) | Loại thường  | Mã Lớp Tín Chỉ, Niên Khóa, Học Kỳ       |                                                               | OK      |
-| 6   | Bảng điểm tổng kết (Trung)                | Cross Tab    |                                         |                                                               | OK      |
+| 1 | Danh sách lớp tín chỉ (Thuận) | Loại thường | Niên khóa, học kỳ | Chương trình in ra các lớp tín chỉ đã mở (chưa hủy) | OK |
+| 2 | Danh sách sinh viên đăng ký lớp tín chỉ (Thuận) | Loại thường | Niên khóa, học kỳ, môn học, nhóm | Chương trình in ra danh sách theo thứ tự tăng dần tên và họ | OK |
+| 3 | Bảng điểm môn học của một lớp tín chỉ (Thuận)| Loại thường | Khoa, Niên khóa, Học kỳ, Môn học, Nhóm | Chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ | OK |
+| 4 | Phiếu Điểm (Trung) | Loại thường | Mã Sinh Viên | | OK |
+| 5 | In danh sách đóng học phí của lớp (Trung) | Loại thường | Mã Lớp Tín Chỉ, Niên Khóa, Học Kỳ | | OK |
+| 6 | Bảng điểm tổng kết (Trung) | Cross Tab | | | OK |
 
+## [**Bắt đầu**](#bắt-đầu)
 
-
-## Bắt đầu
-
-### Yêu cầu
+### [**Yêu cầu**] (#yêu-cầu)
 
 - **C#/.NET Framework**: .NET Framework 4.x trở lên.
 - **DevExpress**: Các thư viện DevExpress (version 19.2.5)
 
-### Cài đặt và Chạy Dự Án
+### [**Cài đặt và Chạy Dự Án**] (#cài-đặt-và-chạy-dự-án)
 
 1. **Sao chép kho lưu trữ**:
-    ```shell
-    git clone https://github.com/nmthuann/QLDSV_TC.git
-    cd QLDSV_TC
-    ```
+
+   ```shell
+   git clone https://github.com/nmthuann/QLDSV_TC.git
+   cd QLDSV_TC
+   ```
 
 2. **Mở dự án trong IDE**:
-    - Mở dự án trong môi trường phát triển tích hợp (IDE) như Visual Studio Code (version 2019).
-    - Đảm bảo cài đặt DevExpress trong IDE.
+
+   - Mở dự án trong môi trường phát triển tích hợp (IDE) như Visual Studio Code (version 2019).
+   - Đảm bảo cài đặt DevExpress trong IDE.
 
 3. **Cấu hình cơ sở dữ liệu**:
-    - Cập nhật thông tin kết nối cơ sở dữ liệu để phù hợp với cấu hình của bạn.
-    - Tham khảo tài liệu trong thư mục `docs/` để biết cách thiết lập cơ sở dữ liệu.
+   - Cập nhật thông tin kết nối cơ sở dữ liệu để phù hợp với cấu hình của bạn.
+   - Tham khảo tài liệu trong thư mục `docs/` để biết cách thiết lập cơ sở dữ liệu.
 
-## Tính năng
+## [**Nội dung cần tìm hiểu**](#noi-dung-can-tim-hieu)
+
+### [**Publication and Subcription**](#publication-and-subcription)
+
+Với đề tài này chúng ta cần 3 server phân mảnh đề làm việc.
+
+Đối với phân mảnh 1 và 2: các bạn chọn hết tất cả các bảng trừ bảng sysdiagram(dbo)
+
+![image](https://user-images.githubusercontent.com/58034430/133271162-3521acd5-7851-405d-a404-f29569b3d2bb.png)
+
+Đối với phân mảnh 3: Phân mảnh dùng cho tra cứu nên cần nhân bản để đảm bảo toàn vẹn dữ liệu
+
+![Ssms_r9bSDYDM3D](https://user-images.githubusercontent.com/58034430/133271440-2aa8c8ce-9098-4c4b-88e3-04519e7f6d9c.png)
+
+### [**Link Server**](#link-server)
+
+Theo đề tài này chúng ta có 3 server phân mảnh:
+
+Server 1 và server 2 chứa thông tin của chi nhánh 1 và chi nhánh 2.
+
+Server 3 chứa toàn bộ thông tin của kho & nhân viên.
+
+Do trong đề tài này chúng ta có hẳn một server phục vụ cho việc tra cứu. Do đó trong quá trình viết [**Stored Procedure**](#stored-procedure), chúng ta bắt buộc phải viết sao cho có sự tham gia của phân mảnh 3 trong một số Stored Procedure. Ví dụ như tìm kiếm xem mã nhân viên đã tồn tại hay chưa thì dùng server 3 thay vì quay về server chủ.
+
+Chúng ta sẽ có 3 LINK cho mỗi server phân mảnh 1 & 2 như sau
+
+    LINK0 đi từ phân mảnh này tới phân mảnh 3
+    LINK1 đi từ phân mảnh này tới phân mảnh còn lại
+      LINK2 đi từ phân mảnh này tới phân mảnh gốc
+
+> Note: nếu bài không có phân mảnh 3 thì chúng ta quay trở về server gốc để tìm.
+
+> Note: Server 3 không cần LINK Server vì được sử dụng để tra cứu thông tin & không tham gia vào quá trình thay đổi dữ liệu
+
+### [**Stored Procedure**](#stored-procedure)
+
+> Note: Chúng ta nên viết Stored Procedure ngay trên một phân mảnh để xem nó có hoạt động đúng không ? Nếu Stored Procedure hoạt động đúng thì mới quay về server gốc rồi lưu nó lại. Cuối cùng mới đẩy về các server phân mảnh.
+
+Các bước để đẩy một Stored Procedure về phân mảnh
+
+    Bước 1 : Vào replication chọn phân mảnh muốn đẩy xuống
+
+    Bước 2 : Nhấn chuột phải chọn Properties
+
+    Bước 3 : Chọn Articles -> bỏ dấu tích "show only checked articles of the list"
+
+    Bước 4 : Đánh dấu các stored procedure muốn sử dụng tại phân mảnh đó
+
+    Bước 5 : Nhấn OK để kết thúc.
+
+    Bước 6 : Chuột phải lại vào phân mảnh chọn "view snapshot agent status" -> start để nó đẩy xuống phân mảnh
+
+Một đơn vị phân tán có thể truyền xuống các server phân mảnh chỉ có thể là table - stored procedure - view - user defined function
+
+> Note: Đảm bảo dịch vụ SQL Server Agent phải đang hoạt động.
+
+### [**Data Set**](#data-set)
+
+Phần này mình sẽ nói cho các bạn biết về chức năng của các Data Set mình sử dụng và chúng tham gia vào form nào dataSet là cái data set chứa nội dung của toàn bộ cơ sở dữ liệu.
+Data Set này tham gia vào mọi form chính của chương trình gồm:
+
+- Giảng Viên
+- Môn học
+- Lớp Tín Chỉ
+- Sinh viên
+- ...
+  ![image](https://user-images.githubusercontent.com/58034430/133271162-3521acd5-7851-405d-a404-f29569b3d2bb.png)
+
+## [**Tính năng**](#tính-năng)
 
 ### Nhập Liệu
 
@@ -80,22 +177,22 @@ Dưới đây là bảng phân công công việc cho các thành viên trong d�
 
 #### Bảng mô tả chi tiết phân quyền
 
-| Tên login nhóm quyền | Quyền hạn                                               |
-|----------------------|--------------------------------------------------------|
-| PGV                  | - Chọn bất kỳ khoa nào và toàn quyền trên khoa đó.     |
-|                      | - Tạo tài khoản cho nhóm PGV.                          |
-|                      | - Tạo tài khoản cho nhóm Khoa.                         |
-| Khoa                 | - Toàn quyền làm việc trên khoa đã đăng nhập.          |
-|                      | - Tìm dữ liệu trên site đăng nhập để in ấn.            |
-|                      | - Tạo tài khoản cho nhóm Khoa.                         |
-| SV                   | - Được đăng ký lớp tín chỉ.                            |
-|                      | - Tìm dữ liệu trên phân mảnh.                          |
-|                      | - Không được xem học phí.                              |
-|                      | - Tất cả sinh viên đều dùng chung 1 login đăng nhập.   |
+| Tên login nhóm quyền | Quyền hạn                                                     |
+| -------------------- | ------------------------------------------------------------- |
+| PGV                  | - Chọn bất kỳ khoa nào và toàn quyền trên khoa đó.            |
+|                      | - Tạo tài khoản cho nhóm PGV.                                 |
+|                      | - Tạo tài khoản cho nhóm Khoa.                                |
+| Khoa                 | - Toàn quyền làm việc trên khoa đã đăng nhập.                 |
+|                      | - Tìm dữ liệu trên site đăng nhập để in ấn.                   |
+|                      | - Tạo tài khoản cho nhóm Khoa.                                |
+| SV                   | - Được đăng ký lớp tín chỉ.                                   |
+|                      | - Tìm dữ liệu trên phân mảnh.                                 |
+|                      | - Không được xem học phí.                                     |
+|                      | - Tất cả sinh viên đều dùng chung 1 login đăng nhập.          |
 | PKT                  | - Chỉ được quyền cập nhật dữ liệu đóng học phí của sinh viên. |
-|                      | - Được tạo tài khoản mới thuộc cùng nhóm.              |
-|                      | - Xem các báo cáo có liên quan đến học phí.            |
-|                      | - Chỉ nằm ở site 3.                                     |
+|                      | - Được tạo tài khoản mới thuộc cùng nhóm.                     |
+|                      | - Xem các báo cáo có liên quan đến học phí.                   |
+|                      | - Chỉ nằm ở site 3.                                           |
 
 ### In Ấn
 

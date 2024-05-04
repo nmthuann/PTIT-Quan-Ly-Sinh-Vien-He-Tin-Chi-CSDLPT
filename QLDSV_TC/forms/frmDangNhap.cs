@@ -68,7 +68,12 @@ namespace QLDSV_TC.forms
             }
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối\n" + e.Message);
+                MessageBox.Show(
+                       "Lỗi kết nối đến CSDL \n" + e.Message,
+                       "Lỗi",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error
+                   );
                 return 0;
             }
         }
@@ -99,30 +104,51 @@ namespace QLDSV_TC.forms
         }
 
 
+        /// <summary>
+        /// Phương thức xử lý sau khi click Btn Login
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLogin_Click(object sender, EventArgs e)
         {
             /**
-             * B1: username + pass is rỗng
-             * B2: check lại Connect
-             * B3: 
+             * B1: Check dữ liệu nhập vào
+             * B2: Thực hiện Connect
+             *  2.1 truy cập vào hệ thống với vai trò Sinh Viên
+             *      - Sinh viên truy cập cùng 1 tài khoản Login "SV" trong CSDL (mức CSDL).
+             *      -> truy cập vào Server thì dùng chung (login, password)
+             *      - Call câu lệnh truy vấn để (mMaDangNhap, password) 
+             *      -> để xác thực SV (mỗi SV chỉ có 1 mã SV) trong hệ thống (mức ứng dụng).
+             *  2.2 truy cập vào hệ thống với vai trò Giảng Viên
+             *      - GV được cấp một tài khoản login vào Server đã được phân quyền đúng với 
+             *      quyền hạn sử dụng.
+             * B3: Lấy Các thông tin cá nhân cần thiết phục vụ cho việc hiển thị
+             *  - Mã
+             *  - Họ Tên
+             *  - Vai trò
              */
-
+            
+            // B1
             if (txtUsername.Text.Trim() == "" || txtPassword.Text.Trim() == "")
             {
-                MessageBox.Show("Tài khoản và mật khẩu không hợp lệ", "", MessageBoxButtons.OK);
+                MessageBox.Show (
+                        "Tài khoản và mật khẩu không được bỏ trống. Vui lòng nhập lại", 
+                        "Thông báo", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Warning
+                    );
                 return;
             }
 
 
-            /**
-             * get dữ liệu
-             */
+            // B2: 
             Program.mlogin = txtUsername.Text.Trim();
             Program.password = txtPassword.Text.Trim();
             Program.mPhongBan = cmbPhongBan.SelectedIndex;
             Program.serverName = cmbPhongBan.SelectedValue.ToString();
 
-            if (cbVaiTro.Checked)  // login - SV
+            // login - SV
+            if (cbVaiTro.Checked)  
             {
                
                 Program.mlogin = Program.LoginSinhVien; // LoginSinhVIen = SV
@@ -158,7 +184,8 @@ namespace QLDSV_TC.forms
                    
                 }
             }
-            else // login - GV
+            // login - GV
+            else
             {
                 Program.mlogin = txtUsername.Text.Trim();
                 Program.password = txtPassword.Text.Trim();
@@ -171,17 +198,21 @@ namespace QLDSV_TC.forms
                 Program.myReader = Program.ExecSqlDataReader(statement);
             }
 
-            
 
+            //  B3:
             if (Program.myReader == null) return;
             Program.myReader.Read();
             try
             {
                 Program.username = Program.myReader.GetString(0);
                 if (Convert.IsDBNull(Program.username))
-                {
+                {  
                     MessageBox.Show(
-                        "Login không có quyền truy cập dữ liệu", "", MessageBoxButtons.OK);
+                            "Login không có quyền truy cập dữ liệu. Vui lòng kiểm tra lại", 
+                            "Thông báo", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Warning
+                        );
                     return;
                 }
                 Program.mHoten = Program.myReader.GetString(1);
@@ -200,12 +231,14 @@ namespace QLDSV_TC.forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ sos\n Vui long kiem tra lại \n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show(
+                        "Tài khoản hoặc mật khẩu không hợp lệ sos\n Vui long kiem tra lại \n" + ex.Message, 
+                        "Lỗi", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Error
+                    );
                 return;
             }
-
-
-
         }
 
 

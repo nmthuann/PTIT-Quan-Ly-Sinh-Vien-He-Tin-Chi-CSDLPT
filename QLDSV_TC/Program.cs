@@ -17,7 +17,8 @@ namespace QLDSV_TC
          *
          */
 
-        //  public static Cấu hình hệ thống
+        // public static Cấu hình hệ thống
+        // Thay đổi đường dẫn datasource của tôi thành đg dẫn của bạn 
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlCommand sqlcmd = new SqlCommand();
@@ -117,7 +118,7 @@ namespace QLDSV_TC
                 //{
                     MessageBox.Show(
                     "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
-                    e.Message, "", MessageBoxButtons.OK);
+                    e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    
                 //}
                 return 0;
@@ -149,7 +150,7 @@ namespace QLDSV_TC
             catch (SqlException ex)
             {
                 Program.conn.Close();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -186,7 +187,12 @@ namespace QLDSV_TC
             catch (SqlException ex)
             {
                 if (ex.Message.Contains("Error converting data type varchar to int"))
-                    MessageBox.Show("Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.");
+                    MessageBox.Show(
+                            "Bạn format Cell lại cột \"Ngày Thi\" qua kiểu Number hoặc mở File Excel.", 
+                            "Thông báo", 
+                            MessageBoxButtons.OK, 
+                            MessageBoxIcon.Warning
+                        );
                 else MessageBox.Show(ex.Message);
                 conn.Close();
                 return ex.State;

@@ -92,7 +92,7 @@ Với đề tài này chúng ta cần 3 server phân mảnh đề làm việc.
 
 Đối với phân mảnh 1 và 2: các bạn chọn hết tất cả các bảng trừ bảng sysdiagram(dbo)
 
-![image](https://user-images.githubusercontent.com/58034430/133271162-3521acd5-7851-405d-a404-f29569b3d2bb.png)
+![image](https://github.com/nmthuann/QLDSV_TC/blob/master/docs/images/phan-manh.png?raw=true)
 
 Đối với phân mảnh 3: Phân mảnh dùng cho tra cứu nên cần nhân bản để đảm bảo toàn vẹn dữ liệu
 

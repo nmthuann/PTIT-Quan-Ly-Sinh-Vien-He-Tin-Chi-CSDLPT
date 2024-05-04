@@ -4,6 +4,36 @@
 
 Dự án quản lý điểm sinh viên hệ tín chỉ được phát triển bằng C# và DevExpress là một đồ án nhóm môn học của thầy Lưu Nguyễn Kỳ Thư trong môn học Cơ Sở Dữ Liệu Phân Tán. Ứng dụng giúp quản lý thông tin sinh viên và điểm số của họ trong các môn học, tạo điều kiện thuận lợi cho việc theo dõi và báo cáo kết quả học tập.
 
+## Thành viên tham gia dự án
+
+- **Nguyễn Lưu Kỳ Thư** - Giảng viên
+    - Vai trò: Hướng dẫn dự án, giảng dạy môn Cơ Sở Dữ Liệu Phân Tán
+    - Thông tin liên hệ: [email@example.com](mailto:email@example.com)
+
+- **Nguyễn Minh Thuận** - Thành viên nhóm
+    - Vai trò: Phát triển chức năng
+    - Thông tin liên hệ: [thuanminh.2001286@gmail.com](mailto:thuanminh.2001286@gmail.com)
+
+- **Nguyễn Thành Trung** - Thành viên nhóm
+    - Vai trò: Phát triển chức năng
+    - Thông tin liên hệ: [email2@example.com](mailto:email2@example.com)
+
+### Phân công công việc
+
+Dưới đây là bảng phân công công việc cho các thành viên trong dự án:
+| STT | Tên Báo Cáo                               | Loại         | Input                                   | Output                                                        | Ghi chú |
+|-----|-------------------------------------------|--------------|-----------------------------------------|---------------------------------------------------------------|---------|
+| 1   | Danh sách lớp tín chỉ (Thuận)             | Loại thường  | Niên khóa, học kỳ                       | Chương trình in ra các lớp tín chỉ đã mở (chưa hủy)            | OK      |
+| 2   | Danh sách sinh viên đăng ký lớp tín chỉ   | Loại thường  | Niên khóa, học kỳ, môn học, nhóm        | Chương trình in ra danh sách theo thứ tự tăng dần tên và họ   | OK      |
+|     | (Thuận)                                   |              |                                         |                                                               |         |
+| 3   | Bảng điểm môn học của một lớp tín chỉ     | Loại thường  | Khoa, Niên khóa, Học kỳ, Môn học, Nhóm  | Chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ  | OK      |
+|     | (Thuận)                                   |              |                                         |                                                               |         |
+| 4   | Phiếu Điểm (Trung)                        | Loại thường  | Mã Sinh Viên                            |                                                               | OK      |
+| 5   | In danh sách đóng học phí của lớp (Trung) | Loại thường  | Mã Lớp Tín Chỉ, Niên Khóa, Học Kỳ       |                                                               | OK      |
+| 6   | Bảng điểm tổng kết (Trung)                | Cross Tab    |                                         |                                                               | OK      |
+
+
+
 ## Bắt đầu
 
 ### Yêu cầu

@@ -96,7 +96,7 @@ Với đề tài này chúng ta cần 3 server phân mảnh đề làm việc.
 
 Đối với phân mảnh 3: Phân mảnh dùng cho tra cứu nên cần nhân bản để đảm bảo toàn vẹn dữ liệu
 
-![Ssms_r9bSDYDM3D](https://user-images.githubusercontent.com/58034430/133271440-2aa8c8ce-9098-4c4b-88e3-04519e7f6d9c.png)
+![Ssms_r9bSDYDM3D](https://github.com/nmthuann/QLDSV_TC/blob/master/docs/images/phanmanh3-tracuuhocphi.png?raw=true)
 
 ### [**Link Server**](#link-server)
 

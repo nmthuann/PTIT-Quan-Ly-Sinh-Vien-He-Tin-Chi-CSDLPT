@@ -101,8 +101,17 @@ Dưới đây là bảng phân công công việc cho các thành viên trong d�
 
 Ứng dụng cung cấp các chức năng in ấn sau:
 
-- **Danh sách lớp tín chỉ**: Người dùng nhập vào Niên khóa, Học kỳ, chương trình sẽ in ra các lớp tín chỉ đã mở (chưa hủy) trong niên khóa, học kỳ đó theo thứ tự tên môn học, nhóm.
-- **Bảng điểm môn học của một lớp tín chỉ**: Người dùng nhập vào Niên khóa, Học kỳ, môn học, nhóm; chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ.
+- **Danh sách lớp tín chỉ**: Người dùng nhập vào niên khóa và học kỳ, chương trình sẽ in ra danh sách các lớp tín chỉ đã mở (chưa hủy) trong niên khóa và học kỳ thuộc khoa mà người dùng đang chọn. Mẫu in bao gồm tên môn học và nhóm, sắp xếp theo thứ tự tên môn học và nhóm.
+
+- **Danh sách sinh viên đăng ký lớp tín chỉ**: Người dùng nhập vào niên khóa, học kỳ, môn học, và nhóm, chương trình sẽ in ra danh sách sinh viên đã đăng ký theo thứ tự tăng dần tên và họ.
+
+- **Bảng điểm môn học của một lớp tín chỉ**: Người dùng nhập vào niên khóa, học kỳ, môn học, và nhóm, chương trình sẽ in ra bảng điểm theo thứ tự tăng dần tên và họ.
+
+- **Phiếu điểm**: In phiếu điểm cho một sinh viên dựa vào mã sinh viên nhập vào hoặc chọn từ danh sách. Phiếu điểm bao gồm các cột: STT, tên môn học, và điểm. Thứ tự in theo tên môn học. Điểm được in là điểm cao nhất trong các lần thi (nếu có).
+
+- **In danh sách đóng học phí của lớp**: Người dùng nhập vào mã lớp tín chỉ, niên khóa, học kỳ, chương trình sẽ in ra thông tin đóng học phí của sinh viên cho niên khóa và học kỳ đó. Báo cáo bao gồm sinh viên đã đóng học phí và sinh viên chưa đóng.
+
+- **Bảng điểm tổng kết**: Bảng điểm tổng kết của một lớp dựa trên mã lớp nhập vào. Điểm thi được lấy là điểm cao nhất trong các lần thi. Báo cáo được hiển thị dưới dạng Cross-Tab.
 
 ## Cấu trúc Thư mục
 

@@ -78,6 +78,25 @@ Dưới đây là bảng phân công công việc cho các thành viên trong d�
 - **SV (Sinh Viên)**: Được đăng ký lớp tín chỉ và xem phiếu điểm của mình.
 - **PKT (Phòng Kế Toán)**: Chỉ được cập nhật dữ liệu đóng học phí của sinh viên và tạo tài khoản thuộc cùng nhóm.
 
+#### Bảng mô tả chi tiết phân quyền
+
+| Tên login nhóm quyền | Quyền hạn                                               |
+|----------------------|--------------------------------------------------------|
+| PGV                  | - Chọn bất kỳ khoa nào và toàn quyền trên khoa đó.     |
+|                      | - Tạo tài khoản cho nhóm PGV.                          |
+|                      | - Tạo tài khoản cho nhóm Khoa.                         |
+| Khoa                 | - Toàn quyền làm việc trên khoa đã đăng nhập.          |
+|                      | - Tìm dữ liệu trên site đăng nhập để in ấn.            |
+|                      | - Tạo tài khoản cho nhóm Khoa.                         |
+| SV                   | - Được đăng ký lớp tín chỉ.                            |
+|                      | - Tìm dữ liệu trên phân mảnh.                          |
+|                      | - Không được xem học phí.                              |
+|                      | - Tất cả sinh viên đều dùng chung 1 login đăng nhập.   |
+| PKT                  | - Chỉ được quyền cập nhật dữ liệu đóng học phí của sinh viên. |
+|                      | - Được tạo tài khoản mới thuộc cùng nhóm.              |
+|                      | - Xem các báo cáo có liên quan đến học phí.            |
+|                      | - Chỉ nằm ở site 3.                                     |
+
 ### In Ấn
 
 Ứng dụng cung cấp các chức năng in ấn sau:

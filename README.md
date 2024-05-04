@@ -9,7 +9,7 @@
 ## Mục Lục
 
 - [**Mô tả**](#mo-ta)
-- [**Thành viên tham gia dự án**]\*\*(#thanh-vien-tham-gia)
+- [**Thành viên tham gia dự án**](#thanh-vien-tham-gia)
   - [**Phân công công việc**](#phan-cong-cong-viec)
 - [**Bắt đầu**](#bat-dau)
   - [**Yêu cầu**](#yeu-cau)

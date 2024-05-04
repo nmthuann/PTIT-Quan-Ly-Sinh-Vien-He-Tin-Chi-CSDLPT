@@ -24,10 +24,8 @@ Dưới đây là bảng phân công công việc cho các thành viên trong d�
 | STT | Tên Báo Cáo                               | Loại         | Input                                   | Output                                                        | Ghi chú |
 |-----|-------------------------------------------|--------------|-----------------------------------------|---------------------------------------------------------------|---------|
 | 1   | Danh sách lớp tín chỉ (Thuận)             | Loại thường  | Niên khóa, học kỳ                       | Chương trình in ra các lớp tín chỉ đã mở (chưa hủy)            | OK      |
-| 2   | Danh sách sinh viên đăng ký lớp tín chỉ   | Loại thường  | Niên khóa, học kỳ, môn học, nhóm        | Chương trình in ra danh sách theo thứ tự tăng dần tên và họ   | OK      |
-|     | (Thuận)                                   |              |                                         |                                                               |         |
-| 3   | Bảng điểm môn học của một lớp tín chỉ     | Loại thường  | Khoa, Niên khóa, Học kỳ, Môn học, Nhóm  | Chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ  | OK      |
-|     | (Thuận)                                   |              |                                         |                                                               |         |
+| 2   | Danh sách sinh viên đăng ký lớp tín chỉ (Thuận) | Loại thường  | Niên khóa, học kỳ, môn học, nhóm        | Chương trình in ra danh sách theo thứ tự tăng dần tên và họ   | OK      |
+| 3   | Bảng điểm môn học của một lớp tín chỉ (Thuận)| Loại thường  | Khoa, Niên khóa, Học kỳ, Môn học, Nhóm  | Chương trình in ra bảng điểm theo thứ tự tăng dần tên và họ  | OK      |
 | 4   | Phiếu Điểm (Trung)                        | Loại thường  | Mã Sinh Viên                            |                                                               | OK      |
 | 5   | In danh sách đóng học phí của lớp (Trung) | Loại thường  | Mã Lớp Tín Chỉ, Niên Khóa, Học Kỳ       |                                                               | OK      |
 | 6   | Bảng điểm tổng kết (Trung)                | Cross Tab    |                                         |                                                               | OK      |

@@ -165,7 +165,7 @@ namespace QLDSV_TC.forms
             // 
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 186);
+            this.panel1.Location = new System.Drawing.Point(0, 232);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1422, 275);
             this.panel1.TabIndex = 7;
@@ -220,9 +220,9 @@ namespace QLDSV_TC.forms
             this.panel2.Controls.Add(this.gc_DSLTC_SVDADANGKY);
             this.panel2.Controls.Add(this.panelControlThongTinLTC);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 461);
+            this.panel2.Location = new System.Drawing.Point(0, 507);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1422, 492);
+            this.panel2.Size = new System.Drawing.Size(1422, 446);
             this.panel2.TabIndex = 8;
             // 
             // gc_DSLTC_SVDADANGKY
@@ -241,7 +241,7 @@ namespace QLDSV_TC.forms
             this.repositoryItemCheckEdit2,
             this.repositoryItemTextEdit1,
             this.repositoryItemCheckEdit5});
-            this.gc_DSLTC_SVDADANGKY.Size = new System.Drawing.Size(771, 492);
+            this.gc_DSLTC_SVDADANGKY.Size = new System.Drawing.Size(771, 446);
             this.gc_DSLTC_SVDADANGKY.TabIndex = 15;
             this.gc_DSLTC_SVDADANGKY.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_DSLTC_SVDADANGKY});
@@ -360,7 +360,7 @@ namespace QLDSV_TC.forms
             this.panelControlThongTinLTC.Location = new System.Drawing.Point(0, 0);
             this.panelControlThongTinLTC.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
             this.panelControlThongTinLTC.Name = "panelControlThongTinLTC";
-            this.panelControlThongTinLTC.Size = new System.Drawing.Size(651, 492);
+            this.panelControlThongTinLTC.Size = new System.Drawing.Size(651, 446);
             this.panelControlThongTinLTC.TabIndex = 9;
             // 
             // btnThoat
@@ -502,9 +502,11 @@ namespace QLDSV_TC.forms
             this.groupBoxTTSINHVIEN.Controls.Add(this.label3);
             this.groupBoxTTSINHVIEN.Controls.Add(this.lbMaSV);
             this.groupBoxTTSINHVIEN.Controls.Add(this.lb1);
-            this.groupBoxTTSINHVIEN.Location = new System.Drawing.Point(12, 5);
+            this.groupBoxTTSINHVIEN.Location = new System.Drawing.Point(15, 6);
+            this.groupBoxTTSINHVIEN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBoxTTSINHVIEN.Name = "groupBoxTTSINHVIEN";
-            this.groupBoxTTSINHVIEN.Size = new System.Drawing.Size(615, 173);
+            this.groupBoxTTSINHVIEN.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBoxTTSINHVIEN.Size = new System.Drawing.Size(769, 216);
             this.groupBoxTTSINHVIEN.TabIndex = 1;
             this.groupBoxTTSINHVIEN.TabStop = false;
             this.groupBoxTTSINHVIEN.Text = "Thông Tin Sinh Viên";
@@ -512,7 +514,8 @@ namespace QLDSV_TC.forms
             // lbTenKhoa
             // 
             this.lbTenKhoa.AutoSize = true;
-            this.lbTenKhoa.Location = new System.Drawing.Point(214, 133);
+            this.lbTenKhoa.Location = new System.Drawing.Point(268, 166);
+            this.lbTenKhoa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTenKhoa.Name = "lbTenKhoa";
             this.lbTenKhoa.Size = new System.Drawing.Size(136, 17);
             this.lbTenKhoa.TabIndex = 7;
@@ -521,7 +524,8 @@ namespace QLDSV_TC.forms
             // lbMaLopTenLop
             // 
             this.lbMaLopTenLop.AutoSize = true;
-            this.lbMaLopTenLop.Location = new System.Drawing.Point(214, 104);
+            this.lbMaLopTenLop.Location = new System.Drawing.Point(268, 130);
+            this.lbMaLopTenLop.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMaLopTenLop.Name = "lbMaLopTenLop";
             this.lbMaLopTenLop.Size = new System.Drawing.Size(273, 17);
             this.lbMaLopTenLop.TabIndex = 6;
@@ -530,7 +534,8 @@ namespace QLDSV_TC.forms
             // lbTenSV
             // 
             this.lbTenSV.AutoSize = true;
-            this.lbTenSV.Location = new System.Drawing.Point(214, 75);
+            this.lbTenSV.Location = new System.Drawing.Point(268, 94);
+            this.lbTenSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTenSV.Name = "lbTenSV";
             this.lbTenSV.Size = new System.Drawing.Size(131, 17);
             this.lbTenSV.TabIndex = 5;
@@ -539,7 +544,8 @@ namespace QLDSV_TC.forms
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 133);
+            this.label5.Location = new System.Drawing.Point(64, 166);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 17);
             this.label5.TabIndex = 4;
@@ -548,7 +554,8 @@ namespace QLDSV_TC.forms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 104);
+            this.label4.Location = new System.Drawing.Point(64, 130);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 17);
             this.label4.TabIndex = 3;
@@ -557,7 +564,8 @@ namespace QLDSV_TC.forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 75);
+            this.label3.Location = new System.Drawing.Point(64, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 2;
@@ -566,7 +574,8 @@ namespace QLDSV_TC.forms
             // lbMaSV
             // 
             this.lbMaSV.AutoSize = true;
-            this.lbMaSV.Location = new System.Drawing.Point(214, 45);
+            this.lbMaSV.Location = new System.Drawing.Point(268, 56);
+            this.lbMaSV.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbMaSV.Name = "lbMaSV";
             this.lbMaSV.Size = new System.Drawing.Size(94, 17);
             this.lbMaSV.TabIndex = 1;
@@ -575,7 +584,8 @@ namespace QLDSV_TC.forms
             // lb1
             // 
             this.lb1.AutoSize = true;
-            this.lb1.Location = new System.Drawing.Point(51, 45);
+            this.lb1.Location = new System.Drawing.Point(64, 56);
+            this.lb1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb1.Name = "lb1";
             this.lb1.Size = new System.Drawing.Size(89, 17);
             this.lb1.TabIndex = 0;
@@ -584,7 +594,8 @@ namespace QLDSV_TC.forms
             // lbNiemKhoa
             // 
             this.lbNiemKhoa.AutoSize = true;
-            this.lbNiemKhoa.Location = new System.Drawing.Point(668, 106);
+            this.lbNiemKhoa.Location = new System.Drawing.Point(835, 132);
+            this.lbNiemKhoa.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNiemKhoa.Name = "lbNiemKhoa";
             this.lbNiemKhoa.Size = new System.Drawing.Size(74, 17);
             this.lbNiemKhoa.TabIndex = 2;
@@ -594,7 +605,8 @@ namespace QLDSV_TC.forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(667, 37);
+            this.label1.Location = new System.Drawing.Point(834, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 24);
             this.label1.TabIndex = 3;
@@ -608,17 +620,24 @@ namespace QLDSV_TC.forms
             "2020-2021",
             "2021-2022",
             "2022-2023",
-            "2023-2024"});
-            this.cmbNienKhoa.Location = new System.Drawing.Point(763, 102);
+            "2023-2024",
+            "2024-2025",
+            "2025-2026",
+            "2027-2028",
+            "2029-2030",
+            "2031-2032"});
+            this.cmbNienKhoa.Location = new System.Drawing.Point(954, 128);
+            this.cmbNienKhoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbNienKhoa.Name = "cmbNienKhoa";
-            this.cmbNienKhoa.Size = new System.Drawing.Size(178, 24);
+            this.cmbNienKhoa.Size = new System.Drawing.Size(222, 24);
             this.cmbNienKhoa.TabIndex = 4;
             this.cmbNienKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbNienKhoa_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(998, 106);
+            this.label2.Location = new System.Drawing.Point(1248, 132);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 5;
@@ -631,8 +650,8 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speHocKy.Location = new System.Drawing.Point(1063, 101);
-            this.speHocKy.Margin = new System.Windows.Forms.Padding(4);
+            this.speHocKy.Location = new System.Drawing.Point(1329, 126);
+            this.speHocKy.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.speHocKy.Name = "speHocKy";
             this.speHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -647,8 +666,7 @@ namespace QLDSV_TC.forms
             0,
             0,
             0});
-            this.speHocKy.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
-            this.speHocKy.Size = new System.Drawing.Size(70, 24);
+            this.speHocKy.Size = new System.Drawing.Size(88, 24);
             this.speHocKy.TabIndex = 20;
             // 
             // btnFilter
@@ -657,9 +675,10 @@ namespace QLDSV_TC.forms
             this.btnFilter.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilter.ForeColor = System.Drawing.Color.White;
             this.btnFilter.Image = global::QLDSV_TC.Properties.Resources.icons8_filter_24;
-            this.btnFilter.Location = new System.Drawing.Point(1173, 88);
+            this.btnFilter.Location = new System.Drawing.Point(1466, 110);
+            this.btnFilter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFilter.Name = "btnFilter";
-            this.btnFilter.Size = new System.Drawing.Size(92, 48);
+            this.btnFilter.Size = new System.Drawing.Size(115, 60);
             this.btnFilter.TabIndex = 21;
             this.btnFilter.UseVisualStyleBackColor = false;
             this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
@@ -675,9 +694,9 @@ namespace QLDSV_TC.forms
             this.panelControlTop.Controls.Add(this.groupBoxTTSINHVIEN);
             this.panelControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControlTop.Location = new System.Drawing.Point(0, 0);
-            this.panelControlTop.Margin = new System.Windows.Forms.Padding(8, 9, 8, 9);
+            this.panelControlTop.Margin = new System.Windows.Forms.Padding(10, 11, 10, 11);
             this.panelControlTop.Name = "panelControlTop";
-            this.panelControlTop.Size = new System.Drawing.Size(1422, 186);
+            this.panelControlTop.Size = new System.Drawing.Size(1422, 232);
             this.panelControlTop.TabIndex = 6;
             // 
             // frmDangKyLTC

@@ -182,6 +182,7 @@ namespace QLDSV_TC.forms
                 {
                     bdsLTC.CancelEdit();
                 }
+                
                 this.Close();
             }
 

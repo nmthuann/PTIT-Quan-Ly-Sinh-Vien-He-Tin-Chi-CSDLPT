@@ -165,6 +165,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet_HocPhi.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSV_TC_DataSet.cs">
+      <DependentUpon>QLDSV_TC_DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLDSV_TC_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

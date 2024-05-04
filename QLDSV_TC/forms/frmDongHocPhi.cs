@@ -171,6 +171,7 @@ namespace QLDSV_TC.forms
                 this.sP_CT_DONGHOCPHI_MASVTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sP_CT_DONGHOCPHI_MASVTableAdapter.Fill(
                 this.qLDSV_TCDataSet_HocPhi.SP_CT_DONGHOCPHI_MASV, maSV, nienKhoa, hocKy);
+                MessageBox.Show("Cập nhật học phí thành công", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -202,12 +203,12 @@ namespace QLDSV_TC.forms
                 if (!Int32.TryParse(e.Value as String, out tien))
                 {
                     e.Valid = false;
-                    e.ErrorText = "So Tien Dong phải là số";
+                    e.ErrorText = "Số tiền đóng phải là số";
                 }
-                if (checkCanDong < int.Parse(e.Value as String))
+                if (checkCanDong < int.Parse(e.Value as String)) //System.FormatException: 'Input string was not in a correct format.'
                 {
                     e.Valid = false;
-                    e.ErrorText = "Số Tiền đóng vượt quá quy định!";
+                    e.ErrorText = "Số Tiền đóng vượt quá quy định. Bạn đã đóng dư "+ (int.Parse(e.Value as String) - checkCanDong);
                 }
             }
         }

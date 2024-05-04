@@ -60,7 +60,24 @@ namespace QLDSV_TC.forms
             
         }
 
+        //public void enalbleButtonsOnClickRibbonPageQuanLy(string btnName, BarButtonItem btn)
+        //{
+        //    // Sử dụng List để lưu tên các button cần kiểm tra
+        //    List<string> nameBtns = new List<string>
+        //    {
+        //        "barButtonLopHoc",
+        //        "barButtonMonHoc",
+        //        "barButtonLopTinChi",
+        //        "barButtonNhapDiem"
+        //    };
 
+        //    // Kiểm tra xem tên button được nhấn có nằm trong danh sách hay không
+        //    if (nameBtns.Contains(btnName))
+        //    {
+        //        // Vô hiệu hóa button nếu tên của nó khớp với một trong các tên trong danh sách
+        //        btn.Enabled = false;
+        //    }
+        //}
 
         public void enalbleButtonsAfterLogin()
         {
@@ -185,6 +202,10 @@ namespace QLDSV_TC.forms
 
         private void barButtonLopTinChi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //barButtonLopTinChi.Enabled = false;
+            //barButtonLopHoc.Enabled = true;
+            //barButtonMonHoc.Enabled = true;
+            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmLopTinChi));
             if (frm != null) frm.Activate();
             else
@@ -197,6 +218,10 @@ namespace QLDSV_TC.forms
 
         private void barButtonMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //barButtonLopTinChi.Enabled = true;
+            //barButtonLopHoc.Enabled = true;
+            //barButtonMonHoc.Enabled = false;
+            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmMonHoc));
             if (frm != null) frm.Activate();
             else
@@ -281,6 +306,10 @@ namespace QLDSV_TC.forms
 
         private void barButtonNhapDiem_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //barButtonLopTinChi.Enabled = true;
+            //barButtonLopHoc.Enabled = true;
+            //barButtonMonHoc.Enabled = true;
+            //barButtonNhapDiem.Enabled = false;
             Form frm = CheckExists(typeof(forms.frmNhapDiem));
             if (frm != null) frm.Activate();
             else
@@ -317,6 +346,10 @@ namespace QLDSV_TC.forms
 
         private void barButtonLopHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //barButtonLopTinChi.Enabled = true;
+            //barButtonLopHoc.Enabled = false;
+            //barButtonMonHoc.Enabled = true;
+            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmLopHoc));
             if (frm != null) frm.Activate();
             else

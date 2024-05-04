@@ -380,10 +380,42 @@ namespace QLDSV_TC.forms
 
         private void cmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show("Nhấn Xác Nhận để Filter!");
             btnFilter.Enabled = true;
-            //dataGridView1.Rows.Clear();
-            // gv_DSLTC_SVDADANGKY.Clear
+
+
+            //// Lấy văn bản của mục được chọn trong ComboBox
+            //string selectedText = cmbNienKhoa.SelectedItem.ToString();
+
+            //// Trích xuất phần đầu của chuỗi để lấy năm bắt đầu (ví dụ: "2021" từ chuỗi "2021-2022")
+            //string startYearString = selectedText.Split('-')[0];
+
+            //// Chuyển đổi năm bắt đầu sang kiểu số nguyên (int)
+            //int startYear;
+            //if (int.TryParse(startYearString, out startYear))
+            //{
+            //    // Lấy năm hiện tại
+            //    int currentYear = DateTime.Now.Year;
+
+            //    // So sánh năm bắt đầu với năm hiện tại
+            //    if (startYear == currentYear)
+            //    {    
+            //        // Bật nút Filter
+            //        btnFilter.Enabled = true;
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show(
+            //            "Ngoài thời gian đăng ký lớp tín chỉ.", 
+            //            "Thông Báo", 
+            //            MessageBoxButtons.OK, 
+            //            MessageBoxIcon.Information);
+            //    }
+            //}
+            //else
+            //{
+            //    // Xử lý lỗi nếu không chuyển đổi được chuỗi năm bắt đầu sang kiểu số nguyên
+            //    MessageBox.Show("Lỗi: Không thể chuyển đổi năm bắt đầu của năm học thành số nguyên.");
+            //}
         }
 
 
@@ -446,7 +478,11 @@ namespace QLDSV_TC.forms
             {
                 if (!check)
                 {
-                    MessageBox.Show("Môn Học Đăng Ký của bạn có sự thay đổi, Vui Lòng ấn Xác nhận!");
+                    MessageBox.Show(
+                        "Môn Học Đăng Ký của bạn có sự thay đổi, Vui Lòng ấn Xác nhận!", 
+                        "Thông Báo", 
+                        MessageBoxButtons.OK, 
+                        MessageBoxIcon.Warning);
                     return;
                 }
                 this.Close();

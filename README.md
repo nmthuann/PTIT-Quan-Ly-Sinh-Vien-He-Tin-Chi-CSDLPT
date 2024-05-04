@@ -137,3 +137,63 @@ Dự án được cấp phép theo Giấy phép MIT. Xem [LICENSE](LICENSE) đ�
 ## Liên hệ
 
 Nếu có câu hỏi hoặc phản hồi, vui lòng liên hệ qua email: [thuanminh.2001286@gmail.com](mailto:thuanminh.2001286@gmail.com).
+
+
+<details>
+<summary>Hướng Dẫn Sử Dụng Form</summary>
+
+## Giới thiệu
+
+Form [Tên Form] là một phần của ứng dụng [Tên Ứng Dụng], cho phép người dùng thực hiện [mô tả chức năng chính của form]. Dưới đây là hướng dẫn chi tiết về cách sử dụng form.
+
+## Các Thành Phần Chính Trên Form
+
+Dưới đây là các thành phần chính mà bạn sẽ thấy trên form:
+
+- **[Tên TextBox]**: Ô nhập liệu cho [mô tả mục đích của ô nhập liệu này].
+- **[Tên Button]**: Nút thực hiện [mô tả chức năng của nút].
+- **[Tên Label]**: Nhãn hiển thị [mô tả thông tin được hiển thị].
+- **[Tên ComboBox]**: Hộp chọn cho phép chọn [mô tả danh sách lựa chọn].
+
+![Hình ảnh minh họa các thành phần trên form](đường_dẫn_đến_ảnh)
+
+## Cách Sử Dụng Form
+
+### 1. [Chức Năng Đầu Tiên]
+
+- Mô tả chức năng: [Mô tả chức năng và mục đích của chức năng này].
+- Các bước thực hiện:
+    1. [Mô tả bước đầu tiên cần thực hiện].
+    2. [Mô tả bước thứ hai cần thực hiện].
+    3. [Mô tả các bước tiếp theo].
+- Lưu ý: [Thêm bất kỳ lưu ý nào cần thiết khi sử dụng chức năng này].
+
+![Hình ảnh minh họa chức năng đầu tiên](đường_dẫn_đến_ảnh)
+
+### 2. [Chức Năng Thứ Hai]
+
+- Mô tả chức năng: [Mô tả chức năng và mục đích của chức năng này].
+- Các bước thực hiện:
+    1. [Mô tả bước đầu tiên cần thực hiện].
+    2. [Mô tả bước thứ hai cần thực hiện].
+    3. [Mô tả các bước tiếp theo].
+- Lưu ý: [Thêm bất kỳ lưu ý nào cần thiết khi sử dụng chức năng này].
+
+![Hình ảnh minh họa chức năng thứ hai](đường_dẫn_đến_ảnh)
+
+## Xử Lý Lỗi
+
+Trong trường hợp gặp lỗi khi sử dụng form, bạn có thể tham khảo các thông báo lỗi sau đây để biết cách khắc phục:
+
+- [Mô tả lỗi đầu tiên và cách xử lý].
+- [Mô tả lỗi thứ hai và cách xử lý].
+- [Mô tả các lỗi khác và cách xử lý].
+
+## Liên Hệ Hỗ Trợ
+
+Nếu bạn gặp bất kỳ vấn đề nào khi sử dụng form hoặc cần hỗ trợ thêm, vui lòng liên hệ với [thông tin liên hệ] để được hỗ trợ.
+
+## Kết Luận
+
+Hãy chắc chắn đọc kỹ hướng dẫn trên để hiểu rõ hơn về cách sử dụng form. Chúc bạn thành công khi sử dụng ứng dụng này!
+</details>

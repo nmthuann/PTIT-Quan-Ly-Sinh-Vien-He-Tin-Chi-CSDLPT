@@ -151,7 +151,7 @@ Data Set này tham gia vào mọi form chính của chương trình gồm:
 - Lớp Tín Chỉ
 - Sinh viên
 - ...
-  ![image](https://user-images.githubusercontent.com/58034430/133271162-3521acd5-7851-405d-a404-f29569b3d2bb.png)
+  ![image](https://github.com/nmthuann/QLDSV_TC/blob/master/docs/images/Dataset.png?raw=true)
 
 ## [**Tính năng**](#tinh-nang)
 

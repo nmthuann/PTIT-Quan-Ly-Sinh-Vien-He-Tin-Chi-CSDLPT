@@ -139,6 +139,121 @@ Dự án được cấp phép theo Giấy phép MIT. Xem [LICENSE](LICENSE) đ�
 Nếu có câu hỏi hoặc phản hồi, vui lòng liên hệ qua email: [thuanminh.2001286@gmail.com](mailto:thuanminh.2001286@gmail.com).
 
 
+## Bổ sung thông tin
+
+Thuận bổ sung thêm các thông tin cần thiết từ anh Phong (Nguyễn Thành Phong, lớp D18CQCN03-N, khóa 2018-2023), có video về môn học mọi người có ghé xem nhớ thả cho a Phong một like nhé.
+
+### [**Publication and Subcription**](#publication-and-subcription)
+  Với đề tài này chúng ta cần 3 server phân mảnh đề làm việc. Các bạn coi hình ảnh bên dưới để dễ hình dung
+ 
+  Đối với phân mảnh 1 và 2: các bạn chọn hết tất cả các bảng trừ bảng sysdiagram(dbo)
+ 
+ ![image](https://user-images.githubusercontent.com/58034430/133271162-3521acd5-7851-405d-a404-f29569b3d2bb.png)
+
+  Đối với phân mảnh 3: các bạn chọn các cột như hình rồi nhấn next liên tục cho tới khi kết thúc tác vụ thì thôi. Do là phân mảnh dùng cho tra cứu nên cần nhân bản để đảm bảo toàn vẹn dữ liệu
+ 
+ ![Ssms_r9bSDYDM3D](https://user-images.githubusercontent.com/58034430/133271440-2aa8c8ce-9098-4c4b-88e3-04519e7f6d9c.png)
+
+ 
+### [**Link Server**](#link-server)
+   Theo đề tài này chúng ta có 3 server phân mảnh:
+  
+   Server 1 và server 2 chứa thông tin của chi nhánh 1 và chi nhánh 2. 
+
+   Server 3 chứa toàn bộ thông tin của kho & nhân viên. 
+
+   Do trong đề tài này chúng ta có hẳn một server phục vụ cho việc tra cứu. Do đó trong quá trình viết [**Stored Procedure**](#stored-procedure), chúng ta bắt buộc phải viết sao cho có sự tham gia của phân mảnh 3 trong một số Stored Procedure. Ví dụ như tìm kiếm xem mã nhân viên đã tồn tại hay chưa thì dùng server 3 thay vì quay về server chủ.
+ 
+  Chúng ta sẽ có 3 LINK cho mỗi server phân mảnh 1 & 2 như sau
+ 
+    LINK0 đi từ phân mảnh này tới phân mảnh 3
+    LINK1 đi từ phân mảnh này tới phân mảnh còn lại
+	  LINK2 đi từ phân mảnh này tới phân mảnh gốc
+  
+ >Note: nếu bài không có phân mảnh 3 thì chúng ta quay trở về server gốc để tìm.
+
+ >Note: Server 3 không cần LINK Server vì được sử dụng để tra cứu thông tin & không tham gia vào quá trình thay đổi dữ liệu 
+### [**Authorization**](#authorization)
+   Đối với phân quyền, chúng ta sẽ cùng nhau phân tích đề bài:
+   > Phân quyền: Chương trình có 3 nhóm : Công ty , ChiNhanh, User
+   > -  Nếu login thuộc nhóm CongTy thì login đó có thể đăng nhập vào bất kỳ chi nhánh nào để xem số liệu bằng cách chọn tên chi nhánh, và chỉ có các chức năng sau:
+
+   >1.Chỉ có thể xem dữ liệu của phân mảnh tương ứng.
+ 
+   >2.Xem được các báo cáo.
+ 
+   >3.Tạo login thuộc nhóm Congty
+ 
+ 
+   >-  Nếu login thuộc nhóm ChiNhanh thì chỉ cho phép toàn quyền làm việc trên chi nhánh đó , không được log vào chi nhánh khác ; Tạo login thuộc nhóm ChiNhanh, User .
+   >- Nếu login thuộc nhóm User thì chỉ được quyền cập nhật dữ liệu, không được tạo tài khoản mới cho hệ thống.
+Chương trình cho phép ta tạo các login, password và cho login này làm việc với quyền hạn gì. Căn cứ vào quyền này khi user login vào hệ thống, ta sẽ biết người đó được quyền làm việc với mảnh phân tán nào hay trên tất cả các phân mảnh. 
+
+  Công Ty có thể chuyển qua lại giữa các chi nhánh để xem dữ liệu nhưng không thể thêm - xóa - sửa, có thể tạo tài khoản với cùng vai trò Công ty.
+ 
+  Chi nhánh không thể chuyển qua lại giữa các chi nhánh để xem dữ liệu nhưng có thể thêm - xóa - sửa thoải mái với phân mảnh đang đăng nhập, có thể tạo tài khoản với vai trò Chi nhánh hoặc User.
+ 
+  User cũng không thể chuyển qua lại giữa các chi nhánh để xem dữ liệu nhưng có thể thêm - xóa - sửa thoải mái với phân mảnh đang đăng nhập, không thể tạo tài khoản.
+ 
+# [**Stored Procedure**](#stored-procedure)
+   Ở đây, mình sẽ nói sơ lược về một số điều cần lưu ý khi viết Stored Procedure.
+ 
+   Đầu tiên, theo kinh nghiệm của chính mình & do thầy Thư truyền đạt, chúng ta nên viết Stored Procedure ngay trên một phân mảnh để xem nó có hoạt động đúng không ? Nếu Stored Procedure hoạt động đúng thì mới quay về server gốc rồi lưu nó lại. Cuối cùng mới đẩy về các server phân mảnh.
+   
+   Các bước để đẩy một Stored Procedure về phân mảnh
+ 
+    Bước 1 : Vào replication chọn phân mảnh muốn đẩy xuống
+ 
+    Bước 2 : Nhấn chuột phải chọn Properties
+ 
+    Bước 3 : Chọn Articles -> bỏ dấu tích "show only checked articles of the list"
+ 
+    Bước 4 : Đánh dấu các stored procedure muốn sử dụng tại phân mảnh đó
+ 
+    Bước 5 : Nhấn OK để kết thúc.
+ 
+    Bước 6 : Chuột phải lại vào phân mảnh chọn "view snapshot agent status" -> start để nó đẩy xuống phân mảnh
+ 
+   Khi các bạn tải đồ án này về máy, hãy tìm tới thư mục Stored Procedure, thư mục này chứa tất cả các Stored Procedue kèm chú thích cụ thể nhé.
+ 
+   Một đơn vị phân tán có thể truyền xuống các server phân mảnh chỉ có thể là table - stored procedure - view - user defined function
+ 
+   > Note: Đảm bảo dịch vụ SQL Server Agent phải đang hoạt động thì quá trình mới thành công
+### [**Data Set**](#data-set)
+  Phần này mình sẽ nói cho các bạn biết về chức năng của các Data Set mình sử dụng và chúng tham gia vào form nào
+  dataSet là cái data set chứa nội dung của toàn bộ cơ sở dữ liệu. Data Set này tham gia vào mọi form chính của chương trình gồm: nhân viên, kho, vật tư, đặt hàng. Nói chung thì ban đầu mình tính là có nhiều data set cơ mà cuối cùng thì dùng đúng 1 cái này thôi. Không dùng tạo thêm cái nào. Tạo cái này thì các bạn làm theo video thầy Thư nhưng bước chọn bảng thì chọn hết các bảng luôn nhé.
+ 
+### [**How To Build and How To Read**](#how-to-build-and-how-to-read)
+  Ui đọc đến đây là quá trời thứ phải học rồi. Vậy học thế nào cho hiệu quả đây nhỉ ??? Dễ lắm mình những thứ mình liệt kê bên dưới là theo thứ tự mình đã học và làm để tự xây dựng được đồ án này. Nói cách khác phần này hướng dẫn các bạn làm sao để tự mình solo môn này luôn ý, hehe 😎😎😎
+ 
+  1. Hiểu khái niệm phân mảnh ngang là gì ? phân mảnh dọc là gì ? phân mảnh hỗn hợp là gì ?🔀
+ 
+  2. Phân mảnh là cái chi chi ? Làm sao để phân tán cho một cơ sở dữ liệu ? 📅
+ 
+  3. Phân quyền là cái quần què gì vậy ? ( Sao lắm phân quá zợ 💩💩💩) ? Quyền công ty làm được gì, rùi còn chi nhánh và user thì làm được những gì nhỉ ? Cái này thì phần [**Authorization**](#authorization) mình trả lời rất rõ rồi nè.
+ 
+ 4. Tạo stored procedure như nào ? Làm sao lấy được thông tin từ đăng nhập ? 😫 Phần này thì trong thư mục Stored Procedure mình có đủ rùi nè
+ 
+ 5. Làm sao để tạo form đăng nhập với DevExpress nhỉ ? 🔐
+ 
+ 6. Form chính và Form Nhân viên được tạo và kết nối với nhau ra sao ? 🤝
+ 
+ 7. Tạo mấy cái biểu mẫu báo cáo như nào ý nhỉ ?📈
+ 
+ Mình liệt kê ra các câu hỏi này để các bạn dễ hình dung từng bước để xây dựng đồ án này. Khi bạn tự trả lời được từng câu hỏi này thì các bạn sẽ dần dần có cái nhìn bao quát cái "của nợ" này. NHƯNG, một chữ nhưng TO ĐÙNG, vẫn còn một vấn đề nữa.....
+ 
+ UI CHA !! SAO NHIỀU CÂU HỎI QUÁ ZỢ 😵😵😵. VẬY HỌC CÁI NÀY Ở ĐÂU ĐỂ MÀ LÀM ?? Đừng lo, đừng lo. Bạn tới đúng nơi rồi đó. Mình rất hiểu tâm lý của các bạn khi gặp lại thầy Thư ( "lại" nếu như bạn đã học cấu trúc dữ liệu & giải thuật ở năm 2 của thầy ). Chắc nhiều bạn ám ảnh thầy lắm - y như mình vậy 😋😋.
+ 
+ Và mình đã chuẩn bị cho các bạn một danh sách đầy đủ các video cho môn cơ sở phân tán của thầy Lưu Nguyễn Kì Thư tại [**đây**](https://www.youtube.com/playlist?list=PLkPVg51dQOyYQc-jkT9BOEooS2IsaNWyH). 
+ 
+ Điều quan trọng là những video này đều do thầy Thư trực tiếp giảng dạy và có làm hướng dẫn chi tiết nên chỉ cần các bạn chăm chỉ học theo đầy đủ thì **100%** một mình cân hết đồ án luôn 😎😎😎
+ 
+ Ngoài ra, trình tự các video là theo đúng quá trình thầy Thư dạy nên các bạn hãy học theo đúng trình tự này. Đừng nhảy cóc vội vàng nhé vì `dục tốc bất đạt` mà.
+ 
+ >Note: xem xong thì để cho mình một like 👍 video nha ! 
+
+
+
 <details>
 <summary>Hướng Dẫn Sử Dụng Form</summary>
 

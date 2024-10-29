@@ -109,6 +109,7 @@ namespace QLDSV_TC.forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        /// 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             /**
@@ -152,22 +153,53 @@ namespace QLDSV_TC.forms
             {
                
                 Program.mlogin = Program.LoginSinhVien; // LoginSinhVIen = SV
-                Program.password = Program.PasswordSinhVien;
+                Program.password = Program.PasswordSinhVien; // 123456
                 
                 if(Program.KetNoi() == 1) // the connection is successfull!
                 {
-                    Program.mMaDangNhap = txtUsername.Text.Trim();
-                    Program.password = txtPassword.Text.Trim();
+                    Program.mMaDangNhap = txtUsername.Text.Trim(); // ma SV
+                    Program.password = txtPassword.Text.Trim(); // pass SV
 
                     // Program.conn.Open();
                     string query =
                         "SELECT * " +
                         "FROM SINHVIEN WHERE " +
                         "MaSV = '" + Program.mMaDangNhap + "' AND PASSWORD = '" + Program.password + "'";
+
                     SqlDataReader check = Program.ExecSqlDataReader(query);
+
+                    // để chi -> có bảng -> cần thông tin SV -> đúng: có 1 hàng ? sai: deo co hàng
+                    
+                    if (check.HasRows == false)
+                    {
+                        // message
+                    }
+                    else
+                    {
+                        // Mã SV -> txtTaiKhoan -> Program.MaDangNhap
+
+                        // site phân mảnh -> mục đích
+                        
+                        // mượn site chủ -> trả program.close
+
+                        // password, login ->  mình đang site 1
+
+                        // MÃ ĐĂNG NHẬP-> CÓ , Họ TÊn, VAI TRÒ-> SV
+
+                        // LAY_THONG_TIN_DANG_NHAP -> lấy ra họ tên
+
+                    }
+
+
+
+
+
+
+
                     if (!check.HasRows)
                     {
                         Program.conn.Close();
+
                         MessageBox.Show(
                             "Sinh Viên đăng nhập thất bại", "", MessageBoxButtons.OK);
                         return;
@@ -183,14 +215,17 @@ namespace QLDSV_TC.forms
                     }
                    
                 }
-            }
+            } 
+
             // login - GV
             else
             {
                 Program.mlogin = txtUsername.Text.Trim();
                 Program.password = txtPassword.Text.Trim();
+
                 Program.mloginDN = Program.mlogin;
                 Program.passwordDN = Program.password;
+
                 if (Program.KetNoi() == 0) return;
                 String statement =
                 "EXEC SP_THONGTINDANGNHAP'" +
@@ -199,7 +234,7 @@ namespace QLDSV_TC.forms
             }
 
 
-            //  B3:
+            //  B3: 
             if (Program.myReader == null) return;
             Program.myReader.Read();
             try

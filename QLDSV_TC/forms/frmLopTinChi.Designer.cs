@@ -241,9 +241,9 @@ namespace QLDSV_TC.forms
             this.barThanhNutLenh.DockCol = 0;
             this.barThanhNutLenh.DockRow = 0;
             this.barThanhNutLenh.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.barThanhNutLenh.FloatLocation = new System.Drawing.Point(126, 407);
+            this.barThanhNutLenh.FloatLocation = new System.Drawing.Point(130, 407);
             this.barThanhNutLenh.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnThem, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnXoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnUndo),
@@ -258,11 +258,15 @@ namespace QLDSV_TC.forms
             // btnThem
             // 
             this.btnThem.Caption = "Thêm";
+            this.btnThem.ContentHorizontalAlignment = DevExpress.XtraBars.BarItemContentAlignment.Stretch;
             this.btnThem.Enabled = false;
             this.btnThem.Id = 11;
             this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
+            this.btnThem.ItemAppearance.Hovered.Options.UseTextOptions = true;
+            this.btnThem.ItemAppearance.Hovered.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
             this.btnThem.Name = "btnThem";
             this.btnThem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnThem.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
             // 
             // btnXoa
@@ -273,6 +277,7 @@ namespace QLDSV_TC.forms
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnSua
@@ -281,8 +286,10 @@ namespace QLDSV_TC.forms
             this.btnSua.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
             this.btnSua.Enabled = false;
             this.btnSua.Id = 2;
-            this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
+            this.btnSua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.Image")));
+            this.btnSua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSua.ImageOptions.LargeImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnUndo
@@ -303,6 +310,7 @@ namespace QLDSV_TC.forms
             this.btnReload.Id = 3;
             this.btnReload.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnReload.ImageOptions.SvgImage")));
             this.btnReload.Name = "btnReload";
+            this.btnReload.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnReload.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnReload_ItemClick);
             // 
             // btnGhi
@@ -313,6 +321,7 @@ namespace QLDSV_TC.forms
             this.btnGhi.Id = 4;
             this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnThoat
@@ -322,6 +331,7 @@ namespace QLDSV_TC.forms
             this.btnThoat.Id = 5;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
@@ -1021,13 +1031,12 @@ namespace QLDSV_TC.forms
         private System.Windows.Forms.CheckBox cbHuyLop;
         private DevExpress.XtraEditors.ComboBoxEdit cmbeNienKhoa;
         private DevExpress.XtraBars.BarButtonItem btnThem;
-        //private QLDSV_TC_DataSet_LTCTableAdapters.V_DS_MONHOCTableAdapter v_DS_MONHOCTableAdapter;
-        internal System.Windows.Forms.ComboBox cmbTenMonHoc;
         private System.Windows.Forms.BindingSource bdsDangKy;
         private QLDSV_TC_DataSetTableAdapters.DANGKYTableAdapter dANGKYTableAdapter;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraEditors.TextEdit mAMHTextEdit;
         private DevExpress.XtraEditors.TextEdit mAGVTextEdit;
         internal System.Windows.Forms.ComboBox cmbTenGV;
+        private System.Windows.Forms.ComboBox cmbTenMonHoc;
     }
 }

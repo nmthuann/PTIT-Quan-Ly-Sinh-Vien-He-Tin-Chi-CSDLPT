@@ -11,11 +11,6 @@ namespace QLDSV_TC
 {
     static class Program
     {
-        /**
-         * 
-         * 
-         *
-         */
 
         // public static Cấu hình hệ thống
         // Thay đổi đường dẫn datasource của tôi thành đg dẫn của bạn 
@@ -48,7 +43,7 @@ namespace QLDSV_TC
         public static String PasswordSinhVien = "123456";
 
 
-        //  public static Thông tin Login
+        //  public static Thông tin Login -> 
         public static String mMaDangNhap = "";
         public static String mHoten = "";
         public static String mGroup = ""; //  PGV || KHOA || PKT || SV
@@ -202,10 +197,10 @@ namespace QLDSV_TC
 
 
 
-            /// <summary>
-            /// The main entry point for the application.
-            /// </summary>
-            [STAThread]
+        /// <summary>
+        /// The main entry point for the application.
+        /// </summary>
+        [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();

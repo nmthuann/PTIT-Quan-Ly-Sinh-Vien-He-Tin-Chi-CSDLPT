@@ -40,6 +40,8 @@ namespace QLDSV_TC.forms
             this.checkBoxHienPassword = new System.Windows.Forms.CheckBox();
             this.cbVaiTro = new System.Windows.Forms.CheckBox();
             this.lbVaiTro = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,9 +103,9 @@ namespace QLDSV_TC.forms
             this.btnLogin.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(220, 248);
+            this.btnLogin.Location = new System.Drawing.Point(122, 248);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(142, 48);
+            this.btnLogin.Size = new System.Drawing.Size(240, 48);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -115,7 +117,7 @@ namespace QLDSV_TC.forms
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.Location = new System.Drawing.Point(393, 248);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(133, 48);
+            this.btnExit.Size = new System.Drawing.Size(271, 48);
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -153,11 +155,21 @@ namespace QLDSV_TC.forms
             this.lbVaiTro.TabIndex = 10;
             this.lbVaiTro.Text = "Vai trò";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::QLDSV_TC.Properties.Resources.icons8_private_account_male_100;
+            this.pictureBox1.Location = new System.Drawing.Point(564, 63);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 106);
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 347);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbVaiTro);
             this.Controls.Add(this.cbVaiTro);
             this.Controls.Add(this.checkBoxHienPassword);
@@ -173,6 +185,7 @@ namespace QLDSV_TC.forms
             this.Text = "Đăng nhập";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +204,6 @@ namespace QLDSV_TC.forms
         private System.Windows.Forms.CheckBox checkBoxHienPassword;
         private System.Windows.Forms.CheckBox cbVaiTro;
         private System.Windows.Forms.Label lbVaiTro;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

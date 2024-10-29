@@ -23,7 +23,9 @@ namespace QLDSV_TC.forms
 
         private void frmLopTinChi_Load(object sender, EventArgs e)
         {
-
+            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.MONHOC' table. You can move, or remove it, as needed.
+    //        this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
+            // rang buoc check false
             qLDSV_TCDataSet.EnforceConstraints = false;
 
 

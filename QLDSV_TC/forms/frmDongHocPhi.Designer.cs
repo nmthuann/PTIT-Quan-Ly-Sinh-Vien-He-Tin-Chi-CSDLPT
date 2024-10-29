@@ -669,9 +669,9 @@ namespace QLDSV_TC.forms
             this.lbMaSV.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMaSV.Location = new System.Drawing.Point(262, 101);
             this.lbMaSV.Name = "lbMaSV";
-            this.lbMaSV.Size = new System.Drawing.Size(120, 21);
+            this.lbMaSV.Size = new System.Drawing.Size(176, 21);
             this.lbMaSV.TabIndex = 29;
-            this.lbMaSV.Text = "N19DCCN202";
+            this.lbMaSV.Text = "N19DCCN202 (ví dụ)";
             // 
             // lb1
             // 

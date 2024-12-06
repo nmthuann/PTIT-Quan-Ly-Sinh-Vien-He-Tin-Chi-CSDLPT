@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDSV_TC.forms
@@ -24,15 +18,9 @@ namespace QLDSV_TC.forms
         private void frmLopTinChi_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'qLDSV_TCDataSet.MONHOC' table. You can move, or remove it, as needed.
-    //        this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
+            //        this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
             // rang buoc check false
             qLDSV_TCDataSet.EnforceConstraints = false;
-
-
-            //this.dS_GIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.dS_GIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.DS_GIANGVIEN);
-            //this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            //this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
 
             this.LTCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.LTCTableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
@@ -81,12 +69,9 @@ namespace QLDSV_TC.forms
             {
                 btnReload.Enabled = true;
                 btnThoat.Enabled = true;
-                // panelControlThongTinLTC.Enabled = false;
                 btnThem.Enabled = btnXoa.Enabled = btnSua.Enabled = btnGhi.Enabled = false;
             }
         }
-
-
 
         private void lOPTINCHIBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -111,16 +96,6 @@ namespace QLDSV_TC.forms
             maKhoa = ((DataRowView)bdsLTC[0])["MAKHOA"].ToString(); // có thể lỗi???
             txtMaKhoa.Text = maKhoa.Trim();
             cbHuyLop.Checked = false;
-            // cmbTenMonHoc.SelectedIndex = -1;
-            // cmbTenGV.SelectedIndex = 0;
-            // cmbTenMonHoc.SelectedIndex = 0;
-            // this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-
-
-            // Liên kết dữ liệu vào ComboBox
-            //cmbTenMonHoc.DataSource = mONHOCBindingSource;
-            //cmbTenMonHoc.DisplayMember = "TENMH";
-            //cmbTenMonHoc.ValueMember = "MAMH";
 
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnReload.Enabled = false;
             btnGhi.Enabled = btnUndo.Enabled = true;
@@ -411,13 +386,5 @@ namespace QLDSV_TC.forms
             if (cmbTenMonHoc.SelectedValue != null)
                 mAMHTextEdit.Text = cmbTenMonHoc.SelectedValue.ToString();
         }
-
-        //private void mAGVTextEdit_EditValueChanged(object sender, EventArgs e)
-        //{
-        //    if ( mAGVTextEdit.Text != null)
-        //    {
-        //        cmbTenGV.SelectedValue = cmbTenGV.Text;
-        //    }
-        //}
     }
 }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDSV_TC.forms
@@ -189,13 +182,6 @@ namespace QLDSV_TC.forms
                         // LAY_THONG_TIN_DANG_NHAP -> lấy ra họ tên
 
                     }
-
-
-
-
-
-
-
                     if (!check.HasRows)
                     {
                         Program.conn.Close();
@@ -293,15 +279,5 @@ namespace QLDSV_TC.forms
                 lbTaiKhoan.Text = "Tài khoản";
             }
         }
-
-
-        //public void loadAgain()
-        //{
-        //    cmbPhongBan.SelectedItem = Program.mGroup;
-        //    Program.serverName = cmbPhongBan.SelectedValue.ToString();
-        //    txtUsername.Text = null;
-        //    txtPassword.Text = null;
-        //    txtUsername.Focus();
-        //}
     }
 }

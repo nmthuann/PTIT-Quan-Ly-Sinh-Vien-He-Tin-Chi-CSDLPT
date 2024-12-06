@@ -1,19 +1,7 @@
-﻿using DevExpress.XtraEditors.Repository;
-using DevExpress.XtraGrid.Views.Grid;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraGrid.Views.BandedGrid;
-using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid.ViewInfo;
-using DevExpress.XtraEditors;
-using System.Windows.Forms.VisualStyles;
 using System.Data.SqlClient;
 
 namespace QLDSV_TC.forms
@@ -151,14 +139,6 @@ namespace QLDSV_TC.forms
                     checkBoxCell.Value = isMaLTCPresent; // true hoặc false
                 }
             }
-
-
-            // txtMaLTC.Text = row.Cells[0].Value.ToString();
-            //txtMaMH.Text = row.Cells[1].Value.ToString();
-            //txtTenMH.Text = row.Cells[2].Value.ToString();
-            //txtHoTenGV.Text = row.Cells[4].Value.ToString();
-
-
         }
 
 
@@ -176,10 +156,8 @@ namespace QLDSV_TC.forms
         private void btnFilter_Click(object sender, EventArgs e)
         {
             /**
-             * chưa fix được Click vào Filter nhiều lần
+             * TODO: chưa fix được Click vào Filter nhiều lần
              */
-            
-
 
             if (cmbNienKhoa.Text == "")
             {
@@ -202,8 +180,6 @@ namespace QLDSV_TC.forms
             //}
 
             //  System.ArgumentException: 'Cannot clear this list.'
-
-
 
             try
             {
@@ -371,10 +347,7 @@ namespace QLDSV_TC.forms
             }
         }
 
-        private void txtMaLTC_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void txtMaLTC_EditValueChanged(object sender, EventArgs e){ }
 
 
 
@@ -499,175 +472,3 @@ namespace QLDSV_TC.forms
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-//private void btnXacNhan_Click(object sender, EventArgs e)
-//{
-//    if (MessageBox.Show(
-//        "Bạn có chắc chắn muốn đăng kí lớp học này ?", 
-//        "", MessageBoxButtons.OKCancel) == DialogResult.OK)
-//    {
-
-//        /**
-//         *  A. Nếu bds khác null
-//         *  Có 2 trường hợp:
-//         *      1. MaLTC ban đầu chưa có trong CSDL, 
-//         *          nhưng hiện tại có -> INSERT
-//         *      2. MaLTC ban đầu có trong CSDL, 
-//         *          nhưng hiện tại không có -> UPDATE
-//         *  B. Nếu bds null
-//         *      1. UPDATE
-//         */
-
-//        if (bdsDSLTC_SVDADANGKY_temp != null)
-//        {
-//            //  các MaLTC có trong bds
-//            foreach (DataRowView rowView in bdsDSLTC_SVDADANGKY_temp)
-//            {
-//                // lấy từng mã LTC hiện tại trong bds
-//                int maLTC = Convert.ToInt32(rowView["MALTC"]);
-//                bool isMaLTCPresent = maLTCList.Contains(maLTC); // mã LTC nằm trong CSDL
-//                if (!isMaLTCPresent) // tức là nó bị thay đổi -> INSERT
-//                {
-//                    string cmd =
-//                    "EXEC [dbo].[SP_DANGKY_LTC] '" + maLTC + "' , '" + maSV + "' ";
-//                    if (Program.ExecSqlNonQuery(cmd) == 0)
-//                    {
-//                        continue; // = 0 is success
-//                    }
-//                    else
-//                    {
-//                        MessageBox.Show("Đăng Ký thất bại");
-//                    }
-//                }
-//            }
-
-
-//            //  MaLTC ban đầu trong CSDL có mà hiện tại không có
-//            foreach (int maLTC in maLTCList)
-//            {
-//                bool existsInBDS = false;
-
-//                foreach (DataRowView rowView in bdsDSLTC_SVDADANGKY_temp)
-//                {
-//                    int currentMaLTC = Convert.ToInt32(rowView["MALTC"]);
-//                    if (maLTC == currentMaLTC)
-//                    {
-//                        existsInBDS = true;
-//                        // Thực hiện các thao tác khác nếu cần
-//                        break; // Không cần kiểm tra tiếp nếu đã tìm thấy
-//                    }
-//                }
-
-//                if (existsInBDS)
-//                {
-//                    // Xử lý khi maLTC có tồn tại trong bdsDSLTC_SVDADANGKY_temp
-//                }
-//                else
-//                {
-//                    // Xử lý khi maLTC không tồn tại trong bdsDSLTC_SVDADANGKY_temp
-//                }
-//            }
-
-//            MessageBox.Show("Xác nhận Đăng Ký thành công!");
-//            LoadDuLieuVaoDataGridView();
-//        }
-//        else
-//        {
-//            // Xử lý khi biến bdsDSLTC_SVDADANGKY_temp là null
-//            if (maLTCList == null) return;
-//            for (int i = 0; i < maLTCList.Count; i++)
-//            {
-//                int maLTC = maLTCList[i];
-//                string cmd = 
-//                    "EXEC [dbo].[SP_DANGKY_LTC] '" + maLTC + "' , '" + maSV + "' ";
-//                if (Program.ExecSqlNonQuery(cmd) == 0)
-//                {
-//                    MessageBox.Show("Hủy thành công!");
-//                    LoadDuLieuVaoDataGridView();
-//                }
-//                else
-//                {
-//                    MessageBox.Show("Hủy thất bại");
-//                }
-//            }
-//        }
-//    }
-//}
-
-//private void btnXacNhan_Click(object sender, EventArgs e)
-//{
-//    if (MessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
-//    {
-//        if (bdsDSLTC_SVDADANGKY_temp != null)
-//        {
-//            foreach (DataRowView rowView in bdsDSLTC_SVDADANGKY_temp)
-//            {
-//                int maLTC = Convert.ToInt32(rowView["MALTC"]);
-//                bool isMaLTCPresent = maLTCList.Contains(maLTC);
-
-//                if (!isMaLTCPresent)
-//                {
-//                    // Trường hợp 1: MaLTC ban đầu chưa có trong CSDL, nhưng hiện tại có -> INSERT
-//                    string cmd = "EXEC [dbo].[SP_DANGKY_LTC] '" + maLTC + "' , '" + maSV + "' ";
-//                    if (Program.ExecSqlNonQuery(cmd) != 0)
-//                    {
-//                        MessageBox.Show("Đăng Ký thất bại");
-//                    }
-//                }
-//                else
-//                {
-//                    // Trường hợp 2: MaLTC ban đầu có trong CSDL, nhưng hiện tại không có -> UPDATE
-//                    // Thực hiện logic UPDATE ở đây nếu cần
-//                    foreach (int maltc in maLTCList)
-//                    {
-//                        // UPDATE logic ở đây nếu cần
-//                        string cmd = "EXEC [dbo].[SP_DANGKY_LTC] '" + maltc + "' , '" + maSV + "' ";
-//                        if (Program.ExecSqlNonQuery(cmd) == 0)
-//                        {
-//                            MessageBox.Show("Hủy thành công!");
-//                            LoadDuLieuVaoDataGridView();
-//                        }
-//                        else
-//                        {
-//                            MessageBox.Show("Hủy thất bại");
-//                        }
-//                    }
-//                }
-//            }
-
-//            MessageBox.Show("Xác nhận Đăng Ký thành công!");
-//            LoadDuLieuVaoDataGridView();
-//        }
-//        else
-//        {
-//            // Trường hợp B: Nếu bdsDSLTC_SVDADANGKY_temp là null
-//            if (maLTCList != null)
-//            {
-//                foreach (int maLTC in maLTCList)
-//                {
-//                    // UPDATE logic ở đây nếu cần
-//                    string cmd = "EXEC [dbo].[SP_DANGKY_LTC] '" + maLTC + "' , '" + maSV + "' ";
-//                    if (Program.ExecSqlNonQuery(cmd) == 0)
-//                    {
-//                        MessageBox.Show("Hủy thành công!");
-//                        LoadDuLieuVaoDataGridView();
-//                    }
-//                    else
-//                    {
-//                        MessageBox.Show("Hủy thất bại");
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}

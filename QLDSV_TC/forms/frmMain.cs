@@ -1,13 +1,6 @@
 ﻿using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLDSV_TC.forms
@@ -202,10 +195,6 @@ namespace QLDSV_TC.forms
 
         private void barButtonLopTinChi_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //barButtonLopTinChi.Enabled = false;
-            //barButtonLopHoc.Enabled = true;
-            //barButtonMonHoc.Enabled = true;
-            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmLopTinChi));
             if (frm != null) frm.Activate();
             else
@@ -218,10 +207,6 @@ namespace QLDSV_TC.forms
 
         private void barButtonMonHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //barButtonLopTinChi.Enabled = true;
-            //barButtonLopHoc.Enabled = true;
-            //barButtonMonHoc.Enabled = false;
-            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmMonHoc));
             if (frm != null) frm.Activate();
             else
@@ -306,10 +291,6 @@ namespace QLDSV_TC.forms
 
         private void barButtonNhapDiem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //barButtonLopTinChi.Enabled = true;
-            //barButtonLopHoc.Enabled = true;
-            //barButtonMonHoc.Enabled = true;
-            //barButtonNhapDiem.Enabled = false;
             Form frm = CheckExists(typeof(forms.frmNhapDiem));
             if (frm != null) frm.Activate();
             else
@@ -346,10 +327,6 @@ namespace QLDSV_TC.forms
 
         private void barButtonLopHoc_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //barButtonLopTinChi.Enabled = true;
-            //barButtonLopHoc.Enabled = false;
-            //barButtonMonHoc.Enabled = true;
-            //barButtonNhapDiem.Enabled = true;
             Form frm = CheckExists(typeof(forms.frmLopHoc));
             if (frm != null) frm.Activate();
             else
@@ -372,7 +349,4 @@ namespace QLDSV_TC.forms
             }
         }
     }
-
-
-
 }

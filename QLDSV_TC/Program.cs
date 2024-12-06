@@ -1,10 +1,6 @@
-﻿using DevExpress.Skins;
-using DevExpress.UserSkins;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace QLDSV_TC
@@ -109,13 +105,11 @@ namespace QLDSV_TC
 
             catch (Exception e)
             {
-                //if (flag == true)
-                //{
-                    MessageBox.Show(
-                    "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
-                    e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+                MessageBox.Show(
+                "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
+                e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                    
-                //}
                 return 0;
                 //MessageBox.Show(
                 //    "Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " +
@@ -205,20 +199,9 @@ namespace QLDSV_TC
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //// Program.frmMain = new forms.frmMain();
-            //Program.frmDangNhap = new forms.frmDangNhap();
-            //// frmMain.enalbleButtonsInit();
-            //Application.Run(frmDangNhap);
-
             frmMain = new forms.frmMain();
-            // frmMain.enalbleButtonsInit();
-            //frmDangNhap = new forms.frmDangNhap();
-            //Application.Run(frmDangNhap);
-
             Application.Run(frmMain);
 
         }
-
-
     }
 }

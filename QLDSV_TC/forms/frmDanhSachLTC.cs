@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DevExpress.XtraReports.UI;
 using System.Windows.Forms;
 using QLDSV_TC.Reports;
@@ -26,11 +19,7 @@ namespace QLDSV_TC.forms
             // TODO: This line of code loads data into the 'qLDSV_TC_DataSet.DANHSACHKHOA' table. You can move, or remove it, as needed.
             this.dANHSACHKHOATableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANHSACHKHOATableAdapter.Fill(this.qLDSV_TC_DataSet.DANHSACHKHOA);
-            // TODO: This line of code loads data into the 'qLDSV_TC_DataSet.KHOA' table. You can move, or remove it, as needed.
-           
-
-
-            
+            // TODO: This line of code loads data into the 'qLDSV_TC_DataSet.KHOA' table. You can move, or remove it, as needed. 
         }
 
         private void cmbKhoa_SelectedIndexChanged(object sender, EventArgs e)
